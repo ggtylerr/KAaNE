@@ -9,7 +9,7 @@ Adventure Game (WIP)
 
 Algebra
 
-The Bulb (WIP)
+The Bulb
 
 Broken Buttons (WIP)
 
