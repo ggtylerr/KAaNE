@@ -26,7 +26,7 @@ def ktane():
 	print "[MOD] Wire Placement (wp)"       # L3055
 	print "[MOD|WIP] Adventure Game (ag)"   # L3141
 	print "[MOD] Algebra (al)"		# L3509
-	print "[MOD|WIP] The Bulb (tb)"         # L3662
+	print "[MOD] The Bulb (tb)"             # L3662
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -3662,6 +3662,7 @@ def algebra():
 def theBulb():
 	# The Bulb
 	# Mod made by Timwi and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=788980366
+	# Variable LGT [Lima, Golf, Tango]: Light is either ON or OFF.
 	# Variable MAT [Mike, Alpha, Tango]: Material is either see-through or opaque.
 	# Variable COL [Charlie, Oscar, Lima]: Color is either Blue, Green, Purple, Red, White or Yellow.
 	# Variable AN1 [Alpha, November, One]: Answer in step 1.
@@ -3669,7 +3670,10 @@ def theBulb():
 	# Variable IND [India, November, Delta]: Indicator
 	x = 0
 	y = "n"
+	w = "n"
 	print "Please input in lower case."
+	print "Valid responses: on off"
+	lgt = raw_input("Is the light on or off? ")
 	print "Valid responses: see-through s opaque o"
 	mat = raw_input("Is the bulb see-through or opaque? ")
 	print "Valid responses: blue b green g purple p red r white w yellow y"
@@ -3677,12 +3681,12 @@ def theBulb():
 	# Step 1
 	if lgt == "on" and mat == "see-through":
 		print "Press I."
-		y = raw_input("Did the light go off? ")
+		w = raw_input("Did the light go off? ")
 		an1 = "i"
 		x = 2
 	if lgt == "on" and mat == "s":
 		print "Press I."
-		y = raw_input("Did the light go off? ")
+		w = raw_input("Did the light go off? ")
 		an1 = "i"
 		x = 2
 	if lgt == "on" and mat == "opaque":
@@ -3729,6 +3733,7 @@ def theBulb():
 			x = 5
 		if x == 3:
 			print "Unscrew the bulb."
+			x = 8
 	# Step 4
 	if x == 4:
 		z = raw_input("Does the bomb have the following indicators: CAR, IND, MSA, or SND? ")
@@ -3740,11 +3745,11 @@ def theBulb():
 			x = 10
 	# Step 5
 	if x == 5:
-		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
-			if an1 == "i":
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES" or w == "y" or w == "Y" or w == "yes" or w == "Yes" or w == "YES":
+			if a23 == "i":
 				print "Press I."
 				print "Screw the bulb back in."
-			if an1 == "o":
+			if a23 == "o":
 				print "Press O."
 				print "Screw the bulb back in."
 		else:
@@ -3756,15 +3761,11 @@ def theBulb():
 				print "Screw the bulb back in."
 	# Step 6
 	if x == 6:
-		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
-			if a23 == "i":
-				if an1 == "i":
-					print "Press I."
-					print "Screw the bulb back in."
-				if an1 == "o":
-					print "Press O."
-					print "Screw the bulb back in."
-			else:
+		if w == "y" or w == "Y" or w == "yes" or w == "Yes" or w == "YES":
+			if an1 == "i":
+				print "Press I."
+				print "Screw the bulb back in."
+			if an1 == "o":
 				print "Press O."
 				print "Screw the bulb back in."
 		else:
