@@ -3744,7 +3744,7 @@ def theBulb():
 			if an1 == "i":
 				print "Press I."
 				print "Screw the bulb back in."
-			if an1 == "o"
+			if an1 == "o":
 				print "Press O."
 				print "Screw the bulb back in."
 		else:
