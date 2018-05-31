@@ -8,24 +8,25 @@ import webbrowser
 
 def ktane():
 	print "Available Modules:"
-	print "Simple Wires (w)"                # L71
-	print "Button (b)"                      # L729
-	print "Keypad (k)"                      # L806
-	print "Simon Says (ss)"                 # L887
-	print "Who's on First? (wf)"            # L941
-	print "Memory (me)"                     # L1094
-	print "Morse Code (mc)"                 # L1251
-	print "Complicated Wires (cw)"          # L1336
-	print "Wire Sequences (ws)"             # L1409
-	print "Mazes (mz)"                      # L1808
-	print "Passwords (pw)"                  # L2006
-	print "Needy Gas (ng)"                  # L2098
-	print "Capacitor Discharger (cd)"       # L2103
-	print "Needy Knobs (nk)"                # L2107
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2125
-	print "[MOD] Wire Placement (wp)"       # L3052
-	print "[MOD|WIP] Adventure Game (ag)"   # L3138
-	print "[MOD] Algebra (al)"		# L3506
+	print "Simple Wires (w)"                # L74
+	print "Button (b)"                      # L732
+	print "Keypad (k)"                      # L809
+	print "Simon Says (ss)"                 # L890
+	print "Who's on First? (wf)"            # L944
+	print "Memory (me)"                     # L1097
+	print "Morse Code (mc)"                 # L1254
+	print "Complicated Wires (cw)"          # L1339
+	print "Wire Sequences (ws)"             # L1412
+	print "Mazes (mz)"                      # L1811
+	print "Passwords (pw)"                  # L2009
+	print "Needy Gas (ng)"                  # L2101
+	print "Capacitor Discharger (cd)"       # L2106
+	print "Needy Knobs (nk)"                # L2110
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2128
+	print "[MOD] Wire Placement (wp)"       # L3055
+	print "[MOD|WIP] Adventure Game (ag)"   # L3141
+	print "[MOD] Algebra (al)"		# L3509
+	print "[MOD|WIP] The Bulb (tb)"         # L3662
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -64,6 +65,8 @@ def ktane():
 		adventureGame()
 	if x == "al":
 		algebra()
+	if x == "tb":
+		theBulb()
 	else:
 		print "Invalid Module!"
 		raw_input("Press any button to continue.")
@@ -3654,6 +3657,263 @@ def algebra():
 	print "(z / 2) - (x / 4) = 4c - z is", c
 	c = (x * (y / 2.0) + 11) * (y * 2) - 4
 	print "x(y/2) + 11 = (4 + c) / 2y is", c
+	raw_input("Press enter to continue.")
+	ktane()
+def theBulb():
+	# The Bulb
+	# Mod made by Timwi and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=788980366
+	# Variable MAT [Mike, Alpha, Tango]: Material is either see-through or opaque.
+	# Variable COL [Charlie, Oscar, Lima]: Color is either Blue, Green, Purple, Red, White or Yellow.
+	# Variable AN1 [Alpha, November, One]: Answer in step 1.
+	# Variable A23 [Alpha, Two, Three]: Answer in either step 2 or step 3.
+	# Variable IND [India, November, Delta]: Indicator
+	x = 0
+	y = "n"
+	print "Please input in lower case."
+	print "Valid responses: see-through s opaque o"
+	mat = raw_input("Is the bulb see-through or opaque? ")
+	print "Valid responses: blue b green g purple p red r white w yellow y"
+	col = raw_input("What is the color of the bulb? ")
+	# Step 1
+	if lgt == "on" and mat == "see-through":
+		print "Press I."
+		y = raw_input("Did the light go off? ")
+		an1 = "i"
+		x = 2
+	if lgt == "on" and mat == "s":
+		print "Press I."
+		y = raw_input("Did the light go off? ")
+		an1 = "i"
+		x = 2
+	if lgt == "on" and mat == "opaque":
+		print "Press O."
+		y = raw_input("Did the light go off? ")
+		an1 = "o"
+		x = 3
+	if lgt == "on" and mat == "o":
+		print "Press O."
+		y = raw_input("Did the light go off? ")
+		an1 = "o"
+		x = 3
+	if lgt == "off":
+		print "Unscrew the bulb."
+		x = 4
+	# Step 2
+	if x == 2:
+		if col == "r" or col == "red":
+			print "Press I."
+			print "Unscrew the bulb."
+			y = raw_input("Did the light go off? ")
+			a23 = "i"
+			x = 5
+		if col == "w" or col == "white":
+			print "Press O."
+			print "Unscrew the bulb."
+			a23 = "o"
+			x = 6
+		if x == 2:
+			print "Unscrew the bulb."
+			x = 7
+	# Step 3
+	if x == 3:
+		if col == "g" or col == "green":
+			print "Press I."
+			print "Unscrew the bulb."
+			y = raw_input("Did the light go off? ")
+			a23 = "i"
+			x = 6
+		if col == "p" or col == "purple":
+			print "Press O."
+			print "Unscrew the bulb."
+			a23 = "o"
+			x = 5
+		if x == 3:
+			print "Unscrew the bulb."
+	# Step 4
+	if x == 4:
+		z = raw_input("Does the bomb have the following indicators: CAR, IND, MSA, or SND? ")
+		if z == "y" or z == "Y" or z == "yes" or z == "Yes" or z == "YES":
+			print "Press I."
+			x = 9
+		else:
+			print "Press O."
+			x = 10
+	# Step 5
+	if x == 5:
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if an1 == "i":
+				print "Press I."
+				print "Screw the bulb back in."
+			if an1 == "o"
+				print "Press O."
+				print "Screw the bulb back in."
+		else:
+			if an1 == "i":
+				print "Press O."
+				print "Screw the bulb back in."
+			if an1 == "o":
+				print "Press I."
+				print "Screw the bulb back in."
+	# Step 6
+	if x == 6:
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if a23 == "i":
+				if an1 == "i":
+					print "Press I."
+					print "Screw the bulb back in."
+				if an1 == "o":
+					print "Press O."
+					print "Screw the bulb back in."
+			else:
+				print "Press O."
+				print "Screw the bulb back in."
+		else:
+			if a23 == "i":
+				print "Press I."
+				print "Screw the bulb back in."
+			if a23 == "o":
+				print "Press O."
+				print "Screw the bulb back in."
+	# Step 7
+	if x == 7:
+		if col == "g" or col == "green":
+			print "Press I."
+			ind = "sig"
+			x = 11
+		if col == "p" or col == "purple":
+			print "Press I."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 12
+		if col == "b" or col == "blue":
+			print "Press O."
+			ind = "clr"
+			x = 11
+		if x == 7:
+			print "Press O."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 13
+	# Step 8
+	if x == 8:
+		if col == "w" or col == "white":
+			print "Press I."
+			ind = "frq"
+			x = 11
+		if col == "r" or col == "red":
+			print "Press I."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 13
+		if col == "y" or col == "yellow":
+			print "Press O."
+			ind = "frk"
+			x = 11
+		if x == 8:
+			print "Press O."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 12
+	# Step 9
+	if x == 9:
+		if col == "b" or col == "blue":
+			print "Press I."
+			x = 14
+		if col == "g" or col == "green":
+			print "Press I."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 12
+		if col == "y" or col == "yellow":
+			print "Press O."
+			x = 15
+		if col == "w" or col == "white":
+			print "Press O."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 13
+		if col == "p" or col == "purple":
+			print "Screw the bulb back in."
+			print "Press I."
+			y = raw_input("Is the light now on? ")
+			x = 12
+		if x == 9:
+			print "Screw the bulb back in."
+			print "Press O."
+			y = raw_input("Is the light now on? ")
+			x = 13
+	# Step 10
+	if x == 10:
+		if col == "p" or col == "purple":
+			print "Press I."
+			x = 14
+		if col == "r" or col == "red":
+			print "Press I."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 13
+		if col == "b" or col == "blue":
+			print "Press O."
+			x = 15
+		if col == "y" or col == "yellow":
+			print "Press O."
+			print "Screw the bulb back in."
+			y = raw_input("Is the light now on? ")
+			x = 12
+		if col == "g" or col == "green":
+			print "Screw the bulb back in."
+			print "Press I."
+			y = raw_input("Is the light now on? ")
+			x = 13
+		if x == 10:
+			print "Screw the bulb back in."
+			print "Press O."
+			y = raw_input("Is the light now on? ")
+			x = 12
+	# Step 11
+	if x == 11:
+		if ind == "sig":
+			y = raw_input("Does the bomb have the indicator labeled \"SIG\"? ")
+		if ind == "clr":
+			y = raw_input("Does the bomb have the indicator labeled \"CLR\"? ")
+		if ind == "frq":
+			y = raw_input("Does the bomb have the indicator labeled \"FRQ\"? ")
+		if ind == "frk":
+			y = raw_input("Does the bomb have the indicator labeled \"FRK\"? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			print "Press I."
+			print "Screw the bulb back in."
+		else:
+			print "Press O."
+			print "Screw the bulb back in."
+	# Step 12
+	if x == 12:
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			print "Press I."
+		else:
+			print "Press O."
+	# Step 13
+	if x == 13:
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			print "Press O."
+		else:
+			print "Press I."
+	# Step 14
+	if x == 14:
+		if mat == "o" or mat == "opaque":
+			print "Press I."
+			print "Screw the bulb back in."
+		else:
+			print "Press O."
+			print "Screw the bulb back in."
+	# Step 15
+	if x == 15:
+		if mat == "s" or mat == "see-through":
+			print "Press I."
+			print "Screw the bulb back in."
+		else:
+			print "Press O."
+			print "Screw the bulb back in."
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
