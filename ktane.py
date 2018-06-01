@@ -8,25 +8,26 @@ import webbrowser
 
 def ktane():
 	print "Available Modules:"
-	print "Simple Wires (w)"                # L74
-	print "Button (b)"                      # L732
-	print "Keypad (k)"                      # L809
-	print "Simon Says (ss)"                 # L890
-	print "Who's on First? (wf)"            # L944
-	print "Memory (me)"                     # L1097
-	print "Morse Code (mc)"                 # L1254
-	print "Complicated Wires (cw)"          # L1339
-	print "Wire Sequences (ws)"             # L1412
-	print "Mazes (mz)"                      # L1811
-	print "Passwords (pw)"                  # L2009
-	print "Needy Gas (ng)"                  # L2101
-	print "Capacitor Discharger (cd)"       # L2106
-	print "Needy Knobs (nk)"                # L2110
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2128
-	print "[MOD] Wire Placement (wp)"       # L3055
-	print "[MOD|WIP] Adventure Game (ag)"   # L3141
-	print "[MOD] Algebra (al)"		# L3509
-	print "[MOD] The Bulb (tb)"             # L3662
+	print "Simple Wires (w)"                # L77
+	print "Button (b)"                      # L735
+	print "Keypad (k)"                      # L812
+	print "Simon Says (ss)"                 # L893
+	print "Who's on First? (wf)"            # L947
+	print "Memory (me)"                     # L1100
+	print "Morse Code (mc)"                 # L1257
+	print "Complicated Wires (cw)"          # L1342
+	print "Wire Sequences (ws)"             # L1415
+	print "Mazes (mz)"                      # L1814
+	print "Passwords (pw)"                  # L2012
+	print "Needy Gas (ng)"                  # L2104
+	print "Capacitor Discharger (cd)"       # L2109
+	print "Needy Knobs (nk)"                # L2112
+	print "[MOD|WIP] Adventure Game (ag)"   # L3144
+	print "[MOD] Astrology (at)"            # L3923
+	print "[MOD] Algebra (al)"		# L3512
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2131
+	print "[MOD] The Bulb (tb)"             # L3665
+	print "[MOD] Wire Placement (wp)"       # L3058
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -67,6 +68,8 @@ def ktane():
 		algebra()
 	if x == "tb":
 		theBulb()
+	if x == "at":
+		astrology()
 	else:
 		print "Invalid Module!"
 		raw_input("Press any button to continue.")
@@ -3915,6 +3918,501 @@ def theBulb():
 		else:
 			print "Press O."
 			print "Screw the bulb back in."
+	raw_input("Press enter to continue.")
+	ktane()
+def astrology():
+	# Astrology
+	# Mod by Spare Wizard and can be downloaded here: https://steamcommunity.com/sharedfiles/filedetails/?id=745341328
+	# Variable SYM1 [Sierra, Yankee, Mike, One]: Symbol #1
+	# Variable SYM2 [Sierra, Yankee, Mike, Two]: Symbol #2
+	# Variable SYM3 [Sierra, Yankee, Mike, Three]: Symbol #3
+	# Variable SN [Sierra, November] + Number: Serial Number letters
+	# Variable OMN [Oscar, Mike, November]: Omen Number
+	img = input("Display images?" + "\n" + "1 = Yes" + "\n" + "2 = No" + "\n")
+	if img == 1:
+		guide = "astrologycharacterguide.png"
+		webbrowser.open(guide)
+	omn = 0
+	sn4 = ""
+	print "Please input in lower caps."
+	sym1 = raw_input("What is the first symbol? ")
+	sym2 = raw_input("What is the second symbol? ")
+	sym3 = raw_input("What is the third symbol? ")
+	x = input("How many letters are there in the Serial Number? ")
+	if x == 3:
+		sn1 = raw_input("What is the first letter? ")
+		sn2 = raw_input("What is the second letter? ")
+		sn3 = raw_input("What is the third letter? ")
+	if x == 4:
+		sn1 = raw_input("What is the first letter? ")
+		sn2 = raw_input("What is the second letter? ")
+		sn3 = raw_input("What is the third letter? ")
+		sn4 = raw_input("What is the fourth letter? ")
+	# Elements and Planets
+	if sym1 == "fire" or sym2 == "fire" or sym3 == "fire":
+		if sym1 == "mercury" or sym2 == "mercury" or sym3 == "mercury":
+			omn = omn + 1
+		if sym1 == "venus" or sym2 == "venus" or sym3 == "venus":
+			omn = omn - 1
+		if sym1 == "jupiter" or sym2 == "jupiter" or sym3 == "jupiter":
+			omn = omn + 1
+		if sym1 == "saturn" or sym2 == "saturn" or sym3 == "saturn":
+			omn = omn - 2
+		if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+			omn = omn + 2
+		if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+			omn = omn - 1
+	if sym1 == "water" or sym2 == "water" or sym3 == "water":
+		if sym1 == "sun" or sym2 == "sun" or sym3 == "sun":
+			omn = omn - 2
+		if sym1 == "mercury" or sym2 == "mercury" or sym3 == "mercury":
+			omn = omn - 1
+		if sym1 == "mars" or sym2 == "mars" or sym3 == "mars":
+			omn = omn + 2
+		if sym1 == "saturn" or sym2 == "saturn" or sym3 == "saturn":
+			omn = omn - 2
+		if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+			omn = omn + 2
+		if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+			omn = omn + 1
+	if sym1 == "earth" or sym2 == "earth" or sym3 == "earth":
+		if sym1 == "sun" or sym2 == "sun" or sym3 == "sun":
+			omn = omn - 1
+		if sym1 == "moon" or sym2 == "moon" or sym3 == "moon":
+			omn = omn - 1
+		if sym1 == "venus" or sym2 == "venus" or sym3 == "venus":
+			omn = omn - 1
+		if sym1 == "mars" or sym2 == "mars" or sym3 == "mars":
+			omn = omn + 1
+		if sym1 == "jupiter" or sym2 == "jupiter" or sym3 == "jupiter":
+			omn = omn + 2
+		if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+			omn = omn + 2
+		if sym1 == "neptune" or sym2 == "neptune" or sym3 == "neptune":
+			omn = omn + 1
+		if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+			omn = omn - 2
+	if sym1 == "air" or sym2 == "air" or sym3 == "air":
+		if sym1 == "sun" or sym2 == "sun" or sym3 == "sun":
+			omn = omn - 1
+		if sym1 == "moon" or sym2 == "moon" or sym3 == "moon":
+			omn = omn + 2
+		if sym1 == "mercury" or sym2 == "mercury" or sym3 == "mercury":
+			omn = omn - 1
+		if sym1 == "mars" or sym2 == "mars" or sym3 == "mars":
+			omn = omn - 2
+		if sym1 == "jupiter" or sym2 == "jupiter" or sym3 == "jupiter":
+			omn = omn - 1
+		if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+			omn = omn + 2
+		if sym1 == "neptune" or sym2 == "neptune" or sym3 == "neptune":
+			omn = omn - 2
+		if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+			omn = omn + 2
+	# Elements and Zodiacs
+	if sym1 == "fire" or sym2 == "fire" or sym3 == "fire":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn + 1
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn + 2
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn + 2
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 1
+	if sym1 == "water" or sym2 == "water" or sym3 == "water":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn + 2
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn + 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 1
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn + 2
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn - 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn - 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 2
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 2
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn + 2
+	if sym1 == "earth" or sym2 == "earth" or sym3 == "earth":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 2
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn - 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn + 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 2
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn - 1
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn - 2
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn + 1
+	if sym1 == "air" or sym2 == "air" or sym3 == "air":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn + 1
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn + 1
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 2
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn - 2
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 2
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn - 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn - 1
+	# Planets and Zodiacs
+	if sym1 == "sun" or sym2 == "sun" or sym3 == "sun":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 1
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn - 1
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn + 2
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn - 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn - 2
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn - 2
+	if sym1 == "moon" or sym2 == "moon" or sym3 == "moon":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemni":
+			omn = omn + 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 2
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 2
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 1
+	if sym1 == "mercury" or sym2 == "mercury" or sym3 == "mercury":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 2
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn - 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 1
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn - 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn - 2
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn - 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn + 1
+	if sym1 == "venus" or sym2 == "venus" or sym3 == "venus":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 2
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn + 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 2
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn + 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 2
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn - 2
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn - 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn + 1
+	if sym1 == "mars" or sym2 == "mars" or sym3 == "mars":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn - 1
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn - 2
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn - 2
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn - 2
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 1
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn + 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn - 1
+	if sym1 == "jupiter" or sym2 == "jupiter" or sym3 == "jupiter":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 1
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn - 2
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn + 1
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn - 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn - 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 2
+	if sym1 == "saturn" or sym2 == "saturn" or sym3 == "saturn":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 1
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn - 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn + 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn - 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn - 1
+	if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 1
+		if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+			omn = omn + 2
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn + 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn - 2
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn + 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 2
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn - 1
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 1
+	if sym1 == "neptune" or sym2 == "neptune" or sym3 == "neptune":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn + 1
+		if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+			omn = omn + 2
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn + 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn - 1
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn + 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn + 1
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+			omn = omn - 2
+		if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+			omn = omn + 2
+	if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+		if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+			omn = omn - 1
+		if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+			omn = omn - 1
+		if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+			omn = omn - 2
+		if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+			omn = omn + 1
+		if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+			omn = omn + 2
+		if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+			omn = omn + 1
+		if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+			omn = omn + 1
+		if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+			omn = omn - 1
+	# Serial Number Stuff
+	if sym1 == "fire" or sym2 == "fire" or sym3 == "fire":
+		if sn1 == "f" or sn2 == "f" or sn3 == "f" or sn4 == "f" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "water" or sym2 == "water" or sym3 == "water":
+		if sn1 == "w" or sn2 == "w" or sn3 == "w" or sn4 == "w" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "earth" or sym2 == "earth" or sym3 == "earth":
+		if sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "h" or sn2 == "h" or sn3 == "h" or sn4 == "h":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "air" or sym2 == "air" or sym3 == "air":
+		if sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "sun" or sym2 == "sun" or sym3 == "sun":
+		if sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "moon" or sym2 == "moon" or sym3 == "moon":
+		if sn1 == "m" or sn2 == "m" or sn3 == "m" or sn4 == "m" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "mercury" or sym2 == "mercury" or sym3 == "mercury":
+		if sn1 == "m" or sn2 == "m" or sn3 == "m" or sn4 == "m" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "c" or sn2 == "c" or sn3 == "c" or sn4 == "c" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "y" or sn2 == "y" or sn3 == "y" or sn4 == "y":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "venus" or sym2 == "venus" or sym3 == "venus":
+		if sn1 == "v" or sn2 == "v" or sn3 == "v" or sn4 == "v" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "mars" or sym2 == "mars" or sym3 == "mars":
+		if sn1 == "m" or sn2 == "m" or sn3 == "m" or sn4 == "m" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "jupiter" or sym2 == "jupiter" or sym3 == "jupiter":
+		if sn1 == "j" or sn2 == "j" or sn3 == "j" or sn4 == "j" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "saturn" or sym2 == "saturn" or sym3 == "saturn":
+		if sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "uranus" or sym2 == "uranus" or sym3 == "uranus":
+		if sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "neptune" or sym2 == "neptune" or sym3 == "neptune":
+		if sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "pluto" or sym2 == "pluto" or sym3 == "pluto":
+		if sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "l" or sn2 == "l" or sn3 == "l" or sn4 == "l" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "aries" or sym2 == "aries" or sym3 == "aries":
+		if sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "taurus" or sym2 == "taurus" or sym3 == "taurus":
+		if sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "gemini" or sym2 == "gemini" or sym3 == "gemini":
+		if sn1 == "g" or sn2 == "g" or sn3 == "g" or sn4 == "g" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "m" or sn2 == "m" or sn3 == "m" or sn4 == "m" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "cancer" or sym2 == "cancer" or sym3 == "cancer":
+		if sn1 == "c" or sn2 == "c" or sn3 == "c" or sn4 == "c" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "leo" or sym2 == "leo" or sym3 == "leo":
+		if sn1 == "l" or sn2 == "l" or sn3 == "l" or sn4 == "l" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "virgo" or sym2 == "virgo" or sym3 == "virgo":
+		if sn1 == "v" or sn2 == "v" or sn3 == "v" or sn4 == "v" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "g" or sn2 == "g" or sn3 == "g" or sn4 == "g" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "libra" or sym2 == "libra" or sym3 == "libra":
+		if sn1 == "l" or sn2 == "l" or sn3 == "l" or sn4 == "l" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "b" or sn2 == "b" or sn3 == "b" or sn4 == "b" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "scorpio" or sym2 == "scorpio" or sym3 == "scorpio":
+		if sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s" or sn1 == "c" or sn2 == "c" or sn3 == "c" or sn4 == "c" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "sagittarius" or sym2 == "sagittarius" or sym3 == "sagittarius":
+		if sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "g" or sn2 == "g" or sn3 == "g" or sn4 == "g" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "t" or sn2 == "t" or sn3 == "t" or sn4 == "t" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "capricorn" or sym2 == "capricorn" or sym3 == "capricorn":
+		if sn1 == "c" or sn2 == "c" or sn3 == "c" or sn4 == "c" or sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "o" or sn2 == "o" or sn3 == "o" or sn4 == "o" or sn1 == "n" or sn2 == "n" or sn3 == "n" or sn4 == "n":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "aquarius" or sym2 == "aquarius" or sym3 == "aquarius":
+		if sn1 == "a" or sn2 == "a" or sn3 == "a" or sn4 == "a" or sn1 == "q" or sn2 == "q" or sn3 == "q" or sn4 == "q" or sn1 == "u" or sn2 == "u" or sn3 == "u" or sn4 == "u" or sn1 == "r" or sn2 == "r" or sn3 == "r" or sn4 == "r" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	if sym1 == "pisces" or sym2 == "pisces" or sym3 == "pisces":
+		if sn1 == "p" or sn2 == "p" or sn3 == "p" or sn4 == "p" or sn1 == "i" or sn2 == "i" or sn3 == "i" or sn4 == "i" or sn1 == "s" or sn2 == "s" or sn3 == "s" or sn4 == "s" or sn1 == "c" or sn2 == "c" or sn3 == "c" or sn4 == "c" or sn1 == "e" or sn2 == "e" or sn3 == "e" or sn4 == "e":
+			omn = omn + 1
+		else:
+			omn = omn - 1
+	# Display Omen Number for debugging purposes
+	print "Omen number is", omn
+	if omn > 0:
+		print "Press \"GOOD OMEN\" on", omn
+	if omn < 0:
+		# Make the omen number positive so it won't show up as negative when printing it
+		if omn == -1:
+			omn = 1
+		if omn == -2:
+			omn = 2
+		if omn == -3:
+			omn = 3
+		if omn == -4:
+			omn = 4
+		if omn == -5:
+			omn = 5
+		if omn == -6:
+			omn = 6
+		if omn == -7:
+			omn = 7
+		if omn == -8:
+			omn = 8
+		if omn == -9:
+			omn = 9
+		print "Press \"POOR OMEN\" on", omn
+	if omn == 0:
+		print "Press \"NO OMEN\""
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
