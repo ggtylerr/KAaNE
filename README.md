@@ -9,6 +9,8 @@ Adventure Game (WIP)
 
 Algebra
 
+Astrology
+
 The Bulb
 
 Broken Buttons (WIP)
