@@ -8,26 +8,27 @@ import webbrowser
 
 def ktane():
 	print "Available Modules:"
-	print "Simple Wires (w)"                # L77
-	print "Button (b)"                      # L735
-	print "Keypad (k)"                      # L812
-	print "Simon Says (ss)"                 # L893
-	print "Who's on First? (wf)"            # L947
-	print "Memory (me)"                     # L1100
-	print "Morse Code (mc)"                 # L1257
-	print "Complicated Wires (cw)"          # L1342
-	print "Wire Sequences (ws)"             # L1415
-	print "Mazes (mz)"                      # L1814
-	print "Passwords (pw)"                  # L2012
-	print "Needy Gas (ng)"                  # L2104
-	print "Capacitor Discharger (cd)"       # L2109
-	print "Needy Knobs (nk)"                # L2112
-	print "[MOD|WIP] Adventure Game (ag)"   # L3144
-	print "[MOD] Astrology (at)"            # L3923
-	print "[MOD] Algebra (al)"		# L3512
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2131
-	print "[MOD] The Bulb (tb)"             # L3665
-	print "[MOD] Wire Placement (wp)"       # L3058
+	print "Simple Wires (w)"                # L80
+	print "Button (b)"                      # L738
+	print "Keypad (k)"                      # L815
+	print "Simon Says (ss)"                 # L896
+	print "Who's on First? (wf)"            # L950
+	print "Memory (me)"                     # L1103
+	print "Morse Code (mc)"                 # L1260
+	print "Complicated Wires (cw)"          # L1345
+	print "Wire Sequences (ws)"             # L1418
+	print "Mazes (mz)"                      # L1817
+	print "Passwords (pw)"                  # L2015
+	print "Needy Gas (ng)"                  # L2107
+	print "Capacitor Discharger (cd)"       # L2112
+	print "Needy Knobs (nk)"                # L2115
+	print "[MOD|WIP] Adventure Game (ag)"   # L3147
+	print "[MOD] Astrology (at)"            # L3926
+	print "[MOD] Algebra (al)"		# L3515
+	print "[MOD] Backgrounds (bg)"	        # L4421
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2134
+	print "[MOD] The Bulb (tb)"             # L3668
+	print "[MOD] Wire Placement (wp)"       # L3061
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -70,6 +71,8 @@ def ktane():
 		theBulb()
 	if x == "at":
 		astrology()
+	if x == "bg":
+		backgrounds()
 	else:
 		print "Invalid Module!"
 		raw_input("Press any button to continue.")
@@ -4413,6 +4416,228 @@ def astrology():
 		print "Press \"POOR OMEN\" on", omn
 	if omn == 0:
 		print "Press \"NO OMEN\""
+	raw_input("Press enter to continue.")
+	ktane()
+def backgrounds():
+	# Backgrounds
+	# Mod by JoketteWuzHere and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=1286383144
+	# Variable BKG [Bravo, Kilo, Golf]: Color of the Background
+	# Variable BTN [Bravo, Tango, November]: Color of the Button
+	# Variable LT1: [Lima, Tango, One]: Letter #1
+	# Variable LT2: [Lima, Tango, Two]: Letter #2
+	# Variable PTM: [Papa, Tango, Mike]: How many times to press
+	# Available Colors [For reference]: ROYGBPWGB (Red, Orange, Yellow, Green, Blue, Purple, White, Grey, Black) [Romeo, Oscar, Yankee, Golf, Bravo, Papa, Whiskey, Golf, Bravo]
+	print "Please type in lower caps."
+	print "Acceptable responses: red r orange o yellow y green gn blue bu purple p white w gray grey gy black ba"
+	bkg = raw_input("What is the color of the background? ")
+	btn = raw_input("What is the color of the button? ")
+	# Priority rules
+	# Define x as 0, then define x as 1 after a rule happens, for rule counting.
+	x = 0
+	# Both colors match
+	if x == 0:
+		if bkg == "red" and btn == "red":
+			x = 1
+		if bkg == "r" and btn == "r":
+			x = 1
+		if bkg == "orange" and btn == "orange":
+			x = 1
+		if bkg == "o" and btn == "o":
+			x = 1
+		if bkg == "yellow" and btn == "yellow":
+			x = 1
+		if bkg == "y" and btn == "y":
+			x = 1
+		if bkg == "green" and btn == "green":
+			x = 1
+		if bkg == "gn" and btn == "gn":
+			x = 1
+		if bkg == "blue" and btn == "blue":
+			x = 1
+		if bkg == "bu" and btn == "bu":
+			x = 1
+		if bkg == "purple" and btn == "purple":
+			x = 1
+		if bkg == "p" and btn == "p":
+			x = 1
+		if bkg == "white" and btn == "white":
+			x = 1
+		if bkg == "w" and btn == "w":
+			x = 1
+		if bkg == "gray" and btn == "gray":
+			x = 1
+		if bkg == "grey" and btn == "grey":
+			x = 1
+		if bkg == "gy" and btn == "gy":
+			x = 1
+		if bkg == "black" and btn == "black":
+			x = 1
+		if bkg == "ba" and btn == "ba":
+			x = 1
+		if x == 1:
+			lt1 = "a"
+	# BTN or BKG are black/white
+	if btn == "black" or btn == "ba" or btn == "white" or btn == "w" or bkg == "black" or bkg == "ba" or bkg == "white" or bkg == "w":
+		if x == 0:
+			x = 1
+			lt1 = "d"
+		else:
+			x = 2
+			lt2 = "b"
+	# No D batteries
+	if x == 0 or x == 1:
+		y = raw_input("Are there no D batteries? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if x == 0:
+				x = 1
+				lt1 = "c"
+			else:
+				x = 2
+				lt2 = "e"
+	# No AA batteries
+	if x == 0 or x == 1:
+		y = raw_input("Are there no AA batteries? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if x == 0:
+				x = 1
+				lt1 = "d"
+			else:
+				x = 2
+				lt2 = "d"
+	# BTN & BKG are primary colors
+	if btn == "red" or btn == "r" or btn == "yellow" or btn == "y" or btn == "blue" or btn == "bu":
+		if bkg == "red" or bkg == "r" or bkg == "yellow" or bkg == "y" or bkg == "blue" or bkg == "bu":
+			if x == 0:
+				x = 1
+				lt1 = "b"
+			elif x == 1:
+				x = 2
+				lt2 = "f"
+	# BTN is a secondary color
+	if btn == "orange" or btn == "o" or btn == "green" or btn == "gn" or btn == "purple" or btn == "p":
+		if x == 0:
+			x = 1
+			lt1 = "f"
+		elif x == 1:
+			x = 2
+			lt2 = "e"
+	# Unlit SND indicator
+	if x == 0 or x == 1:
+		y = raw_input("Is there an unlit \"SND\" indicator? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if x == 0:
+				x = 1
+				lt1 = "e"
+			else:
+				x = 2
+				lt2 = "b"
+	# Serial Port
+	if x == 0 or x == 1:
+		y = raw_input("Is there a Serial Port? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			if x == 0:
+				x = 1
+				lt1 = "b"
+			else:
+				x = 2
+				lt2 = "c"
+	# BKG mixed w/ blue matches BTN
+	if bkg == "yellow" or bkg == "y":
+		if btn == "green" or btn == "g":
+			if x == 0:
+				x = 1
+				lt1 = "c"
+			elif x == 1:
+				x = 2
+				lt2 = "d"
+	if bkg == "red" or bkg == "r":
+		if btn == "purple" or btn == "p":
+			if x == 0:
+				x = 1
+				lt1 = "c"
+			elif x == 1:
+				x = 2
+				lt2 = "d"
+	# None of the above works/finishes letters
+	if x == 0:
+		lt1 = "e"
+		lt2 = "a"
+		#      SPORTS it's in the game
+	elif x == 1:
+		lt2 = "a"
+	# Letter Matching Time
+	if lt1 == "a":
+		if lt2 == "a":
+			ptm = 3
+		if lt2 == "b":
+			ptm = 2
+		if lt2 == "c":
+			ptm = 9
+		if lt2 == "d":
+			ptm = 1
+		if lt2 == "e":
+			ptm = 7
+		if lt2 == "f":
+			ptm = 4
+	if lt1 == "b":
+		if lt2 == "a":
+			ptm = 7
+		if lt2 == "b":
+			ptm = 9
+		if lt2 == "c" or lt2 == "d":
+			ptm = 8
+		if lt2 == "e":
+			ptm = 2
+		if lt2 == "f":
+			ptm = 3
+	if lt1 == "c":
+		if lt2 == "a":
+			ptm = 5
+		if lt2 == "b":
+			ptm = 1
+		if lt2 == "c":
+			ptm = 7
+		if lt2 == "d" or lt2 == "e":
+			ptm = 4
+		if lt2 == "f":
+			ptm = 6
+	if lt1 == "d":
+		if lt2 == "a" or lt2 == "d":
+			ptm = 6
+		if lt2 == "b":
+			ptm = 4
+		if lt2 == "c":
+			ptm = 2
+		if lt2 == "e":
+			ptm = 8
+		if lt2 == "f":
+			ptm = 5
+	if lt1 == "e":
+		if lt2 == "a" or lt2 == "c":
+			ptm = 5
+		if lt2 == "b":
+			ptm = 1
+		if lt2 == "d":
+			ptm = 3
+		if lt2 == "e" or lt2 == "f":
+			ptm = 9
+	if lt1 == "f":
+		if lt2 == "a":
+			ptm = 1
+		if lt2 == "b":
+			ptm = 2
+		if lt2 == "c":
+			ptm = 3
+		if lt2 == "d":
+			ptm = 6
+		if lt2 == "e":
+			ptm = 7
+		if lt2 == "f":
+			ptm = 8
+	if ptm == 1:
+		print "Press the button 1 time, then press submit."
+	else:
+		print "Press the button", ptm, "times, then press submit."
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
