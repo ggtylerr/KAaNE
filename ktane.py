@@ -3,32 +3,34 @@ import webbrowser
 
 # KTaNE by Steel Crate Games
 # keypad code & needy knobs idea by Jonathan-Walsh
+# mods created by their rightful owners
 # rest by Gaming Guy Tyler
 # this code is not intended to copy anything that could already be existing that's like this.
 
 def ktane():
 	print "Available Modules:"
-	print "Simple Wires (w)"                # L80
-	print "Button (b)"                      # L738
-	print "Keypad (k)"                      # L815
-	print "Simon Says (ss)"                 # L896
-	print "Who's on First? (wf)"            # L950
-	print "Memory (me)"                     # L1103
-	print "Morse Code (mc)"                 # L1260
-	print "Complicated Wires (cw)"          # L1345
-	print "Wire Sequences (ws)"             # L1418
-	print "Mazes (mz)"                      # L1817
-	print "Passwords (pw)"                  # L2015
-	print "Needy Gas (ng)"                  # L2107
-	print "Capacitor Discharger (cd)"       # L2112
-	print "Needy Knobs (nk)"                # L2115
-	print "[MOD|WIP] Adventure Game (ag)"   # L3147
-	print "[MOD] Astrology (at)"            # L3926
-	print "[MOD] Algebra (al)"		# L3515
-	print "[MOD] Backgrounds (bg)"	        # L4421
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2134
-	print "[MOD] The Bulb (tb)"             # L3668
-	print "[MOD] Wire Placement (wp)"       # L3061
+	print "Simple Wires (w)"                # L84
+	print "Button (b)"                      # L742
+	print "Keypad (k)"                      # L819
+	print "Simon Says (ss)"                 # L900
+	print "Who's on First? (wf)"            # L954
+	print "Memory (me)"                     # L1107
+	print "Morse Code (mc)"                 # L1264
+	print "Complicated Wires (cw)"          # L1348
+	print "Wire Sequences (ws)"             # L1422
+	print "Mazes (mz)"                      # L1821
+	print "Passwords (pw)"                  # L2019
+	print "Needy Gas (ng)"                  # L2111
+	print "Capacitor Discharger (cd)"       # L2116
+	print "Needy Knobs (nk)"                # L2119
+	print "[MOD|WIP] Adventure Game (ag)"   # L3151
+	print "[MOD] Astrology (at)"            # L3930
+	print "[MOD] Algebra (al)"		# L3519
+	print "[MOD] Backgrounds (bg)"	        # L4425
+	print "[MOD] Battleship (bs)"			# L4647
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2138
+	print "[MOD] The Bulb (tb)"             # L3672
+	print "[MOD] Wire Placement (wp)"       # L3065
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -73,6 +75,8 @@ def ktane():
 		astrology()
 	if x == "bg":
 		backgrounds()
+	if x == "bs":
+		battleship()
 	else:
 		print "Invalid Module!"
 		raw_input("Press any button to continue.")
@@ -4638,6 +4642,114 @@ def backgrounds():
 		print "Press the button 1 time, then press submit."
 	else:
 		print "Press the button", ptm, "times, then press submit."
+	raw_input("Press enter to continue.")
+	ktane()
+def battleship():
+	# Battleship
+	# Mod by Timwi and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=833687997
+	# Variable SL + Number [Sierra, Lima] - Serial Number Letters
+	# Variable SD + Number [Sierra, Delta] - Serial Number Digits
+	# Variable SR + Number - Safe Location Rows (Digits)
+	# Variable SC + Number - Safe Location Columns (Letters)
+	x = input("How many letters are there in the SN? ")
+	print "Please input in lower caps."
+	if x == 3:
+		sl1 = raw_input("What is the 1st letter? ")
+		sl2 = raw_input("What is the 2nd letter? ")
+		sl3 = raw_input("What is the 3rd letter? ")
+		sd1 = input("What is the 1st digit? ")
+		sd2 = input("What is the 2nd digit? ")
+		sd3 = input("What is the 3rd digit? ")
+	if x == 4:
+		sl1 = raw_input("What is the 1st letter? ")
+		sl2 = raw_input("What is the 2nd letter? ")
+		sd1 = input("What is the 1st digit? ")
+		sd2 = input("What is the 2nd digit? ")
+	if sl1 == "f" or sl1 == "k" or sl1 == "p" or sl1 == "u" or sl1 == "z":
+		sl1 = "a"
+	if sl1 == "g" or sl1 == "l" or sl1 == "q" or sl1 == "v":
+		sl1 = "b"
+	if sl1 == "h" or sl1 == "m" or sl1 == "r" or sl1 == "w":
+		sl1 = "c"
+	if sl1 == "i" or sl1 == "n" or sl1 == "s" or sl1 == "x":
+		sl1 = "d"
+	if sl1 == "j" or sl1 == "o" or sl1 == "t" or sl1 == "y":
+		sl1 = "e"
+	sc1 = sl1
+	if sd1 == 0:
+		sd1 = 1
+	if sd1 == 6 or sd1 == 7 or sd1 == 8 or sd1 == 9:
+		sd1 = sd1 - 5
+	sr1 = sd1
+	print "The 1st safe location is", sr1, sc1
+	if sl2 == "f" or sl2 == "k" or sl2 == "p" or sl2 == "u" or sl2 == "z":
+		sl2 = "a"
+	if sl2 == "g" or sl2 == "l" or sl2 == "q" or sl2 == "v":
+		sl2 = "b"
+	if sl2 == "h" or sl2 == "m" or sl2 == "r" or sl2 == "w":
+		sl2 = "c"
+	if sl2 == "i" or sl2 == "n" or sl2 == "s" or sl2 == "x":
+		sl2 = "d"
+	if sl2 == "j" or sl2 == "o" or sl2 == "t" or sl2 == "y":
+		sl2 = "e"
+	sc2 = sl2
+	if sd2 == 0:
+		sd2 = 1
+	if sd2 == 6 or sd2 == 7 or sd2 == 8 or sd2 == 9:
+		sd2 = sd2 - 5
+	sr2 = sd2
+	print "The 2nd safe location is", sr2, sc2
+	if x == 3:
+		if sl3 == "f" or sl3 == "k" or sl3 == "p" or sl3 == "u" or sl3 == "z":
+			sl3 = "a"
+		if sl3 == "g" or sl3 == "l" or sl3 == "q" or sl3 == "v":
+			sl3 = "b"
+		if sl3 == "h" or sl3 == "m" or sl3 == "r" or sl3 == "w":
+			sl3 = "c"
+		if sl3 == "i" or sl3 == "n" or sl3 == "s" or sl3 == "x":
+			sl3 = "d"
+		if sl3 == "j" or sl3 == "o" or sl3 == "t" or sl3 == "y":
+			sl3 = "e"
+		sc3 = sl3
+		if sd3 == 0:
+			sd3 = 1
+		if sd3 == 6 or sd3 == 7 or sd3 == 8 or sd3 == 9:
+			sd3 = sd3 - 5
+		sr3 = sd3
+		print "The 3rd safe location is", sr3, sc3
+	x = input("How many ports are there? ")
+	y = input("How many indicators are there? ")
+	z = input("How many batteries are there? ")
+	y = y + z
+	if x == 1 or x == 6:
+		x = "a"
+	if x == 2 or x == 7:
+		x = "b"
+	if x == 3 or x == 8:
+		x = "c"
+	if x == 4 or x == 9:
+		x = "d"
+	if x == 0 or x == 5:
+		x = "e"
+	if y == 6:
+		y = 1
+	if y == 7:
+		y = 2
+	if y == 8:
+		y = 3
+	if y == 9:
+		y = 4
+	sr4 = y
+	sc4 = x
+	print "The final safe location is", sr4, sc4
+	print "Columns are letters. (horizontal)"
+	print "Rows are digits. (vertical)"
+	print "Mark safe locations with the radar tool."
+	print "Use torpedos on enemies."
+	print "Enemy ships are either horizontal or vertical."
+	print "None of the ships are directly adjacent, not even diagonally."
+	print "The numbers on the edges of the grid represents how many squares in the row/column have a piece of a ship."
+	print "Symbols below the grid represent the size of the ships."
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
