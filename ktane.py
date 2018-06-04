@@ -20,30 +20,31 @@ print "Credits can be found on the Github respotority's front page."
 raw_input("Press enter to continue.")
 
 def ktane():
-	print "Available Modules:"
-	print "Simple Wires (w)"                # L99
-	print "Button (b)"                      # L757
-	print "Keypad (k)"                      # L834
-	print "Simon Says (ss)"                 # L915
-	print "Who's on First? (wf)"            # L969
-	print "Memory (me)"                     # L1122
-	print "Morse Code (mc)"                 # L1279
-	print "Complicated Wires (cw)"          # L1364
-	print "Wire Sequences (ws)"             # L1437
-	print "Mazes (mz)"                      # L1836
-	print "Passwords (pw)"                  # L2034
-	print "Needy Gas (ng)"                  # L2126
-	print "Capacitor Discharger (cd)"       # L2131
-	print "Needy Knobs (nk)"                # L2153
-	print "[MOD|WIP] Adventure Game (ag)"   # L3166
-	print "[MOD] Astrology (at)"            # L3945
-	print "[MOD] Algebra (al)"		# L3533
-	print "[MOD] Backgrounds (bg)"	        # L4444
-	print "[MOD] Battleship (bs)"		# L4667
-	print "[MOD] The Big Circle (bc)"       # L4775
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2153
-	print "[MOD] The Bulb (tb)"             # L3687
-	print "[MOD] Wire Placement (wp)"       # L3080
+	print "\nAvailable Modules:"
+	print "Simple Wires (w)"                # L102
+	print "Button (b)"                      # L760
+	print "Keypad (k)"                      # L837
+	print "Simon Says (ss)"                 # L918
+	print "Who's on First? (wf)"            # L972
+	print "Memory (me)"                     # L1125
+	print "Morse Code (mc)"                 # L1282
+	print "Complicated Wires (cw)"          # L1367
+	print "Wire Sequences (ws)"             # L1440
+	print "Mazes (mz)"                      # L1839
+	print "Passwords (pw)"                  # L2037
+	print "Needy Gas (ng)"                  # L2129
+	print "Capacitor Discharger (cd)"       # L2134
+	print "Needy Knobs (nk)"                # L2156
+	print "[MOD|WIP] Adventure Game (ag)"   # L3169
+	print "[MOD] Astrology (at)"            # L3948
+	print "[MOD] Algebra (al)"		# L3536
+	print "[MOD] Backgrounds (bg)"	        # L4447
+	print "[MOD] Battleship (bs)"		# L4670
+	print "[MOD] The Big Circle (bc)"       # L4778
+	print "[MOD] Binary LEDs (bl)"          # L4986
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2156
+	print "[MOD] The Bulb (tb)"             # L3690
+	print "[MOD] Wire Placement (wp)"       # L3083
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -92,6 +93,8 @@ def ktane():
 		battleship()
 	if x == "bc":
 		bigCircle()
+	if x == "bl":
+		binaryLED()
 	else:
 		print "Invalid Module!"
 		raw_input("Press any button to continue.")
@@ -3540,6 +3543,7 @@ def algebra():
 	f1 = 0
 	f2 = 0
 	f3 = 0
+	f4 = 0
 	# x = n
 	# n = sum of digits in the serial number
 	# x + 2 = 3 or more battery holders present
@@ -3556,7 +3560,12 @@ def algebra():
 		f1 = input("What is the first digit? ")
 		f2 = input("What is the second digit? ")
 		f3 = input("What is the third digit? ")
-	n = f1 + f2 + f3
+	if e == 4:
+		f1 = input("What is the first digit? ")
+		f2 = input("What is the second digit? ")
+		f3 = input("What is the third digit? ")
+		f4 = input("What is the fourth digit? ")
+	n = f1 + f2 + f3 + f4
 	x = n
 	e = raw_input("Is there 3 or more battery holders present? ")
 	if e == "y" or e == "Y" or e == "Yes" or e == "yes" or e == "YES":
@@ -4978,6 +4987,432 @@ def bigCircle():
 			print "Blue, Yellow, White"
 		else:
 			print "White, Yellow, Blue"
+	raw_input("Press enter to continue.")
+	ktane()
+def binaryLED():
+	# Binary LEDs
+	# Mod by Willowyn and can be downloaded here: https://steamcommunity.com/sharedfiles/filedetails/?id=949930700
+	# Variable SQ + Number [Sierra, Quebec] - Sequence Parts
+	# Variable CSQ [Charlie, Sierra, Quebec] - Correct Sequence
+	print "Please input in lower caps."
+	sq1 = input("What is the 1st number in the sequence? ")
+	sq2 = input("What is the 2nd number? ")
+	sq3 = input("What is the 3rd number? ")
+	# Translate any binary number sequences into decimal
+	if sq1 == 00001:
+		sq1 = 1
+	if sq2 == 00001:
+		sq2 = 1
+	if sq3 == 00001:
+		sq3 = 1
+	if sq1 == 00010:
+		sq1 = 2
+	if sq2 == 00010:
+		sq2 = 2
+	if sq3 == 00010:
+		sq3 = 2
+	if sq1 == 00011:
+		sq1 = 3
+	if sq2 == 00011:
+		sq2 = 3
+	if sq3 == 00011:
+		sq3 = 3
+	if sq1 == 00100:
+		sq1 = 4
+	if sq2 == 00100:
+		sq2 = 4
+	if sq3 == 00100:
+		sq3 = 4
+	if sq1 == 00101:
+		sq1 = 5
+	if sq2 == 00101:
+		sq2 = 5
+	if sq3 == 00101:
+		sq3 = 5
+	if sq1 == 00110:
+		sq1 = 6
+	if sq2 == 00110:
+		sq2 = 6
+	if sq3 == 00110:
+		sq3 = 6
+	if sq1 == 00111:
+		sq1 = 7
+	if sq2 == 00111:
+		sq2 = 7
+	if sq3 == 00111:
+		sq3 = 7
+	if sq1 == 01000:
+		sq1 = 8
+	if sq2 == 01000:
+		sq2 = 8
+	if sq3 == 01000:
+		sq3 = 8
+	if sq1 == 01001:
+		sq1 = 9
+	if sq2 == 01001:
+		sq2 = 9
+	if sq3 == 01001:
+		sq3 = 9
+	if sq1 == 01010:
+		sq1 = 10
+	if sq2 == 01010:
+		sq2 = 10
+	if sq3 == 01010:
+		sq3 = 10
+	if sq1 == 01011:
+		sq1 = 11
+	if sq2 == 01011:
+		sq2 = 11
+	if sq3 == 01011:
+		sq3 = 11
+	if sq1 == 01100:
+		sq1 = 12
+	if sq2 == 01100:
+		sq2 = 12
+	if sq3 == 01100:
+		sq3 = 12
+	if sq1 == 01101:
+		sq1 = 13
+	if sq2 == 01101:
+		sq2 = 13
+	if sq3 == 01101:
+		sq3 = 13
+	if sq1 == 01110:
+		sq1 = 14
+	if sq2 == 01110:
+		sq2 = 14
+	if sq3 == 01110:
+		sq3 = 14
+	if sq1 == 01111:
+		sq1 = 15
+	if sq2 == 01111:
+		sq2 = 15
+	if sq3 == 01111:
+		sq3 = 15
+	if sq1 == 10000:
+		sq1 = 16
+	if sq2 == 10000:
+		sq2 = 16
+	if sq3 == 10000:
+		sq3 = 16
+	if sq1 == 10001:
+		sq1 = 17
+	if sq2 == 10001:
+		sq2 = 17
+	if sq3 == 10001:
+		sq3 = 17
+	if sq1 == 10010:
+		sq1 = 18
+	if sq2 == 10010:
+		sq2 = 18
+	if sq3 == 10010:
+		sq3 = 18
+	if sq1 == 10011:
+		sq1 = 19
+	if sq2 == 10011:
+		sq2 = 19
+	if sq3 == 10011:
+		sq3 = 19
+	if sq1 == 10100:
+		sq1 = 20
+	if sq2 == 10100:
+		sq2 = 20
+	if sq3 == 10100:
+		sq3 = 20
+	if sq1 == 10101:
+		sq1 = 21
+	if sq2 == 10101:
+		sq2 = 21
+	if sq3 == 10101:
+		sq3 = 21
+	if sq1 == 10110:
+		sq1 = 22
+	if sq2 == 10110:
+		sq2 = 22
+	if sq3 == 10110:
+		sq3 = 22
+	if sq1 == 10111:
+		sq1 = 23
+	if sq2 == 10111:
+		sq2 = 23
+	if sq3 == 10111:
+		sq3 = 23
+	if sq1 == 11000:
+		sq1 = 24
+	if sq2 == 11000:
+		sq2 = 24
+	if sq3 == 11000:
+		sq3 = 24
+	if sq1 == 11001:
+		sq1 = 25
+	if sq2 == 11001:
+		sq2 = 25
+	if sq3 == 11001:
+		sq3 = 25
+	if sq1 == 11010:
+		sq1 = 26
+	if sq2 == 11010:
+		sq2 = 26
+	if sq3 == 11010:
+		sq3 = 26
+	if sq1 == 11011:
+		sq1 = 27
+	if sq2 == 11011:
+		sq2 = 27
+	if sq3 == 11011:
+		sq3 = 27
+	if sq1 == 11100:
+		sq1 = 28
+	if sq2 == 11100:
+		sq2 = 28
+	if sq3 == 11100:
+		sq3 = 28
+	if sq1 == 11101:
+		sq1 = 29
+	if sq2 == 11101:
+		sq2 = 29
+	if sq3 == 11101:
+		sq3 = 29
+	if sq1 == 11110:
+		sq1 = 30
+	if sq2 == 11110:
+		sq2 = 30
+	if sq3 == 11110:
+		sq3 = 30
+	if sq1 == 11111:
+		sq1 = 31
+	if sq2 == 11111:
+		sq2 = 31
+	if sq3 == 11111:
+		sq3 = 31
+	# 1st Sequence Check
+	if sq1 == 17 and sq2 == 15 and sq3 == 6:
+		csq = 1
+	if sq1 == 15 and sq2 == 6 and sq3 == 2:
+		csq = 1
+	if sq1 == 6 and sq2 == 2 and sq3 == 24:
+		csq = 1
+	if sq1 == 2 and sq2 == 24 and sq3 == 8:
+		csq = 1
+	if sq1 == 24 and sq2 == 8 and sq3 == 26:
+		csq = 1
+	if sq1 == 8 and sq2 == 26 and sq3 == 25:
+		csq = 1
+	if sq1 == 26 and sq2 == 25 and sq3 == 21:
+		csq = 1
+	if sq1 == 25 and sq2 == 21 and sq3 == 24:
+		csq = 1
+	if sq1 == 21 and sq2 == 24 and sq3 == 1:
+		csq = 1
+	if sq1 == 24 and sq2 == 1 and sq3 == 15:
+		csq = 1
+	if sq1 == 1 and sq2 == 15 and sq3 == 18:
+		csq = 1
+	if sq1 == 15 and sq2 == 18 and sq3 == 8:
+		csq = 1
+	# 2nd Sequence Check
+	if sq1 == 18 and sq2 == 15 and sq3 == 19:
+		csq = 2
+	if sq1 == 15 and sq2 == 19 and sq3 == 31:
+		csq = 2
+	if sq1 == 19 and sq2 == 31 and sq3 == 12:
+		csq = 2
+	if sq1 == 31 and sq2 == 12 and sq3 == 6:
+		csq = 2
+	if sq1 == 12 and sq2 == 6 and sq3 == 19:
+		csq = 2
+	if sq1 == 6 and sq2 == 19 and sq3 == 21:
+		csq = 2
+	if sq1 == 19 and sq2 == 21 and sq3 == 11:
+		csq = 2
+	if sq1 == 21 and sq2 == 11 and sq3 == 16:
+		csq = 2
+	if sq1 == 11 and sq2 == 16 and sq3 == 19:
+		csq = 2
+	if sq1 == 16 and sq2 == 19 and sq3 == 2:
+		csq = 2
+	if sq1 == 19 and sq2 == 2 and sq3 == 1:
+		csq = 2
+	if sq1 == 2 and sq2 == 1 and sq == 29:
+		csq = 2
+	# 3rd Sequence Check
+	if sq1 == 8 and sq2 == 25 and sq3 == 1:
+		csq = 3
+	if sq1 == 25 and sq2 == 1 and sq3 == 15:
+		csq = 3
+	if sq1 == 1 and sq2 == 15 and sq3 == 20:
+		csq = 3
+	if sq1 == 15 and sq2 == 20 and sq3 == 9:
+		csq = 3
+	if sq1 == 20 and sq2 == 15 and sq3 == 9:
+		csq = 3
+	if sq1 == 15 and sq2 == 9 and sq3 == 3:
+		csq = 3
+	if sq1 == 9 and sq2 == 3 and sq3 == 6:
+		csq = 3
+	if sq1 == 3 and sq2 == 6 and sq3 == 24:
+		csq = 3
+	if sq1 == 6 and sq2 == 24 and sq3 == 1:
+		csq = 3
+	if sq1 == 24 and sq2 == 1 and sq3 == 24:
+		csq = 3
+	if sq1 == 1 and sq2 == 24 and sq3 == 5:
+		csq = 3
+	if sq1 == 24 and sq2 == 5 and sq3 == 26:
+		csq = 3
+	# 4th Sequence Check
+	if sq1 == 21 and sq2 == 27 and sq3 == 6:
+		csq = 4
+	if sq1 == 27 and sq2 == 6 and sq3 == 12:
+		csq = 4
+	if sq1 == 6 and sq2 == 12 and sq3 == 27:
+		csq = 4
+	if sq1 == 12 and sq2 == 27 and sq3 == 20:
+		csq = 4
+	if sq1 == 27 and sq2 == 20 and sq3 == 7:
+		csq = 4
+	if sq1 == 20 and sq2 == 7 and sq3 == 1:
+		csq = 4
+	if sq1 == 7 and sq2 == 1 and sq3 == 19:
+		csq = 4
+	if sq1 == 1 and sq2 == 19 and sq3 == 15:
+		csq = 4
+	if sq1 == 19 and sq2 == 15 and sq3 == 3:
+		csq = 4
+	if sq1 == 15 and sq2 == 3 and sq3 == 13:
+		csq = 4
+	if sq1 == 3 and sq2 == 13 and sq3 == 9:
+		csq = 4
+	if sq1 == 13 and sq2 == 9 and sq3 == 28:
+		csq = 4
+	# 5th Sequence Check
+	if sq1 == 3 and sq2 == 21 and sq3 == 14:
+		csq = 5
+	if sq1 == 21 and sq2 == 14 and sq3 == 22:
+		csq = 5
+	if sq1 == 14 and sq2 == 22 and sq3 == 7:
+		csq = 5
+	if sq1 == 22 and sq2 == 7 and sq3 == 28:
+		csq = 5
+	if sq1 == 7 and sq2 == 28 and sq3 == 16:
+		csq = 5
+	if sq1 == 28 and sq2 == 16 and sq3 == 27:
+		csq = 5
+	if sq1 == 16 and sq2 == 27 and sq3 == 22:
+		csq = 5
+	if sq1 == 27 and sq2 == 22 and sq3 == 17:
+		csq = 5
+	if sq1 == 22 and sq2 == 17 and sq3 == 26:
+		csq = 5
+	if sq1 == 17 and sq2 == 26 and sq3 == 2:
+		csq = 5
+	if sq1 == 26 and sq2 == 2 and sq3 == 31:
+		csq = 5
+	if sq1 == 2 and sq2 == 31 and sq3 == 15:
+		csq = 5
+	# 6th Sequence Check
+	if sq1 == 8 and sq2 == 22 and sq3 == 30:
+		csq = 6
+	if sq1 == 22 and sq2 == 30 and sq3 == 19:
+		csq = 6
+	if sq1 == 30 and sq2 == 19 and sq3 == 1:
+		csq = 6
+	if sq1 == 19 and sq2 == 1 and sq3 == 25:
+		csq = 6
+	if sq1 == 1 and sq2 == 25 and sq3 == 31:
+		csq = 6
+	if sq1 == 25 and sq2 == 31 and sq3 == 16:
+		csq = 6
+	if sq1 == 31 and sq2 == 16 and sq3 == 9:
+		csq = 6
+	if sq1 == 16 and sq2 == 9 and sq3 == 7:
+		csq = 6
+	if sq1 == 9 and sq2 == 7 and sq3 == 6:
+		csq = 6
+	if sq1 == 7 and sq2 == 6 and sq3 == 13:
+		csq = 6
+	if sq1 == 6 and sq2 == 13 and sq3 == 9:
+		csq = 6
+	if sq1 == 13 and sq2 == 9 and sq3 == 7:
+		csq = 6
+	# 7th Sequence Check
+	if sq1 == 5 and sq2 == 18 and sq3 == 12:
+		csq = 7
+	if sq1 == 18 and sq2 == 12 and sq3 == 7:
+		csq = 7
+	if sq1 == 12 and sq2 == 7 and sq3 == 5:
+		csq = 7
+	if sq1 == 7 and sq2 == 5 and sq3 == 12:
+		csq = 7
+	if sq1 == 5 and sq2 == 12 and sq3 == 31:
+		csq = 7
+	if sq1 == 12 and sq2 == 31 and sq3 == 16:
+		csq = 7
+	if sq1 == 31 and sq2 == 16 and sq3 == 10:
+		csq = 7
+	if sq1 == 16 and sq2 == 10 and sq3 == 15:
+		csq = 7
+	if sq1 == 10 and sq2 == 15 and sq3 == 17:
+		csq = 7
+	if sq1 == 15 and sq2 == 17 and sq3 == 9:
+		csq = 7
+	if sq1 == 17 and sq2 == 9 and sq3 == 12:
+		csq = 7
+	if sq1 == 9 and sq2 == 12 and sq3 == 25:
+		csq = 7
+	# 8th Sequence Check
+	if sq1 == 4 and sq2 == 20 and sq3 == 18:
+		csq = 8
+	if sq1 == 20 and sq2 == 18 and sq3 == 25:
+		csq = 8
+	if sq1 == 18 and sq2 == 25 and sq3 == 20:
+		csq = 8
+	if sq1 == 25 and sq2 == 20 and sq3 == 4:
+		csq = 8
+	if sq1 == 20 and sq2 == 4 and sq3 == 24:
+		csq = 8
+	if sq1 == 4 and sq2 == 24 and sq3 == 29:
+		csq = 8
+	if sq1 == 24 and sq2 == 29 and sq3 == 17:
+		csq = 8
+	if sq1 == 29 and sq2 == 17 and sq3 == 16:
+		csq = 8
+	if sq1 == 17 and sq2 == 16 and sq3 == 12:
+		csq = 8
+	if sq1 == 16 and sq2 == 12 and sq3 == 16:
+		csq = 8
+	if sq1 == 12 and sq2 == 16 and sq3 == 29:
+		csq = 8
+	if sq1 == 16 and sq2 == 29 and sq3 == 19:
+		csq = 8
+	# Tell the possible solutions
+	print "Possible Solutions:"
+	if csq == 1:
+		print "Green on 2, or 00010"
+		print "Blue on 25, or 11001"
+	if csq == 2:
+		print "Red on 2, or 00010"
+		print "Green on 11, or 01011"
+		print "Blue on 12, or 01100"
+	if csq == 3:
+		print "Red on 24, or 11000"
+		print "Green on 25, or 11001"
+		print "Blue on 1, or 00001"
+	if csq == 4:
+		print "Red on 19, or 10011"
+		print "Green on 9, or 01001"
+		print "Blue on 1, or 00001"
+	if csq == 5:
+		print "Red on 26, or 11010"
+		print "Green on 28, or 11100"
+	if csq == 6:
+		print "Red on 8, or 01000"
+		print "Green on 6, or 00110"
+		print "Blue on 31, or 11111"
+	if csq == 7:
+		print "Blue on 15, or 01111"
+	if csq == 8:
+		print "Blue on 12, or 01100"
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
