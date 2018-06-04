@@ -17,6 +17,8 @@ Battleships
 
 The Big Circle
 
+Binary LEDs
+
 The Bulb
 
 Broken Buttons (WIP)
