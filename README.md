@@ -15,6 +15,8 @@ Backgrounds
 
 Battleships
 
+The Big Circle
+
 The Bulb
 
 Broken Buttons (WIP)
@@ -40,5 +42,7 @@ KTaNE by Steel Crate Games
 Keypad code and Needy Knobs idea by Jonathan-Walsh
 
 Mods belong to their rightful owners.
+
+KAaNE logo generated from patorjk.com
 
 Rest by me (Gaming Guy Tyler)
