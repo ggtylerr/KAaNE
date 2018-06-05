@@ -21,31 +21,32 @@ raw_input("Press enter to continue.")
 
 def ktane():
 	print "\nAvailable Modules:"
-	print "Simple Wires (w)"                # L102
-	print "Button (b)"                      # L760
-	print "Keypad (k)"                      # L837
-	print "Simon Says (ss)"                 # L918
-	print "Who's on First? (wf)"            # L972
-	print "Memory (me)"                     # L1125
-	print "Morse Code (mc)"                 # L1282
-	print "Complicated Wires (cw)"          # L1367
-	print "Wire Sequences (ws)"             # L1440
-	print "Mazes (mz)"                      # L1839
-	print "Passwords (pw)"                  # L2037
-	print "Needy Gas (ng)"                  # L2129
-	print "Capacitor Discharger (cd)"       # L2134
-	print "Needy Knobs (nk)"                # L2156
-	print "[MOD|WIP] Adventure Game (ag)"   # L3169
-	print "[MOD] Astrology (at)"            # L3948
-	print "[MOD] Algebra (al)"		# L3536
-	print "[MOD] Backgrounds (bg)"	        # L4447
-	print "[MOD] Battleship (bs)"		# L4670
-	print "[MOD] The Big Circle (bc)"       # L4778
-	print "[MOD] Binary LEDs (bl)"          # L4986
-	print "[MOD] Bitmaps (bm)"		# L5420
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2156
-	print "[MOD] The Bulb (tb)"             # L3690
-	print "[MOD] Wire Placement (wp)"       # L3083
+	print "Simple Wires (w)"                # L108
+	print "Button (b)"                      # L766
+	print "Keypad (k)"                      # L843
+	print "Simon Says (ss)"                 # L924
+	print "Who's on First? (wf)"            # L978
+	print "Memory (me)"                     # L1131
+	print "Morse Code (mc)"                 # L1288
+	print "Complicated Wires (cw)"          # L1373
+	print "Wire Sequences (ws)"             # L1446
+	print "Mazes (mz)"                      # L1847
+	print "Passwords (pw)"                  # L2045
+	print "Needy Gas (ng)"                  # L2137
+	print "Capacitor Discharger (cd)"       # L2142
+	print "Needy Knobs (nk)"                # L2146
+	print "[MOD|WIP] Adventure Game (ag)"   # L3177
+	print "[MOD] Astrology (at)"            # L3962
+	print "[MOD] Algebra (al)"		# L3544
+	print "[MOD] Backgrounds (bg)"	        # L4461
+	print "[MOD] Battleship (bs)"		# L4684
+	print "[MOD] The Big Circle (bc)"       # L4792
+	print "[MOD] Binary LEDs (bl)"          # L5000
+	print "[MOD] Bitmaps (bm)"		# L5425
+	print "[MOD] Bitwise Operations (bo)"	# L5629
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2164
+	print "[MOD] The Bulb (tb)"             # L3704
+	print "[MOD] Wire Placement (wp)"       # L3091
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -98,6 +99,8 @@ def ktane():
 		binaryLED()
 	if x == "bm":
 		bitmaps()
+	if x == "bo":
+		bitwiseOperations()
 	else:
 		print "Invalid Module!"
 		raw_input("Press enter to continue.")
@@ -1839,6 +1842,8 @@ def wireSequences():
 			print "Cut the 12th wire if it's connected to A or B."
 		if c == 8 or c == 9:
 			print "Cut the 12th wire if it's connected to C."
+	raw_input("Press enter to continue.")
+	ktane()
 def mazes():
 	# Mazes
 	# Variable [A]lpha: 1st Indicator
@@ -4709,7 +4714,7 @@ def battleship():
 		sl1 = "e"
 	sc1 = sl1
 	if sd1 == 0:
-		sd1 = 1
+		sd1 = 5
 	if sd1 == 6 or sd1 == 7 or sd1 == 8 or sd1 == 9:
 		sd1 = sd1 - 5
 	sr1 = sd1
@@ -4873,10 +4878,11 @@ def bigCircle():
 		y = input("How many solved modules are there? ")
 		x = x + (3 * y)
 		y = input("How many batteries are there? ")
-		# I'll update this to a more advanced piece of code if there turns out you can have more than 15 batteries on a bomb.
-		if y == 1 or y == 3 or y == 5 or y == 7 or y == 9 or y == 11 or y == 13 or y == 15:
+		even = y % 2
+		odd = y % 1
+		if odd == 0:
 			x = x + 4
-		if y == 0 or y == 2 or y == 4 or y == 6 or y == 8 or y == 10 or y == 12 or y == 14:
+		if y == 0 or even == 0:
 			x = x - 4
 		y = raw_input("Are there any parrallel ports? ")
 		if y == "Y" or y == "y" or y == "yes" or y == "Yes" or y == "YES":
@@ -4913,7 +4919,8 @@ def bigCircle():
 		sp3 = raw_input("What is the 4th character of the SN? ")
 		sp4 = raw_input("What is the 5th character of the SN? ")
 		sp5 = raw_input("What is the 6th character of the SN? ")
-		if x == 0 or x == 10 or x == 20 or x == 30 or x == 40 or x == 50 or x == 60 or x == 70 or x == 80 or x == 90 or x == 100:
+		tenths = x % 10:
+		if x == 0 or tenths == 0:
 			csn = sp0
 		if x == 1 or x == 9 or x == 11 or x == 19 or x == 21 or x == 29 or x == 31 or x == 39 or x == 41 or x == 49 or x == 51 or x == 59 or x == 61 or x == 69 or x == 71 or x == 79 or x == 81 or x == 89 or x == 91 or x == 99 or x == 101:
 			csn = sp1
@@ -5621,5 +5628,276 @@ def bitmaps():
 	print "Press", can
 	raw_input("Press enter to continue.")
 	ktane()
+def bitwiseOperations():
+	# Bitwise Operations
+	# Created by Virepri and can be downloaded here: https://steamcommunity.com/sharedfiles/filedetails/?id=925533475
+	# Variable BOP [Bravo, Oscar, Papa] - Bitwise Operator
+	# Variable MDL [Mike, Delta, Lima] - # of modules
+	# Variable DBT [Delta, Bravo, Tango] - # of D batts
+	# Variable PRT [Papa, Romeo, Tango] - # of ports
+	# Variable B1 + Number [Bravo, One] - Byte 1
+	# Variable B2 + Number [Bravo, Two] - Byte 2
+	# Variable BT + Number [Bravo, Tango] - Proper Bytes
+	print "Please input in lower caps."
+	bop = raw_input("What is the Bitwise Operator? ")
+	z = 0
+	# If the Bitwise Operator is NOT, then skip Byte 2 completely.
+	if bop == "not":
+		z = 1
+	# Byte Checking
+	x = raw_input("Are there no AA batteries? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		b11 = 1
+	else:
+		b11 = 0
+	x = raw_input("Is there a Parallel Port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		b12 = 1
+	else:
+		b12 = 0
+	x = raw_input("Is there a lit indicator NSA? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		b13 = 1
+	else:
+		b13 = 0
+	mdl = input("How many modules are there? ")
+	x = input("What is the starting time of the bomb in minutes? ")
+	if mdl > x:
+		b14 = 1
+	else:
+		b14 = 0
+	x = input("How many lit indicators are there? ")
+	if x > 1:
+		b15 = 1
+	else:
+		b15 = 0
+	x = mdl % 3
+	if x == 0:
+		b16 = 1
+	else:
+		b16 = 0
+	dbt = input("How many D batteries are there? ")
+	if dbt < 2:
+		b17 = 1
+	else:
+		b17 = 0
+	prt = input("How many ports are there? ")
+	if prt < 4:
+		b18 = 1
+	else:
+		b18 = 0
+	if z == 0:
+		if dbt > 1:
+			b21 = 1
+		else:
+			b21 = 0
+		if prt > 2:
+			b22 = 1
+		else:
+			b22 = 0
+		x = input("How many battery holders are there? ")
+		if x > 1:
+			b23 = 1
+		else:
+			b23 = 0
+		x = raw_input("Is there a lit BOB indicator? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			b24 = 1
+		else:
+			b24 = 0
+		x = input("How many unlit indicators are there? ")
+		if x > 1:
+			b25 = 1
+		else:
+			b25 = 0
+		x = raw_input("Is the last digit of the SN odd? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			b26 = 1
+		else:
+			b26 = 0
+		x = mdl % 2
+		if x == 0:
+			b27 = 1
+		else:
+			b27 = 0
+		x = input("How many batteries are there? ")
+		if x > 1:
+			b28 = 1
+		else:
+			b28 = 0
+	# Converting Bytes
+	if bop == "and":
+		if b11 == 1 and b21 == 1:
+			bt1 = 1
+		else:
+			bt1 = 0
+		if b12 == 1 and b22 == 1:
+			bt2 = 1
+		else:
+			bt2 = 0
+		if b13 == 1 and b23 == 1:
+			bt3 = 1
+		else:
+			bt3 = 0
+		if b14 == 1 and b24 == 1:
+			bt4 = 1
+		else:
+			bt4 = 0
+		if b15 == 1 and b25 == 1:
+			bt5 = 1
+		else:
+			bt5 = 0
+		if b16 == 1 and b26 == 1:
+			bt6 = 1
+		else:
+			bt6 = 0
+		if b17 == 1 and b27 == 1:
+			bt7 = 1
+		else:
+			bt7 = 0
+		if b18 == 1 and b28 == 1:
+			bt8 = 1
+		else:
+			bt8 = 0
+	if bop == "or":
+		if b11 == 1 or b21 == 1:
+			bt1 = 1
+		else:
+			bt1 = 0
+		if b12 == 1 or b22 == 1:
+			bt2 = 1
+		else:
+			bt2 = 0
+		if b13 == 1 or b23 == 1:
+			bt3 = 1
+		else:
+			bt3 = 0
+		if b14 == 1 or b24 == 1:
+			bt4 = 1
+		else:
+			bt4 = 0
+		if b15 == 1 or b25 == 1:
+			bt5 = 1
+		else:
+			bt5 = 0
+		if b16 == 1 or b26 == 1:
+			bt6 = 1
+		else:
+			bt6 = 0
+		if b17 == 1 or b27 == 1:
+			bt7 = 1
+		else:
+			bt7 = 0
+		if b18 == 1 or b28 == 1:
+			bt8 = 1
+		else:
+			bt8 = 0
+	if bop == "xor":
+		if b11 == 1:
+			if not b21 == 0:
+				bt1 = 1
+			else:
+				bt1 = 0
+		elif b21 == 1:
+			bt1 = 1
+		else:
+			bt1 = 0
+		if b12 == 1:
+			if not b22 == 0:
+				bt2 = 1
+			else:
+				bt2 = 0
+		elif b22 == 1:
+			bt2 = 1
+		else:
+			bt2 = 0
+		if b13 == 1:
+			if not b23 == 0:
+				bt3 = 1
+			else:
+				bt3 = 0
+		elif b23 == 1:
+			bt3 = 1
+		else:
+			bt3 = 0
+		if b14 == 1:
+			if not b24 == 0:
+				bt4 = 1
+			else:
+				bt4 = 0
+		elif b24 == 1:
+			bt4 = 1
+		else:
+			bt4 = 0
+		if b15 == 1:
+			if not b25 == 0:
+				bt5 = 1
+			else:
+				bt5 = 0
+		elif b25 == 1:
+			bt5 = 1
+		else:
+			bt5 = 0
+		if b16 == 1:
+			if not b26 == 0:
+				bt6 = 1
+			else:
+				bt6 = 0
+		elif b26 == 1:
+			bt6 = 1
+		else:
+			bt6 = 0
+		if b17 == 1:
+			if not b27 == 0:
+				bt7 = 1
+			else:
+				bt7 = 0
+		elif b27 == 1:
+			bt7 = 1
+		else:
+			bt7 = 0
+		if b18 == 1:
+			if not b28 == 0:
+				bt8 = 1
+			else:
+				bt8 = 0
+		elif b28 == 1:
+			bt8 = 1
+		else:
+			bt8 = 0
+	if bop == "not":
+		if b11 == 1:
+			bt1 = 0
+		else:
+			bt1 = 1
+		if b12 == 1:
+			bt2 = 0
+		else:
+			bt2 = 1
+		if b13 == 1:
+			bt3 = 0
+		else:
+			bt3 = 1
+		if b14 == 1:
+			bt4 = 0
+		else:
+			bt4 = 1
+		if b15 == 1:
+			bt5 = 0
+		else:
+			bt5 = 1
+		if b16 == 1:
+			bt6 = 0
+		else:
+			bt6 = 1
+		if b17 == 1:
+			bt7 = 0
+		else:
+			bt7 = 1
+		if b18 == 1:
+			bt8 = 0
+		else:
+			bt8 = 1
+	print "Proper bit sequence:", bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8
 ktane()
 # ....is some good shit
