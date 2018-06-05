@@ -42,6 +42,7 @@ def ktane():
 	print "[MOD] Battleship (bs)"		# L4670
 	print "[MOD] The Big Circle (bc)"       # L4778
 	print "[MOD] Binary LEDs (bl)"          # L4986
+	print "[MOD] Bitmaps (bm)"		# L5420
 	print "[MOD|WIP] Broken Buttons (bb)"   # L2156
 	print "[MOD] The Bulb (tb)"             # L3690
 	print "[MOD] Wire Placement (wp)"       # L3083
@@ -95,9 +96,11 @@ def ktane():
 		bigCircle()
 	if x == "bl":
 		binaryLED()
+	if x == "bm":
+		bitmaps()
 	else:
 		print "Invalid Module!"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def wires():
 	# Simple Wires
@@ -126,27 +129,27 @@ def wires():
 			if not b == "r":
 				if not c == "r":
 					print "Cut the 2nd wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 		if c == "w":
 			print "Cut the 3rd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if a == "bu" and b == "bu":
 			print "Cut the 2nd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if a == "bu" and c == "bu":
 			print "Cut the 3rd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "bu" and c == "bu":
 			print "Cut the 3rd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		else:
 			print "Cut the 3rd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if x == 4:
 		print "Red: r"
@@ -163,112 +166,112 @@ def wires():
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				if d == "r":
 					print "Cut the 4th wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 				if c == "r":
 					print "Cut the 3rd wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 				if b == "r":
 					print "Cut the 2nd wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 		if a == "r" and c == "r":
 			x = raw_input("Is the last digit of the SN odd? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				if d == "r":
 					print "Cut the 4th wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 				if c == "r":
 					print "Cut the 3rd wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 		if b == "r" and c == "r":
 			x = raw_input("Is the last digit of the SN odd? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				if d == "r":
 					print "Cut the 4th wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 				if c == "r":
 					print "Cut the 3rd wire."
-					raw_input("Press any button to continue.")
+					raw_input("Press enter to continue.")
 					ktane()
 		if b == "r" and d == "r":
 			x = raw_input("Is the last digit of the SN odd? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				print "Cut the 4th wire."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 		if c == "r" and d == "r":
 			x = raw_input("Is the last digit of the SN odd? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				print "Cut the 4th wire."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 		if d == "y":
 			if not a == "r":
 				if not b == "r":
 					if not c == "r":
 						print "Cut the 1st wire."
-						raw_input("Press any button to continue.")
+						raw_input("Press enter to continue.")
 						ktane()
 		if a == "bu":
 			if not b == "bu":
 				if not c == "bu":
 					if not d == "bu":
 						print "Cut the 1st wire."
-						raw_input("Press any button to continue.")
+						raw_input("Press enter to continue.")
 						ktane()
 		if b == "bu":
 			if not a == "bu":
 				if not c == "bu":
 					if not d == "bu":
 						print "Cut the 1st wire."
-						raw_input("Press any button to continue.")
+						raw_input("Press enter to continue.")
 						ktane()
 		if c == "bu":
 			if not a == "bu":
 				if not b == "bu":
 					if not d == "bu":
 						print "Cut the 1st wire."
-						raw_input("Press any button to continue.")
+						raw_input("Press enter to continue.")
 						ktane()
 		if d == "bu":
 			if not a == "bu":
 				if not b == "bu":
 					if not c == "bu":
 						print "Cut the 1st wire."
-						raw_input("Press any button to continue.")
+						raw_input("Press enter to continue.")
 						ktane()
 		if a == "y" and b == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if a == "y" and c == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if a == "y" and d == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and d == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if c == "y" and d == "y":
 			print "Cut the 4th wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		else:
 			print "Cut the 2nd wire."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if x == 5:
 		print "Red: r"
@@ -285,7 +288,7 @@ def wires():
 			x = raw_input("Is the last digit of the SN odd? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				print "Cut the 4th wire."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 		if a == "r":
 			if not b == "r":
@@ -294,27 +297,27 @@ def wires():
 						if not e == "r":
 							if b == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if d == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		if b == "r":
 			if not a == "r":
@@ -323,27 +326,27 @@ def wires():
 						if not e == "r":
 							if a == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if d == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		if c == "r":
 			if not a == "r":
@@ -352,27 +355,27 @@ def wires():
 						if not e == "r":
 							if a == "y" and b == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if d == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		if d == "r":
 			if not a == "r":
@@ -381,27 +384,27 @@ def wires():
 						if not e == "r":
 							if a == "y" and b == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and e == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		if e == "r":
 			if not a == "r":
@@ -410,27 +413,27 @@ def wires():
 						if not d == "r":
 							if a == "y" and b == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if a == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and c == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if b == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 							if c == "y" and d == "y":
 								print "Cut the 1st wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		if not a == "ba":
 			if not b == "ba":
@@ -438,10 +441,10 @@ def wires():
 					if not d == "ba":
 						if not e == "ba":
 							print "Cut the 2nd wire."
-							raw_input("Press any button to continue.")
+							raw_input("Press enter to continue.")
 							ktane()
 		print "Cut the 1st wire."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if x == 6:
 		print "Red: r"
@@ -464,7 +467,7 @@ def wires():
 								x = raw_input("Is the last digit of the SN odd? ")
 								if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 									print "Cut the 3rd wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if a == "y":
 			if not b == "y":
@@ -474,43 +477,43 @@ def wires():
 							if not f == "y":
 								if b == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if e == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if b == "y":
 			if not a == "y":
@@ -520,43 +523,43 @@ def wires():
 							if not f == "y":
 								if a == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if e == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if c == "y":
 			if not a == "y":
@@ -566,43 +569,43 @@ def wires():
 							if not f == "y":
 								if a == "w" and b == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if e == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if d == "y":
 			if not a == "y":
@@ -612,43 +615,43 @@ def wires():
 							if not f == "y":
 								if a == "w" and b == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if e == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if e == "y":
 			if not a == "y":
@@ -658,43 +661,43 @@ def wires():
 							if not f == "y":
 								if a == "w" and b == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and f == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if f == "y":
 			if not a == "y":
@@ -704,43 +707,43 @@ def wires():
 							if not e == "y":
 								if a == "w" and b == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if a == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and c == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if b == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and d == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if c == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 								if d == "w" and e == "w":
 									print "Cut the 4th wire."
-									raw_input("Press any button to continue.")
+									raw_input("Press enter to continue.")
 									ktane()
 		if not a == "r":
 			if not b == "r":
@@ -749,13 +752,13 @@ def wires():
 						if not e == "r":
 							if not f == "r":
 								print "Cut the 6th wire."
-								raw_input("Press any button to continue.")
+								raw_input("Press enter to continue.")
 								ktane()
 		print "Cut the 4th wire."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	print "Invalid Number!"
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def button():
 	# Button
@@ -783,13 +786,13 @@ def button():
 		print "If the color is blue, release on 4."
 		print "If the color is yellow, release on 5."
 		print "Otherwise, release on 1."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "detonate":
 		c = input("How many batteries? ")
 		if c >= 2:
 			print "Press and immediately release."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if a == "w":
 		x = raw_input("Is there a CAR lit indicator? ")
@@ -798,14 +801,14 @@ def button():
 			print "If the color is blue, release on 4."
 			print "If the color is yellow, release on 5."
 			print "Otherwise, release on 1."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	try:
 		if c >= 2:
 			x = raw_input("Is there a FRK lit indicator? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				print "Press and immediately release."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 	except NameError:
 		c = input("How many batteries? ")
@@ -813,26 +816,26 @@ def button():
 			x = raw_input("Is there a FRK lit indicator? ")
 			if x == "y" or x == "yes" or x == "Y" or x == "Yes" or x == "YES":
 				print "Press and immediately release."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 	if a == "y":
 		print "Hold down the button."
 		print "If the color is blue, release on 4."
 		print "If the color is yellow, release on 5."
 		print "Otherwise, release on 1."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "y":
 		if b == "hold":
 			print "Press and immediately release."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	else:
 		print "Hold down the button."
 		print "If the color is blue, release on 4."
 		print "If the color is yellow, release on 5."
 		print "Otherwise, release on 1."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def keypad():
 	# Keypad
@@ -913,7 +916,7 @@ def keypad():
 			print thirdSymbol,
 		if sortList[i] == 4:
 			print fourthSymbol,
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def simonSays():
 	# Simon Says
@@ -923,7 +926,7 @@ def simonSays():
 	b = input("How many strikes are there? ")
 	if b >= 3 or b <= -1:
 		print "Unless you mistyped, good luck getting out with that many strikes."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "y" or a == "yes" or a == "Y" or a == "Yes" or a == "YES":
 		if b == 0:
@@ -931,21 +934,21 @@ def simonSays():
 			print "Blue = Red"
 			print "Green = Yellow"
 			print "Yellow = Green"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == 1:
 			print "Red = Yellow"
 			print "Blue = Green"
 			print "Green = Blue"
 			print "Yellow = Red"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == 2:
 			print "Red = Green"
 			print "Blue = Red"
 			print "Green = Yellow"
 			print "Yellow = Blue"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	else:
 		if b == 0:
@@ -953,21 +956,21 @@ def simonSays():
 			print "Blue = Yellow"
 			print "Green = Green"
 			print "Yellow = Red"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == 1:
 			print "Red = Red"
 			print "Blue = Blue"
 			print "Green = Yellow"
 			print "Yellow = Green"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == 2:
 			print "Red = Yellow"
 			print "Blue = Green"
 			print "Green = Blue"
 			print "Yellow = Red"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 def whosOnFirst():
 	# Who's on First?
@@ -994,7 +997,7 @@ def whosOnFirst():
 			b = raw_input("What is the word in the 1st position? ")
 	except NameError:
 		print "Unknown word. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if c == 2:
 		b = raw_input("What is the word in the 2nd position? ")
@@ -1008,119 +1011,119 @@ def whosOnFirst():
 		b = raw_input("What is the word in the 6th position?")
 	if b == "ready":
 		print "Yes, Okay, What, Middle, Left, Press, Right, Blank, Ready"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "first":
 		print "Left, Okay, Yes, Middle, No, Right, Nothing, Uhhh, Wait, Ready, Blank, What, Press, First"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "no":
 		print "Blank, Uhhh, Wait, First, What, Ready, Right, Yes, Nothing, Left, Press, Okay, No"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "blank":
 		print "Wait, Right, Okay, Middle, Blank"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "nothing":
 		print "Uhhh, Right, Okay, Middle, Yes, Blank, No, Press, Left, What, Wait, First, Nothing"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "yes":
 		print "Okay, Right, Uhhh, Middle, First, What, Press, Ready, Nothing, Yes"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "what":
 		print "Uhhh, What"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "uhhh":
 		print "Ready, Nothing, Left, What, Okay, Yes, Right, No, Press, Blank, Uhhh"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "left":
 		print "Right, Left"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "right":
 		print "Yes, Nothing, Ready, Press, No, Wait, What, Right"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "middle":
 		print "Blank, Ready, Okay, What, Nothing, Press, No, Wait, Left, Middle"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "okay":
 		print "Middle, No, First, Yes, Uhhh, Nothing, Wait, Okay"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "wait":
 		print "Uhhh, No, Blank, Okay, Yes, Left, First, Press, What, Wait"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "press":
 		print "Right, Middle, Yes, Ready, Press"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "you":
 		print "Sure, You are, Your, You're, Next, Uh Huh, Ur, Hold, What? , You"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "you are":
 		print "Your, Next, Like, Uh Huh, What? , Done, Uh Uh, Hold, You, U, You're, Sure, Ur, You Are"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "your":
 		print "Uh Uh, You Are, Uh Huh, Your"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "you're":
 		print "You, You're"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "ur":
 		print "Done, U, Ur"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "u":
 		print "Uh Huh, Sure, Next, What? , You're, Ur, Uh Uh, Done, U"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "uh huh":
 		print "Uh Huh"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "uh uh":
 		print "Ur, U, You are, You're, Next, Uh Uh"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "what?":
 		print "You, Hold, You're, Your, U, Done, Uh Uh, Like, You Are, Uh Huh, Ur, Next, What?"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "done":
 		print "Sure, Uh Huh, Next, What? , Your, Ur, You're, Hold, Like, You, U, You Are, Uh Uh, Done"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "next":
 		print "What? , Uh Huh, Uh Uh, Your, Hold, Sure, Next"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "hold":
 		print "You Are, U, Done, Uh Uh, You, Ur, Sure, What? , You're, Next, Hold"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "sure":
 		print "You Are, Done, Like, You're, You, Hold, Uh Huh, Ur, Sure"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if b == "like":
 		print "You're, Next, U, Ur, Hold, Done, Uh Uh, What? , Uh Huh, You, Like"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	else:
 		print "Invalid Word. Please Try Again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def memory():
 	# Memory
@@ -1136,7 +1139,7 @@ def memory():
 		a = input("What is the Display Number? ")
 	except NameError:
 		print "Please only use numbers! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == 1 or a == 2:
 		b = 2
@@ -1155,13 +1158,13 @@ def memory():
 			print "Stage 2"
 	except NameError:
 		print "Unknown Number. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	try:
 		a = input("What is the Display Number? ")
 	except NameError:
 		print "Please only use numbers! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == 1:
 		e = 4
@@ -1194,13 +1197,13 @@ def memory():
 			print "Stage 3"
 	except NameError:
 		print "Unknown Number. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	try:
 		a = input("What is the Display Number? ")
 	except NameError:
 		print "Please only use numbers! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == 1:
 		f = e
@@ -1219,13 +1222,13 @@ def memory():
 			print "Stage 4"
 	except NameError:
 		print "Unknown Number. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	try:
 		a = input("What is the Display Number? ")
 	except NameError:
 		print "Please only use numbers! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == 1:
 		if b == 1:
@@ -1261,13 +1264,13 @@ def memory():
 			print "Stage 5"
 	except NameError:
 		print "Unknown Number. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	try:
 		a = input("What is the Display Number? ")
 	except NameError:
 		print "Please only use numbers! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == 1:
 		print "Press the button with the label ", d
@@ -1277,7 +1280,7 @@ def memory():
 		print "Press the button with the label ", g
 	if a == 4:
 		print "Press the button with the label ", f
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def morseCode():
 	# Morse Code
@@ -1288,81 +1291,81 @@ def morseCode():
 	a = raw_input("What is the first letter? ")
 	if a == "..-.":
 		print "3.555 MHz"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "....":
 		print "3.515 MHz"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == ".-..":
 		print "3.542 MHz"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "-":
 		print "3.532 MHz"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "...-":
 		print "3.595 MHz"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if a == "-...":
 		b = raw_input("What is the second letter? ")
 		if b == ".":
 			print "3.600 MHz"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "..":
 			print "3.552 MHz"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "---":
 			c = raw_input("What is the third letter? ")
 			if c == "--":
 				print "3.565 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 			if c == "-..-":
 				print "3.535 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 		if b == ".-.":
 			c = raw_input("What is the third letter? ")
 			if c == ".":
 				print "3.572 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 			if c == "..":
 				print "3.575 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 	if a == "...":
 		b = raw_input("What is the second letter? ")
 		if b == "....":
 			print "3.505 MHz"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == ".-..":
 			print "3.522 MHz"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "-":
 			c = raw_input("What is the third letter? ")
 			if c == ".":
 				print "3.582 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 			if c == "..":
 				print "3.592 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 			if c == ".-.":
 				print "3.545 MHz"
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 	else:
 		print "Invalid letter. Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def complicatedWires():
 	# Complicated Wires
@@ -1378,64 +1381,64 @@ def complicatedWires():
 		c = raw_input("Does the wire have it's LED on? ")
 		if b == "n" and c == "n":
 			print "Cut."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "y":
 			print "Cut if there's a Parallel Port. (They're the pink ones)"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		d = raw_input("Does the wire have a star? ")
 		if b == "n" and c == "y" and d == "n":
 			print "Don't cut."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "n" and c == "y" and d == "y":
 			print "Cut if there are more than 2 batteries."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "n" and d == "n":
 			print "Cut if the last digit of the SN is even."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "n" and d == "y":
 			print "Don't cut."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if a == "y":
 		c = raw_input("Does the wire have a star? ")
 		if b == "y" and c == "n":
 			print "Cut if the last digit of the SN is even."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		d = raw_input("Does the wire have it's LED on? ")
 		if b == "n" and c == "n" and d == "n":
 			print "Cut if the last digit of the SN is even."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "n" and c == "n" and d == "y":
 			print "Cut if there are more than 2 batteries."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "n" and c == "y" and d == "n":
 			print "Cut."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "n" and c == "y" and d == "y":
 			print "Cut if there are more than 2 batteries."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "y" and d == "n":
 			print "Cut if there's a Parallel Port. (They're the pink ones)"
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if b == "y" and c == "y" and d == "y":
 			print "Don't cut."
-			raw_input("Press any button to continue.")
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	else:
 		print "Invalid response! Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def wireSequences():
 	# Wire Sequences
@@ -2124,16 +2127,16 @@ def passwords():
 	if a1 == "v" or a2 == "v" or a3 == "v" or a4 == "v" or a5 == "v" or a6 == "v":
 		if b1 == "r" or b2 == "r" or b3 == "r" or b4 == "r" or b5 == "r" or b6 == "r":
 			print "NEVER"
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def gas():
 	print "Detonate - N"
 	print "Vent Gas - Y"
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def capacitorDischarger():
 	print "Pull down the lever whenever you can."
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def knobs():
 	print "Up Position:"
@@ -2151,7 +2154,7 @@ def knobs():
 	print "Right Position:"
 	print "101111      101100"
 	print "111010      111010"
-	raw_input("Press any button to continue.")
+	raw_input("Press enter to continue.")
 	ktane()
 def brokenButtons():
 	# Broken Buttons
@@ -2301,11 +2304,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if a1 == "too" or a2 == "too" or a3 == "too" or c1 == "too" or c2 == "too" or c3 == "too":
 		print "Press the button with the word \"too\" (The one that's in the 1st or 3rd row if there are multiple ones)"
@@ -2326,11 +2329,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	if a1 == "two" or a2 == "two" or a3 == "two" or c1 == "two" or c2 == "two" or c3 == "two":
 		print "Press the button with the word \"two\" (The one that's in the 1st or 3rd row if there are multiple ones)"
@@ -2351,11 +2354,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If "one" and "submit" shows up, the correct submit button is the left one, and then press "one"
 	if a1 == "one" or a2 == "one" or a3 == "one" or b1 == "one" or b2 == "one" or b3 == "one" or c1 == "one" or c2 == "one" or c3 == "one" or d1 == "one" or d2 == "one" or d3 == "one":
@@ -2391,11 +2394,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If it's literally blank, press it.
 	if a1 == " " or a2 == " " or a3 == " " or b1 == " " or b2 == " " or b3 == " " or c1 == " " or c2 == " " or c3 == " " or d1 == " " or d2 == " " or d3 == " ":
@@ -2429,11 +2432,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If it's "other", the correct submit button is the opposite of the current one. Press it as well.
 	if a1 == "other" or a2 == "other" or a3 == "other" or b1 == "other" or b2 == "other" or b3 == "other" or c1 == "other" or c2 == "other" or c3 == "other" or d1 == "other" or d2 == "other" or d3 == "other":
@@ -2472,11 +2475,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If there's a duplicate, press one of the duplicates.
 	g = raw_input("Is there a duplicate? ")
@@ -2540,11 +2543,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If there's a port name and the word port or module appear, press the port name button.
 	if a1 == "rj-45" or a2 == "rj-45" or a3 == "rj-45" or b1 == "rj-45" or b2 == "rj-45" or b3 == "rj-45" or c1 == "rj-45" or c2 == "rj-45" or c3 == "rj-45" or d1 == "rj-45" or d2 == "rj-45" or d3 == "rj-45":
@@ -2825,11 +2828,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If it's less than 3 chracters, press it.
 	# I'm not sure if it counts blank buttons. This part needs more debugging to confirm.
@@ -2948,11 +2951,11 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If "bomb" and "boom" are present, press "boom"
 	if a1 == "bomb" or a2 == "bomb" or a3 == "bomb" or b1 == "bomb" or b2 == "bomb" or b3 == "bomb" or c1 == "bomb" or c2 == "bomb" or c3 == "bomb" or d1 == "bomb" or d2 == "bomb" or d3 == "bomb":
@@ -2986,22 +2989,22 @@ def brokenButtons():
 	if e == 5:
 		if f == 1:
 			print "Press the left submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 		if f == 2:
 			print "Press the right submit button."
-			raw_input("Press any button to continue.")
+			raw_input("Press enter to continue.")
 			ktane()
 	# If "submit" and "button" are present, press the correct submit button.
 	if a1 == "submit" or a2 == "submit" or a3 == "submit" or b1 == "submit" or b2 == "submit" or b3 == "submit" or c1 == "submit" or c2 == "submit" or c3 == "submit" or d1 == "submit" or d2 == "submit" or d3 == "submit":
 		if a1 == "button" or a2 == "button" or a3 == "button" or b1 == "button" or b2 == "button" or b3 == "button" or c1 == "button" or c2 == "button" or c3 == "button" or d1 == "button" or d2 == "button" or d3 == "button":
 			if f == 1:
 				print "Press the left submit button."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 			if f == 2:
 				print "Press the right submit button."
-				raw_input("Press any button to continue.")
+				raw_input("Press enter to continue.")
 				ktane()
 	# If "column" and either "seven" or "two" are present, press "column"
 	if a1 == "column" or a2 == "column" or a3 == "column" or b1 == "column" or b2 == "column" or b3 == "column" or c1 == "column" or c2 == "column" or c3 == "column" or d1 == "column" or d2 == "column" or d3 == "column":
@@ -3074,11 +3077,11 @@ def brokenButtons():
 	# HELP IS GREATLY APPRECIATED!
 	if f == 1:
 		print "Press the left submit button."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if f == 2:
 		print "Press the right submit button."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def wirePlacement():
 	# Wire Placement
@@ -3103,7 +3106,7 @@ def wirePlacement():
 		print "C4 - Red"
 		print "A3 - Yellow"
 		print "D1 - Yellow"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if x == "bu":
 		print "Cuts:"
@@ -3117,7 +3120,7 @@ def wirePlacement():
 		print "D3 - Red"
 		print "C3 - Yellow"
 		print "A1 - Yellow"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if x == "r":
 		print "Cuts:"
@@ -3131,7 +3134,7 @@ def wirePlacement():
 		print "B1 - Red"
 		print "A2 - Yellow"
 		print "B2 - Yellow"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if x == "w":
 		print "Cuts:"
@@ -3145,7 +3148,7 @@ def wirePlacement():
 		print "C1 - Red"
 		print "A4 - Yellow"
 		print "B4 - Yellow"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	if x == "y":
 		print "Cuts:"
@@ -3159,12 +3162,12 @@ def wirePlacement():
 		print "C2 - Red"
 		print "A3 - Yellow"
 		print "A4 - Yellow"
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 	else:
 		print "Unknown Response!"
 		print "Please try again."
-		raw_input("Press any button to continue.")
+		raw_input("Press enter to continue.")
 		ktane()
 def adventureGame():
 	# Adventure Game
@@ -5395,7 +5398,6 @@ def binaryLED():
 		print "Green on 11, or 01011"
 		print "Blue on 12, or 01100"
 	if csq == 3:
-		print "Red on 24, or 11000"
 		print "Green on 25, or 11001"
 		print "Blue on 1, or 00001"
 	if csq == 4:
@@ -5413,6 +5415,210 @@ def binaryLED():
 		print "Blue on 15, or 01111"
 	if csq == 8:
 		print "Blue on 12, or 01100"
+	raw_input("Press enter to continue.")
+	ktane()
+def bitmaps():
+	# Bitmaps
+	# Mod created by lumbud84 and implemented by Timwi. It can be downloaded here: https://steamcommunity.com/sharedfiles/filedetails/?id=805042374
+	# Variable ANS [Alpha, November, Sierra] - Answer
+	# Variable CAN [Charlie, Alpha, November] - Converted Answer
+	# Variable PAS [Papa, Alpha, Sierra] - If PAS is 1, then that means a proper rule has already been found, so skip the other rules.
+	# Variable MWQ [Mike, Whiskey, Quebec] - Number of Mostly White Quadrants
+	# Variable MBQ [Mike, Bravo, Quebec] - Number of Mostly Black Quadrants
+	pas = 0
+	x = input("What is the last digit of the SN? ")
+	if pas == 0 and x == 0:
+		# Rule 1
+		y = raw_input("Does exactly one quadrant have 5 or fewer white/bright pixels? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("How many white/bright pixels are there in the other quadrants? ")
+		x = 1
+	if pas == 0 and x == 1:
+		# Rule 2
+		mwq = input("How many mostly-white/bright quadrants are there? ")
+		w = input("How many lit indicators are there? ")
+		if mwq == w:
+			pas = 1
+			ans = input("How many batteries are there? ")
+		x = 2
+	if pas == 0 and x == 2:
+		# Rule 3
+		y = raw_input("Is there a row/column that is completely white/bright or completely black/dark? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("What is it's x/y coordinate (Starting from 1 in the top left.)? ")
+		x = 3
+	if pas == 0 and x == 3:
+		# Rule 4
+		try:
+			if mwq:
+				mbq = input("How many mostly-black/dark quadrants are there? ")
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			mbq = input("How many mostly-black/dark quadrants are there? ")
+		if mwq < mbq:
+			pas = 1
+			ans = mbq
+		x = 4
+	if pas == 0 and x == 4:
+		# Rule 5
+		y = input("How many white pixels are there? ")
+		if y > 35:
+			pas = 1
+			ans = y
+		x = 5
+	if pas == 0 and x == 5:
+		# Rule 6
+		try:
+			if mwq > mbq:
+				pas = 1
+				ans = input("What is the smallest number of black/dark pixels in any quadrant? ")
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			mbq = input("How many mostly-black/dark quadrants are there? ")
+			if mwq > mbq:
+				pas = 1
+				ans = input("What is the smallest number of black/dark pixels in any quadrant? ")
+		x = 6
+	if pas == 0 and x == 6:
+		# Rule 7
+		y = raw_input("Does a quadrant have 5 or fewer black/dark pixels? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("How many black/dark pixels are there? ")
+		x = 7
+	if pas == 0 and x == 7:
+		# Rule 8
+		try:
+			if mbq == mbq:
+				y == input("How many unlit indicators are there? ")
+		except NameError:
+			mbq == input("How many mostly-black/dark quadrants are there? ")
+			y == input("How many unlit indicators are there? ")
+		if mbq == y:
+			pas = 1
+			ans = input("How many ports are there? ")
+		x = 8
+	if pas == 0 and x == 8:
+		# Rule 9
+		y = raw_input("Is there a 3x3 square that is completely white/bright or completely black/dark? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("What is the x-coordinate (starting from 1) of the center of first such square in reading order? ")
+		x = 9
+	if pas == 0 and x == 9:
+		# Rule 10
+		try:
+			if mwq == mbq:
+				pas = 1
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			mbq = input("How many mostly-black/dark quadrants are there? ")
+			if mwq == mbq:
+				pas = 1
+		if pas == 1:
+			ans = input("What is the first numeric digit of the SN? ")
+		x = 0
+	# Copy and paste rules for wrapping around
+	if pas == 0 and x == 0:
+		# Rule 1
+		y = raw_input("Does exactly one quadrant have 5 or fewer white/bright pixels? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("How many white/bright pixels are there in the other quadrants? ")
+		x = 1
+	if pas == 0 and x == 1:
+		# Rule 2
+		try:
+			if mwq == mwq:
+				w = input("How many lit indicators are there? ")
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			w = input("How many lit indicators are there? ")
+		if mwq == w:
+			pas = 1
+			ans = input("How many batteries are there? ")
+		x = 2
+	if pas == 0 and x == 2:
+		# Rule 3
+		y = raw_input("Is there a row/column that is completely white/bright or completely black/dark? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("What is it's x/y coordinate (Starting from 1 in the top left.)? ")
+		x = 3
+	if pas == 0 and x == 3:
+		# Rule 4
+		try:
+			if mwq == mwq:
+				if mbq == mbq:
+					mbq = mbq
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			mbq = input("How many mostly-black/dark quadrants are there? ")
+		if mwq < mbq:
+			pas = 1
+			ans = mbq
+		x = 4
+	if pas == 0 and x == 4:
+		# Rule 5
+		y = input("How many white pixels are there? ")
+		if y > 35:
+			pas = 1
+			ans = y
+		x = 5
+	if pas == 0 and x == 5:
+		# Rule 6
+		try:
+			if mwq > mbq:
+				pas = 1
+				ans = input("What is the smallest number of black/dark pixels in any quadrant? ")
+		except NameError:
+			mwq = input("How many mostly-white/bright quadrants are there? ")
+			mbq = input("How many mostly-black/dark quadrants are there? ")
+			if mwq > mbq:
+				pas = 1
+				ans = input("What is the smallest number of black/dark pixels in any quadrant? ")
+		x = 6
+	if pas == 0 and x == 6:
+		# Rule 7
+		y = raw_input("Does a quadrant have 5 or fewer black/dark pixels? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("How many black/dark pixels are there? ")
+		x = 7
+	if pas == 0 and x == 7:
+		# Rule 8
+		try:
+			if mbq == mbq:
+				y == input("How many unlit indicators are there? ")
+		except NameError:
+			mbq == input("How many mostly-black/dark quadrants are there? ")
+			y == input("How many unlit indicators are there? ")
+		if mbq == y:
+			pas = 1
+			ans = input("How many ports are there? ")
+		x = 8
+	if pas == 0 and x == 8:
+		# Rule 9
+		y = raw_input("Is there a 3x3 square that is completely white/bright or completely black/dark? ")
+		if y == "y" or y == "Y" or y == "yes" or y == "Yes" or y == "YES":
+			pas = 1
+			ans = input("What is the x-coordinate (starting from 1) of the center of first such square in reading order? ")
+		x = 9
+	# If the answer is already within a 1-4 range, then just make the answer the converted answer.
+	if ans == 1 or ans == 2 or ans == 3 or ans == 4:
+		can = ans
+	# Convert the answer into the 1-4 range
+	if ans == 5 or ans == 9 or ans == 13 or ans == 17 or ans == 21 or ans == 25 or ans == 29 or ans == 33 or ans == 37 or ans == 41 or ans == 45 or ans == 49 or ans == 53 or ans == 57 or ans == 61:
+		can = 1
+	if ans == 6 or ans == 10 or ans == 14 or ans == 18 or ans == 22 or ans == 26 or ans == 30 or ans == 34 or ans == 38 or ans == 42 or ans == 46 or ans == 50 or ans == 54 or ans == 58 or ans == 62:
+		can = 2
+	if ans == 7 or ans == 11 or ans == 15 or ans == 19 or ans == 23 or ans == 27 or ans == 31 or ans == 35 or ans == 39 or ans == 43 or ans == 47 or ans == 51 or ans == 55 or ans == 59 or ans == 63:
+		can = 3
+	if ans == 8 or ans == 12 or ans == 16 or ans == 20 or ans == 24 or ans == 28 or ans == 32 or ans == 36 or ans == 40 or ans == 44 or ans == 48 or ans == 52 or ans == 56 or ans == 60 or ans == 64:
+		can = 4
+	print "Press", can
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
