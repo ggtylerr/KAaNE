@@ -5899,5 +5899,7 @@ def bitwiseOperations():
 		else:
 			bt8 = 1
 	print "Proper bit sequence:", bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8
+	raw_input("Press enter to continue.")
+	ktane()
 ktane()
 # ....is some good shit
