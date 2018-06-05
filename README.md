@@ -21,6 +21,8 @@ Binary LEDs
 
 Bitmaps
 
+Bitwise Operations
+
 The Bulb
 
 Broken Buttons (WIP)
