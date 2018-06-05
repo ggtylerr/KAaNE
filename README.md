@@ -19,6 +19,8 @@ The Big Circle
 
 Binary LEDs
 
+Bitmaps
+
 The Bulb
 
 Broken Buttons (WIP)
