@@ -21,32 +21,33 @@ raw_input("Press enter to continue.")
 
 def ktane():
 	print "\nAvailable Modules:"
-	print "Simple Wires (w)"                # L108
-	print "Button (b)"                      # L766
-	print "Keypad (k)"                      # L843
-	print "Simon Says (ss)"                 # L924
-	print "Who's on First? (wf)"            # L978
-	print "Memory (me)"                     # L1131
-	print "Morse Code (mc)"                 # L1288
-	print "Complicated Wires (cw)"          # L1373
-	print "Wire Sequences (ws)"             # L1446
-	print "Mazes (mz)"                      # L1847
-	print "Passwords (pw)"                  # L2045
-	print "Needy Gas (ng)"                  # L2137
-	print "Capacitor Discharger (cd)"       # L2142
-	print "Needy Knobs (nk)"                # L2146
-	print "[MOD|WIP] Adventure Game (ag)"   # L3177
-	print "[MOD] Astrology (at)"            # L3962
-	print "[MOD] Algebra (al)"		# L3544
-	print "[MOD] Backgrounds (bg)"	        # L4461
-	print "[MOD] Battleship (bs)"		# L4684
-	print "[MOD] The Big Circle (bc)"       # L4792
-	print "[MOD] Binary LEDs (bl)"          # L5000
-	print "[MOD] Bitmaps (bm)"		# L5425
-	print "[MOD] Bitwise Operations (bo)"	# L5629
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2164
-	print "[MOD] The Bulb (tb)"             # L3704
-	print "[MOD] Wire Placement (wp)"       # L3091
+	print "Simple Wires (w)"                # L111
+	print "Button (b)"                      # L769
+	print "Keypad (k)"                      # L846
+	print "Simon Says (ss)"                 # L927
+	print "Who's on First? (wf)"            # L981
+	print "Memory (me)"                     # L1134
+	print "Morse Code (mc)"                 # L1291
+	print "Complicated Wires (cw)"          # L1376
+	print "Wire Sequences (ws)"             # L1449
+	print "Mazes (mz)"                      # L1850
+	print "Passwords (pw)"                  # L2048
+	print "Needy Gas (ng)"                  # L2140
+	print "Capacitor Discharger (cd)"       # L2145
+	print "Needy Knobs (nk)"                # L2149
+	print "[MOD|WIP] Adventure Game (ag)"   # L3180
+	print "[MOD] Astrology (at)"            # L3965
+	print "[MOD] Algebra (al)"		# L3547
+	print "[MOD] Backgrounds (bg)"	        # L4464
+	print "[MOD] Battleship (bs)"		# L4687
+	print "[MOD] The Big Circle (bc)"       # L4795
+	print "[MOD] Binary LEDs (bl)"          # L5003
+	print "[MOD] Bitmaps (bm)"		# L5428
+	print "[MOD] Bitwise Operations (bo)"	# L5632
+	print "[MOD] Blind Alley (ba)"		# L5907
+	print "[MOD|WIP] Broken Buttons (bb)"   # L2167
+	print "[MOD] The Bulb (tb)"             # L3707
+	print "[MOD] Wire Placement (wp)"       # L3094
 	print ""
 	x = raw_input("What Module? ")
 	if x == "w":
@@ -101,6 +102,8 @@ def ktane():
 		bitmaps()
 	if x == "bo":
 		bitwiseOperations()
+	if x == "ba":
+		blindAlley()
 	else:
 		print "Invalid Module!"
 		raw_input("Press enter to continue.")
@@ -4919,7 +4922,7 @@ def bigCircle():
 		sp3 = raw_input("What is the 4th character of the SN? ")
 		sp4 = raw_input("What is the 5th character of the SN? ")
 		sp5 = raw_input("What is the 6th character of the SN? ")
-		tenths = x % 10:
+		tenths = x % 10
 		if x == 0 or tenths == 0:
 			csn = sp0
 		if x == 1 or x == 9 or x == 11 or x == 19 or x == 21 or x == 29 or x == 31 or x == 39 or x == 41 or x == 49 or x == 51 or x == 59 or x == 61 or x == 69 or x == 71 or x == 79 or x == 81 or x == 89 or x == 91 or x == 99 or x == 101:
@@ -5687,7 +5690,7 @@ def bitwiseOperations():
 	else:
 		b18 = 0
 	if z == 0:
-		if dbt > 1:
+		if dbt > 0:
 			b21 = 1
 		else:
 			b21 = 0
@@ -5793,77 +5796,69 @@ def bitwiseOperations():
 		else:
 			bt8 = 0
 	if bop == "xor":
-		if b11 == 1:
-			if not b21 == 0:
-				bt1 = 1
-			else:
-				bt1 = 0
-		elif b21 == 1:
+		if b11 == 1 and b21 == 0:
 			bt1 = 1
-		else:
+		if b11 == 0 and b21 == 1:
+			bt1 = 1
+		if b11 == 1 and b21 == 1:
 			bt1 = 0
-		if b12 == 1:
-			if not b22 == 0:
-				bt2 = 1
-			else:
-				bt2 = 0
-		elif b22 == 1:
+		if b11 == 0 and b21 == 0:
+			bt1 = 0
+		if b12 == 1 and b22 == 0:
 			bt2 = 1
-		else:
+		if b12 == 0 and b22 == 1:
+			bt2 = 1
+		if b12 == 1 and b22 == 1:
 			bt2 = 0
-		if b13 == 1:
-			if not b23 == 0:
-				bt3 = 1
-			else:
-				bt3 = 0
-		elif b23 == 1:
+		if b12 == 0 and b22 == 0:
+			bt2 = 0
+		if b13 == 1 and b23 == 0:
 			bt3 = 1
-		else:
+		if b13 == 0 and b23 == 1:
+			bt3 = 1
+		if b13 == 1 and b23 == 1:
 			bt3 = 0
-		if b14 == 1:
-			if not b24 == 0:
-				bt4 = 1
-			else:
-				bt4 = 0
-		elif b24 == 1:
+		if b13 == 0 and b23 == 0:
+			bt3 = 0
+		if b14 == 1 and b24 == 0:
 			bt4 = 1
-		else:
+		if b14 == 0 and b24 == 1:
+			bt4 = 1
+		if b14 == 1 and b24 == 1:
 			bt4 = 0
-		if b15 == 1:
-			if not b25 == 0:
-				bt5 = 1
-			else:
-				bt5 = 0
-		elif b25 == 1:
+		if b14 == 0 and b24 == 0:
+			bt4 = 0
+		if b15 == 1 and b25 == 0:
 			bt5 = 1
-		else:
+		if b15 == 0 and b25 == 1:
+			bt5 = 1
+		if b15 == 1 and b25 == 1:
 			bt5 = 0
-		if b16 == 1:
-			if not b26 == 0:
-				bt6 = 1
-			else:
-				bt6 = 0
-		elif b26 == 1:
+		if b15 == 0 and b25 == 0:
+			bt5 = 0
+		if b16 == 1 and b26 == 0:
 			bt6 = 1
-		else:
+		if b16 == 0 and b26 == 1:
+			bt6 = 1
+		if b16 == 1 and b26 == 1:
 			bt6 = 0
-		if b17 == 1:
-			if not b27 == 0:
-				bt7 = 1
-			else:
-				bt7 = 0
-		elif b27 == 1:
+		if b16 == 0 and b26 == 0:
+			bt6 = 0
+		if b17 == 1 and b27 == 0:
 			bt7 = 1
-		else:
+		if b17 == 0 and b27 == 1:
+			bt7 = 1
+		if b17 == 1 and b27 == 1:
 			bt7 = 0
-		if b18 == 1:
-			if not b28 == 0:
-				bt8 = 1
-			else:
-				bt8 = 0
-		elif b28 == 1:
+		if b17 == 0 and b27 == 0:
+			bt7 = 0
+		if b18 == 1 and b28 == 0:
 			bt8 = 1
-		else:
+		if b18 == 0 and b28 == 1:
+			bt8 = 1
+		if b18 == 1 and b28 == 1:
+			bt8 = 0
+		if b18 == 0 and b28 == 0:
 			bt8 = 0
 	if bop == "not":
 		if b11 == 1:
@@ -5899,6 +5894,205 @@ def bitwiseOperations():
 		else:
 			bt8 = 1
 	print "Proper bit sequence:", bt1, bt2, bt3, bt4, bt5, bt6, bt7, bt8
+	raw_input("Press enter to continue.")
+	ktane()
+def blindAlley():
+	# Blind Alley
+	# Mod created by Timwi and can be downloaded here: https://steamcommunity.com/sharedfiles/filedetails/?id=793073877
+	# Code below is based around the lookup table by Nanthelas
+	# Variable L + Number [Lima] - Locations
+	# Variable S + Number [Sierra] - SN
+	# Variable C + Number [Charlie] - Converted SN
+	l1 = 0
+	l2 = 0
+	l4 = 0
+	l5 = 0
+	l6 = 0
+	l7 = 0
+	l8 = 0
+	l9 = 0
+	# Defining converted as 1 instead of 0 because we're checking even thru boolean expressions (or whatever you call %)
+	c1 = 1
+	c2 = 1
+	c3 = 1
+	c4 = 1
+	c5 = 1
+	c6 = 1
+	# Indicators
+	x = raw_input("Is there a BOB indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l1 = l1 + 1
+		else:
+			l6 = l6 + 1
+	x = raw_input("Is there a CAR indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l2 = l2 + 1
+		else:
+			l1 = l1 + 1
+	x = raw_input("Is there a CLR indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l9 = l9 + 1
+		else:
+			l6 = l6 + 1
+	x = raw_input("Is there a FRK indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l8 = l8 + 1
+		else:
+			l2 = l2 + 1
+	x = raw_input("Is there a FRQ indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l4 = l4 + 1
+		else:
+			l7 = l7 + 1
+	x = raw_input("Is there a IND indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l4 = l4 + 1
+		else:
+			l1 = l1 + 1
+	x = raw_input("Is there a MSA indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l9 = l9 + 1
+		else:
+			l8 = l8 + 1
+	x = raw_input("Is there a NSA indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l2 = l2 + 1
+		else:
+			l5 = l5 + 1
+	x = raw_input("Is there a SIG indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l5 = l5 + 1
+		else:
+			l7 = l7 + 1
+	x = raw_input("Is there a SND indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l5 = l5 + 1
+		else:
+			l9 = l9 + 1
+	x = raw_input("Is there a TRN indicator? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		x = raw_input("Is it lit? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			l4 = l4 + 1
+		else:
+			l7 = l7 + 1
+	# Ports
+	x = raw_input("Is there a DVI-D port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l4 = l4 + 1
+	x = raw_input("Is there a Parallel port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l8 = l8 + 1
+	x = raw_input("Is there a PS-2 port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l6 = l6 + 1
+	x = raw_input("Is there a Stereo RCA port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l9 = l9 + 1
+	x = raw_input("Is there a RJ-45 port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l2 = l2 + 1
+	x = raw_input("Is there a Serial port? ")
+	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+		l6 = l6 + 1
+	# Batteries and SN
+	x = input("How many batteries are there? ")
+	x = x % 2
+	if x == 0:
+		l5 = l5 + 1
+	x = input("How many holders are there? ")
+	x = x % 2
+	if x == 0:
+		l1 = l1 + 1
+	print "Please input in lower caps for the next 12 questions."
+	a = raw_input("Is the 1st character of the SN a letter? ")
+	if a == "y" or a == "Y" or a == "yes" or a == "Yes" or a == "YES":
+		s1 = raw_input("What is the 1st character of the SN? ")
+	else:
+		s1 = input("What is the 1st character of the SN? ")
+	b = raw_input("Is the 2nd character of the SN a letter? ")
+	if b == "y" or b == "Y" or b == "yes" or b == "Yes" or b == "YES":
+		s2 = raw_input("What is the 2nd character of the SN? ")
+	else:
+		s2 = input("What is the 2nd character of the SN? ")
+	c = raw_input("Is the 3rd character of the SN a letter? ")
+	if c == "y" or c == "Y" or c == "yes" or c == "Yes" or c == "YES":
+		s3 = raw_input("What is the 3rd character of the SN? ")
+	else:
+		s3 = input("What is the 3rd character of the SN? ")
+	d = raw_input("Is the 4th character of the SN a letter? ")
+	if d == "y" or d == "Y" or d == "yes" or d == "Yes" or d == "YES":
+		s4 = raw_input("What is the 4th character of the SN? ")
+	else:
+		s4 = input("What is the 4th character of the SN? ")
+	e = raw_input("Is the 5th character of the SN a letter? ")
+	if e == "y" or e == "Y" or e == "yes" or e == "Yes" or e == "YES":
+		s5 = raw_input("What is the 5th character of the SN? ")
+	else:
+		s5 = input("What is the 5th character of the SN? ")
+	f = raw_input("Is the 6th character of the SN a letter? ")
+	if f == "y" or f == "Y" or f == "yes" or f == "Yes" or f == "YES":
+		s6 = raw_input("What is the 6th character of the SN? ")
+	else:
+		s6 = input("What is the 6th character of the SN? ")
+	if a == "y" or a == "Y" or a == "yes" or a == "Yes" or a == "YES":
+		pass
+	else:
+		c1 = s1 % 2
+	if b == "y" or b == "Y" or b == "yes" or b == "Yes" or b == "YES":
+		pass
+	else:
+		c2 = s2 % 2
+	if c == "y" or c == "Y" or c == "yes" or c == "Yes" or c == "YES":
+		pass
+	else:
+		c3 = s3 % 2
+	if d == "y" or d == "Y" or d == "yes" or d == "Yes" or d == "YES":
+		pass
+	else:
+		c4 = s4 % 2
+	if e == "y" or e == "Y" or e == "yes" or e == "Yes" or e == "YES":
+		pass
+	else:
+		c5 = s5 % 2
+	if f == "y" or f == "Y" or f == "yes" or f == "Yes" or f == "YES":
+		pass
+	else:
+		c6 = s6 % 2
+	if c1 == 0 or c2 == 0 or c3 == 0 or c4 == 0 or c5 == 0 or c6 == 0:
+		l7 = l7 + 1
+	if s1 == "a" or s2 == "a" or s3 == "a" or s4 == "a" or s5 == "a" or s6 == "a" or s1 == "e" or s2 == "e" or s3 == "e" or s4 == "e" or s5 == "e" or s6 == "e" or s1 == "i" or s2 == "i" or s3 == "i" or s4 == "i" or s5 == "i" or s6 == "i" or s1 == "o" or s2 == "o" or s3 == "o" or s4 == "o" or s5 == "o" or s6 == "o" or s1 == "u" or s2 == "u" or s3 == "u" or s4 == "u" or s5 == "u" or s6 == "u":
+		l8 = l8 + 1
+	print "Top left has a value of", l1
+	print "Top mid has a value of", l2
+	print "Mid left has a value of", l4
+	print "Middle has a value of", l5
+	print "Mid right has a value of", l6
+	print "Bottom left has a value of", l7
+	print "Bottom mid has a value of", l8
+	print "Bottom right has a value of", l9
+	print "Press the area with the most value."
+	print "If there's multiple ones with the most value, press both."
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
