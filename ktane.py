@@ -45,6 +45,7 @@ def ktane():
 	print "[MOD] Bitmaps (bm)"		# L5428
 	print "[MOD] Bitwise Operations (bo)"	# L5632
 	print "[MOD] Blind Alley (ba)"		# L5907
+	print "[MOD] Blind Maze (bz)"		# L6101
 	print "[MOD|WIP] Broken Buttons (bb)"   # L2167
 	print "[MOD] The Bulb (tb)"             # L3707
 	print "[MOD] Wire Placement (wp)"       # L3094
@@ -104,6 +105,8 @@ def ktane():
 		bitwiseOperations()
 	if x == "ba":
 		blindAlley()
+	if x == "bz":
+		blindMaze()
 	else:
 		print "Invalid Module!"
 		raw_input("Press enter to continue.")
@@ -6093,6 +6096,397 @@ def blindAlley():
 	print "Bottom right has a value of", l9
 	print "Press the area with the most value."
 	print "If there's multiple ones with the most value, press both."
+	raw_input("Press enter to continue.")
+	ktane()
+def blindMaze():
+	# Blind Maze
+	# Created by Riverbui and JoketteWuzHere. It can be downloaded here: https://www.youtube.com/watch?v=3NniZ_PVN2k
+	# Shoutouts to JoketteWuzHere for showing up on stream!
+	# Variable [M]ike: Maze
+	# Variable [R]omeo: Rotation
+	# Variable [C]harlie: Rule has already been checked.
+	c = 0
+	# Maze Finding
+	x = input("What is the last digit of the SN? ")
+	y = input("How many solved modules are there? ")
+	x = x + y
+	if x == 0 or x == 1 or x == 2 or x == 3 or x == 4 or x == 5 or x == 6 or x == 7 or x == 8 or x == 9:
+		m = x
+	else:
+		# If it turns out you can have over a million modules on a bomb, I'll update this. I seriously doubt it, though.
+		x = x + 1000000
+		x = map(int,str(x))
+		x = x[6]
+		m = x
+	# Rotation Finding
+	x = input("How many AA batteries are there? ")
+	y = input("How many D batteries are there? ")
+	if x == 0 and y == 1:
+		r = "90c"
+		c = 1
+	else:
+		x = input("How many unique port types are there? ")
+		if x < 3:
+			r = "90cc"
+			c = 1
+	if c == 0:
+		x = raw_input("Is there a lit IND indicator and a vowel in the SN? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			r = "180"
+			c = 1
+	if c == 0:
+		x = input("How many yellow buttons are there? ")
+		z = input("How many red buttons are there? ")
+		if x == 0 and y == 1:
+			r = "90cc"
+			c = 1
+	if c == 0:
+		print "Registered Maze-Based Modules: Maze, Morse-A-Maze, 3D Maze, Mouse In The Maze, Hexamaze, Blind Maze, and Polyhedral Maze."
+		x = input("How many unique maze-based modules are there on the bomb? ")
+		if x > 2:
+			r = "180"
+			c = 1
+	if c == 0:
+		x == raw_input("Is there an unlit MSA indicator? ")
+		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
+			if z > 1:
+				r = "90c"
+				c = 1
+	if c == 0:
+		r = "0"
+	# Start Location Finding
+	print "Red - r"
+	print "Green - gn"
+	print "White - w"
+	print "Grey - gy"
+	print "Yellow - y"
+	n = raw_input("What color is North? ")
+	e = raw_input("What color is East? ")
+	w = raw_input("What color is West? ")
+	s = raw_input("What color is South? ")
+	if n == "r":
+		n = 1
+	if n == "gn":
+		n = 5
+	if n == "w" or n == "gy":
+		n = 2
+	if n == "y":
+		n = 3
+	if e == "r":
+		e = 3
+	if e == "gn":
+		e = 1
+	if e == "w" or e == "gy":
+		e = 5
+	if e == "y":
+		e = 2
+	if w == "r":
+		w = 2
+	if w == "gn":
+		w = 5
+	if w == "w":
+		w = 3
+	if w == "gy":
+		w = 1
+	if w == "y":
+		w = 4
+	if s == "r" or s == "gy":
+		s = 3
+	if s == "gn" or s == "y":
+		s = 2
+	if s == "w":
+		s = 4
+	x = n + s
+	y = e + w
+	if x == 6 or x == 7 or x == 8 or x == 9 or x == 10:
+		x = x - 5
+	if y == 6 or y == 7 or y == 8 or y == 9 or y == 10:
+		y = y - 5
+	# Maze Printing
+	if m == 0 and r == "0":
+		print " _______     _______"
+		print "| .   .  _._| .   . |"
+		print "| . |_._  .  _._| . |"
+		print "|_._  . |_._  . |_._|"
+		print "| .   . | . |_._  . |"
+		print "|_._|_.___._|_.___._|"
+	if m == 0 and r == "90c":
+		print " ___________________"
+		print "|_._  . | .  _._  . |"
+		print "| .  _.___._| .   . |"
+		print "|_.___._| .   . |_._"
+		print "| . | .  _._|_._  . |"
+		print "|_.___._|_.___.___._|"
+	if m == 0 and r == "180":
+		print " ___________________"
+		print "| .  _._| .   . | . |"
+		print "|_._  . |_._| .  _._|"
+		print "| . |_._  . |_._  . |"
+		print "| . | .  _._  . | . |"
+		print "|_.___._| .  _.___._|"
+	if m == 0 and r == "90cc":
+		print " ___________________"
+		print "| .  _.___._| .   . |"
+		print "|_._  . | .  _._|_._|"
+		print "  . | .  _._|_._  . |"
+		print "| .  _._| .   .  _._|"
+		print "|_.___.___._|_.___._|"
+	if m == 1 and r == "0":
+		print " _______     _______"
+		print "|_._  . | . | .   . |"
+		print "| .  _.___._| . |_._|"
+		print "| .   .  _.___._  . |"
+		print "| . |_._| . |_._  . |"
+		print "|_.___.___._|_.___._|"
+	if m == 1 and r == "90c":
+		print " ___________________"
+		print "| .  _._  .   . | . |"
+		print "| . |_._  . | .  _._|"
+		print "|_.___._| . |_.___._"
+		print "| . | . | .  _._  . |"
+		print "|_.___.___._|_.___._|"
+	if m == 1 and r == "180":
+		print " ___________________"
+		print "| .  _._| .  _._  . |"
+		print "| .  _._|_._| . | . |"
+		print "|_._  .  _.___._  . |"
+		print "| . | . | .   .  _._|"
+		print "|_.___._| . |_.___._|"
+	if m == 1 and r == "90cc":
+		print " ___________________"
+		print "| .  _._| .   .   . |"
+		print "|_.___._  . |_._|_._|"
+		print " _._  . | . |_._  . |"
+		print "| .   . | .  _._| . |"
+		print "|_._|_.___.___.___._|"
+	if m == 2 and r == "0":
+		print " _______     _______"
+		print "| .  _._| .  _._| . |"
+		print "|_.___.___.___._  . |"
+		print "|_._  .   .   .  _._|"
+		print "| . | . | . |_._  . |"
+		print "|_.___._|_.___._|_._|"
+	if m == 2 and r == "90c":
+		print " ___________________"
+		print "| .  _._| . | .   . |"
+		print "|_.___._  . | . |_._|"
+		print "| .  _._  . | .   ."
+		print "|_._| .   . | . |_._|"
+		print "|_.___._|_.___.___._|"
+	if m == 2 and r == "180":
+		print " ___________________"
+		print "| . |_._  . | .   . |"
+		print "|_._  . | . | . |_._|"
+		print "| .  _.___.___.___._|"
+		print "| .  _._  .  _._  . |"
+		print "|_._|_._  . |_.___._|"
+	if m == 2 and r == "90cc":
+		print " ___________________"
+		print "|_._  .   . | .  _._|"
+		print "| . | . | .  _._| . |"
+		print " _._  . | .  _.___._|"
+		print "| . | . | .  _._  . |"
+		print "|_.___._|_._|_.___._|"
+	if m == 3 and r == "0":
+		print " _______     _______"
+		print "|_._  . |_._  .   . |"
+		print "| .  _.___.___._| . |"
+		print "| .   . | .   .  _._|"
+		print "|_._|_._| . | .   . |"
+		print "|_.___.___._|_._|_._|"
+	if m == 3 and r == "90c":
+		print " ___________________"
+		print "| . |_._  .   . | . |"
+		print "| . |_.___._| .  _._|"
+		print "|_.___._  . | . | ."
+		print "|_._  .   . |_._  . |"
+		print "|_.___._|_.___.___._|"
+	if m == 3 and r == "180":
+		print " ___________________"
+		print "| . | . | .  _.___._|"
+		print "|_._  . | . | . | . |"
+		print "| .  _.___._|_._  . |"
+		print "| . | .  _._  .  _._|"
+		print "|_.___._  . |_.___._|"
+	if m == 3 and r == "90cc":
+		print " ___________________"
+		print "| .  _._  . | .  _._|"
+		print "| .   . | .  _.___._|"
+		print " _._| . |_.___._  . |"
+		print "| .   . | .  _._| . |"
+		print "|_._|_.___.___._|_._|"
+	if m == 4 and r == "0":
+		print " _______     _______"
+		print "| .   .  _._  . | . |"
+		print "|_._| . | . |_._  . |"
+		print "| .  _.___._| .  _._|"
+		print "| . |_._  . |_._  . |"
+		print "|_.___._|_.___.___._|"
+	if m == 4 and r == "90c":
+		print " ___________________"
+		print "| .  _._  . |_._  . |"
+		print "|_._| . | .  _._  . |"
+		print "| .  _._|_.___._| ."
+		print "| . | .   . | .  _._|"
+		print "|_.___._|_.___.___._|"
+	if m == 4 and r == "180":
+		print " ___________________"
+		print "| .  _._  . |_._  . |"
+		print "|_._  . |_.___._| . |"
+		print "| .  _._| .   .  _._|"
+		print "| .   . |_._| . | . |"
+		print "|_._|_._  .  _.___._|"
+	if m == 4 and r == "90cc":
+		print " ___________________"
+		print "|_._  .   . | .   . |"
+		print "| .  _._|_.___._| . |"
+		print "  . |_._  . | .  _._|"
+		print "| .  _._  . |_._| . |"
+		print "|_.___._|_.___.___._|"
+	if m == 5 and r == "0":
+		print " _______     _______"
+		print "| .   . |_.___._  . |"
+		print "| . | .  _._| .  _._|"
+		print "| . | .  _._  .   . |"
+		print "|_._| . | .  _._| . |"
+		print "|_.___._|_.___._|_._|"
+	if m == 5 and r == "90c":
+		print " ___________________"
+		print "| . |_.___.___._  . |"
+		print "|_.___._  .   .  _._|"
+		print "| .   . | . |_._| ."
+		print "|_._|_._  .   . | . |"
+		print "|_.___.___._|_.___._|"
+	if m == 5 and r == "180":
+		print " ___________________"
+		print "| . |_._  . | .  _._|"
+		print "| . | .  _._| . | . |"
+		print "|_._  .  _._  . | . |"
+		print "| .  _._|_._  . | . |"
+		print "|_.___._  . |_.___._|"
+	if m == 5 and r == "90cc":
+		print " ___________________"
+		print "| .   . | .  _.___._|"
+		print "| . |_._  .   . | . |"
+		print " _._| . | . |_.___._|"
+		print "| .  _.___.___._  . |"
+		print "|_.___.___.___._|_._|"
+	if m == 6 and r == "0":
+		print " _______     _______"
+		print "| .   .  _.___._  . |"
+		print "| . |_._| .   . | . |"
+		print "| . |_.___._| .   . |"
+		print "|_._  . |_.___._| . |"
+		print "|_.___.___._|_.___._|"
+	if m == 6 and r == "90c":
+		print " ___________________"
+		print "| . | .  _.___._  . |"
+		print "| .  _._| . |_._  . |"
+		print "|_._| . |_._  . | ."
+		print "| . |_._  .  _._| . |"
+		print "|_.___.___.___.___._|"
+	if m == 6 and r == "180":
+		print " ___________________"
+		print "| .  _._|_._  .  _._|"
+		print "| . | .  _._|_._  . |"
+		print "| .   . | .  _._| . |"
+		print "| . |_.___._| . | . |"
+		print "|_.___._  .  _.___._|"
+	if m == 6 and r == "90cc":
+		print " ___________________"
+		print "| .  _._  .  _._  . |"
+		print "| . | .  _._  . |_._|"
+		print "  . |_._  . |_._| . |"
+		print "| .  _._|_._| .   . |"
+		print "|_.___.___.___._|_._|"
+	if m == 7 and r == "0":
+		print " _______     _______"
+		print "|_._  . | . | . | . |"
+		print "| .   . | . | .  _._|"
+		print "| . |_._  . |_._  . |"
+		print "| . | . |_._  . | . |"
+		print "|_._|_.___.___.___._|"
+	if m == 7 and r == "90c":
+		print " ___________________"
+		print "|_.___.___._  . | . |"
+		print "| .  _._| .  _.___._|"
+		print "| . | .  _.___.___._"
+		print "| .  _._| .   .  _._|"
+		print "|_.___.___._|_.___._|"
+	if m == 7 and r == "180":
+		print " ___________________"
+		print "| .   .  _._  . | . |"
+		print "| . |_._  . |_._| . |"
+		print "|_._  . | .   . | . |"
+		print "| .   . | . | .  _._|"
+		print "|_._|_._| . |_.___._|"
+	if m == 7 and r == "90cc":
+		print " ___________________"
+		print "|_._  . | .  _._  . |"
+		print "|_.___.___._| .   . |"
+		print " _.___._  .  _._| . |"
+		print "| .   .  _._|_.___._|"
+		print "|_._|_.___.___.___._|"
+	if m == 8 and r == "0":
+		print " _______     _______"
+		print "| .  _._  . | .  _._|"
+		print "| . | .  _.___._  . |"
+		print "| . |_.___._|_._  . |"
+		print "|_.___._| .   . | . |"
+		print "|_.___.___._|_.___._|"
+	if m == 8 and r == "90c":
+		print " ___________________"
+		print "| . | .  _.___._  . |"
+		print "| . |_._| .   . | . |"
+		print "|_._  . |_._| .  _._"
+		print "| .  _._| . | .   . |"
+		print "|_.___.___.___._|_._|"
+	if m == 8 and r == "180":
+		print " ___________________"
+		print "| .   . | .  _.___._|"
+		print "| . |_.___._|_._  . |"
+		print "| .  _._|_._  . | . |"
+		print "|_._  .   .  _._| . |"
+		print "|_.___._| .  _.___._|"
+	if m == 8 and r == "90cc":
+		print " ___________________"
+		print "| . | .   .  _._  . |"
+		print "|_._  . |_._| .  _._|"
+		print "  .   . | . |_._  . |"
+		print "| . |_.___._| . | . |"
+		print "|_.___.___.___._|_._|"
+	if m == 9 and r == "0":
+		print " _______     _______"
+		print "| . |_._  . | .   . |"
+		print "|_._  . | . | . |_._|"
+		print "| . |_.___._  .  _._|"
+		print "| .   . | .   .  _._|"
+		print "|_._|_.___._|_.___._|"
+	if m == 9 and r == "90c":
+		print " ___________________"
+		print "|_._  .  _._| .  _._|"
+		print "| .  _._| .  _._| . |"
+		print "|_._  . | .  _.___._"
+		print "| .   .   .  _._  . |"
+		print "|_._|_._|_._|_.___._|"
+	if m == 9 and r == "180":
+		print " ___________________"
+		print "|_._  . | .   . | . |"
+		print "|_._  .  _._|_._  . |"
+		print "|_._  .   .   . |_._|"
+		print "| . | . | . |_._  . |"
+		print "|_.___._| .  _._|_._|"
+	if m == 9 and r == "90cc":
+		print " ___________________"
+		print "| .  _._| . | . | . |"
+		print "|_.___._  .   .  _._|"
+		print "  .  _._  . |_._  . |"
+		print "|_._| .  _._| .  _._|"
+		print "|_.___._|_.___.___._|"
+	# Starting Location Printing
+	print "The starting location is as follows:"
+	print "X axis -", x
+	print "Y axis -", y
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
