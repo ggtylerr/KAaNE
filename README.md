@@ -25,6 +25,8 @@ Bitwise Operations
 
 Blind Alley
 
+Blind Maze
+
 The Bulb
 
 Broken Buttons (WIP)
