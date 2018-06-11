@@ -27,9 +27,11 @@ Blind Alley
 
 Blind Maze
 
-The Bulb
+Boolean Venn Diagram (WIP)
 
 Broken Buttons (WIP)
+
+The Bulb
 
 Wire Sequences
 
