@@ -6518,848 +6518,432 @@ def booleanVennDiagram():
 	if p == "r":
 		bc = raw_input("What expression is for B and C? ")
 		abc = raw_input("What expression is for A and BC? ")
-	# About 700 lines of logic down below
 	if ab == "and" or bc == "and":
 		if abc == "and":
-			a1 = "F"
-			a2 = "F"
-			a3 = "F"
-			a4 = "F"
-			a5 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
-		if abc == "nand":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a4 = "T"
-			a5 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
+			a1 = a2 = a3 = a4 = a5 = a6 = a7 = 0
+			a8 = 1
 		if abc == "or":
-			a1 = "F"
-			a3 = "F"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a3 = 0
+			a4 = a6 = a7 = a8 = 1
+			if p == "l":
+				a2, a5 = 1, 0
+			else:
+				a2, a5 = 0, 1
+		if abc == "nand":
+			a1 = a2 = a3 = a4 = a5 = a6 = a7 = 1
+			a8 = 0
 		if abc == "nor":
-			a1 = "T"
-			a3 = "T"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
+			a1 = a3 = 1
+			a4 = a6 = a7 = a8 = 0
+			if p == "l":
+				a2, a5 = 0, 1
+			else:
+				a2, a5 = 1, 0
 		if abc == "xor":
-			a1 = "F"
-			a3 = "F"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
+			a1 = a3 = a8 = 0
+			a4 = a6 = a7 = 1
+			if p == "l":
+				a2, a5 = 1, 0
+			else:
+				a2, a5 = 0, 1
 		if abc == "xnor":
-			a1 = "T"
-			a3 = "T"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
+			a1 = a3 = a8 = 1
+			a4 = a6 = a7 = 0
+			if p == "l":
+				a2, a5 = 0, 1
+			else:
+				a2, a5 = 1, 0
 		if abc == "implies":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "T"
-			a8 = "T"
+			a1 = a2 = a3 = a5 = a6 = a8 = 1
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "implied by":
-			a1 = "T"
-			a3 = "T"
-			a6 = "F"
-			a8 = "T"
-		if ab == "and" and abc == "or":
-			a2 = "T"
-			a5 = "F"
-		if bc == "and" and abc == "or":
-			a2 = "F"
-			a5 = "T"
-		if ab == "and" and abc == "nor":
-			a2 = "F"
-			a5 = "T"
-		if bc == "and" and abc == "nor":
-			a2 = "T"
-			a5 = "F"
-		if ab == "and" and abc == "xor":
-			a2 = "T"
-			a5 = "F"
-		if bc == "and" and abc == "xor":
-			a2 = "F"
-			a5 = "T"
-		if ab == "and" and abc == "xnor":
-			a2 = "F"
-			a5 = "T"
-		if bc == "and" and abc == "xnor":
-			a2 = "T"
-			a5 = "F"
-		if ab == "and" and abc == "implies":
-			a4 = "T"
-			a7 = "F"
-		if bc == "and" and abc == "implies":
-			a4 = "F"
-			a7 = "T"
-		if ab == "and" and abc == "implied by":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
-		if bc == "and" and abc == "implied by":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
+			a1 = a3 = a8 = 1
+			a6 = 0
+			if p == "l":
+				a2 = a4 = 0
+				a5 = a7 = 1
+			else:
+				a2 = a4 = 1
+				a5 = a7 = 0
 	if ab == "or" or bc == "or":
-		if abc == "or":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a4 = "T"
-			a5 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
-		if abc == "nor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a4 = "F"
-			a5 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
 		if abc == "and":
-			a1 = "F"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "T"
-			a8 = "T"
+			a1 = a2 = a3 = a5 = 0
+			a6 = a8 = 1
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
+		if abc == "or":
+			a1 = 0
+			a2 = a3 = a4 = a5 = a6 = a7 = a8 = 1
 		if abc == "nand":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "F"
+			a1 = a2 = a3 = a5 = 1
+			a6 = a8 = 0
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
+		if abc == "nor":
+			a1 = 1
+			a2 = a3 = a4 = a5 = a6 = a7 = a8 = 0
 		if abc == "xor":
-			a1 = "F"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "F"
+			a1 = a6 = a8 = 0
+			a2 = a3 = a5 = 1
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
 		if abc == "xnor":
-			a1 = "T"
-			a3 = "F"
-			a5 = "F"
-			a6 = "T"
-			a8 = "T"
+			a1 = a6 = a8 = 1
+			a2 = a3 = a5 = 0
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "implies":
-			a1 = "T"
-			a3 = "F"
-			a6 = "T"
-			a8 = "T"
+			a1 = a3 = a6 = a7 = a8 = 1
+			if p == "l":
+				a2, a4, a5 = 1, 1, 0
+			else:
+				a2, a4, a5 = 0, 0, 1
 		if abc == "implied by":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
-		if ab == "or" and abc == "and":
-			a4 = "T"
-			a7 = "F"
-		if bc == "or" and abc == "and":
-			a4 = "F"
-			a7 = "T"
-		if ab == "or" and abc == "nand":
-			a4 = "F"
-			a7 = "T"
-		if bc == "or" and abc == "nand":
-			a4 = "T"
-			a7 = "F"
-		if ab == "or" and abc == "xor":
-			a2 = "F"
-			a4 = "F"
-			a7 = "T"
-		if bc == "or" and abc == "xor":
-			a2 = "T"
-			a4 = "T"
-			a7 = "F"
-		if ab == "or" and abc == "xnor":
-			a2 = "T"
-			a4 = "T"
-			a7 = "F"
-		if bc == "or" and abc == "xnor":
-			a2 = "F"
-			a4 = "F"
-			a7 = "T"
-		if ab == "or" and abc == "implies":
-			a2 = "T"
-			a4 = "T"
-			a5 = "F"
-			a7 = "F"
-		if bc == "or" and abc == "implies":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
-		if ab == "or" and abc == "implied by":
-			a2 = "F"
-			a5 = "T"
-		if bc == "or" and abc == "implied by":
-			a2 = "T"
-			a5 = "F"
+			a1 = a5 = a6 = a7 = a8 = 1
+			a2 = 0
+			if p == "l":
+				a3 = a4 = 1
+			else:
+				a3 = a4 = 0
 	if ab == "nand" or bc == "nand":
-		if abc == "xor":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a4 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
-		if abc == "xnor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a4 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
 		if abc == "and":
-			a1 = "F"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "T"
-			a8 = "F"
+			a1 = a2 = a3 = a5 = a7 = 0
+			a6 = 1
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "or":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "T"
-			a8 = "T"
+			a2 = a3 =  a5 = a6 = a8 = 1
+			if p == "l":
+				a1, a4, a8 = 1, 1, 0
+			else:
+				a1, a4, a8 = 0, 0, 1
 		if abc == "nand":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "T"
+			a1 = a2 = a3 = a5 = a7 = 1
+			a6 = 0
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
 		if abc == "nor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "F"
-			a8 = "F"
+			a2 = a3 =  a5 = a6 = a8 = 0
+			if p == "l":
+				a1, a4, a8 = 0, 0, 1
+			else:
+				a1, a4, a8 = 1, 1, 0
+		if abc == "xor":
+			a2 = a3 = a5 = a8 = 1
+			a4 = a6 = a7 = 0
+			if p == "l":
+				a1 = 1
+			else:
+				a1 = 0
+		if abc == "xnor":
+			a2 = a3 = a5 = a8 = 0
+			a4 = a6 = a7 = 1
+			if p == "l":
+				a1 = 0
+			else:
+				a1 = 1
 		if abc == "implies":
-			a1 = "T"
-			a3 = "F"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a2 = a4 = a6 = a7 = 1
+			if p == "l":
+				a3, a5, a8 = 0, 0, 1
+			else:
+				a3, a5, a8 = 1, 1, 0
 		if abc == "implied by":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
-		if ab == "nand" and abc == "and":
-			a4 = "T"
-			a7 = "F"
-		if bc == "nand" and abc == "and":
-			a4 = "F"
-			a7 = "T"
-		if ab == "nand" and abc == "or":
-			a4 = "T"
-			a7 = "F"
-		if bc == "nand" and abc == "or":
-			a4 = "F"
-			a7 = "T"
-		if ab == "nand" and abc == "nand":
-			a4 = "F"
-			a7 = "T"
-		if bc == "nand" and abc == "nand":
-			a4 = "T"
-			a7 = "F"
-		if ab == "nand" and abc == "nor":
-			a4 = "F"
-			a7 = "T"
-		if bc == "nand" and abc == "nor":
-			a4 = "T"
-			a7 = "F"
-		if ab == "nand" and abc == "implies":
-			a2 = "T"
-			a5 = "F"
-		if bc == "nand" and abc == "implies":
-			a2 = "F"
-			a5 = "T"
-		if ab == "nand" and abc == "implied by":
-			a2 = "F"
-			a5 = "T"
-		if bc == "nand" and abc == "implied by":
-			a2 = "T"
-			a5 = "F"
+			a1 = a2 = a3 = a4 = a6 = a7 = 1
+			a8 = 0
+			if p == "l":
+				a5 = 1
+			else:
+				a5 = 0
 	if ab == "nor" or bc == "nor":
-		if abc == "implies":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a4 = "T"
-			a5 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
 		if abc == "and":
-			a1 = "F"
-			a3 = "F"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
+			a1 = a3 = a4 = a6 = a7 = a8 = 0
+			if p == "l":
+				a2, a5 = 1, 0
+			else:
+				a2, a5 = 0, 1
 		if abc == "or":
-			a1 = "T"
-			a3 = "F"
-			a6 = "T"
-			a8 = "T"
+			a1 = a6 = a8 = 1
+			a3 = 0
+			if p == "l":
+				a2, a4, a5, a7 = 1, 1, 0, 0
+			else:
+				a2, a4, a5, a7 = 0, 0, 1, 1
 		if abc == "nand":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a3 = a4 = a6 = a7 = a8 = 1
+			if p == "l":
+				a2, a5 = 0, 1
+			else:
+				a2, a5 = 1, 0
 		if abc == "nor":
-			a1 = "F"
-			a3 = "T"
-			a6 = "F"
-			a8 = "F"
+			a1 = a6 = a8 = 0
+			a3 = 1
+			if p == "l":
+				a2, a4, a5, a7 = 0, 0, 1, 1
+			else:
+				a2, a4, a5, a7 = 1, 1, 0, 0
 		if abc == "xor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "T"
-			a8 = "T"
+			a1 = a6 = a8 = 1
+			a2 = a3 = a5 = 0
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "xnor":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "F"
+			a1 = a6 = a8 = 0
+			a2 = a3 = a5 = 1
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
+		if abc == "implies":
+			a1 = 0
+			a2 = a3 = a4 = a5 = a6 = a7 = a8 = 1
 		if abc == "implied by":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "F"
-		if ab == "nor" and abc == "and":
-			a2 = "T"
-			a5 = "F"
-		if bc == "nor" and abc == "and":
-			a2 = "F"
-			a5 = "T"
-		if ab == "nor" and abc == "or":
-			a2 = "T"
-			a4 = "T"
-			a5 = "F"
-			a7 = "F"
-		if bc == "nor" and abc == "or":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
-		if ab == "nor" and abc == "nand":
-			a2 = "F"
-			a5 = "T"
-		if bc == "nor" and abc == "nand":
-			a2 = "T"
-			a5 = "F"
-		if ab == "nor" and abc == "nor":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
-		if bc == "nor" and abc == "nor":
-			a2 = "T"
-			a4 = "T"
-			a5 = "F"
-			a7 = "F"
-		if ab == "nor" and abc == "xor":
-			a4 = "T"
-			a7 = "F"
-		if bc == "nor" and abc == "xor":
-			a4 = "F"
-			a7 = "T"
-		if ab == "nor" and abc == "xnor":
-			a4 = "F"
-			a7 = "T"
-		if bc == "nor" and abc == "xnor":
-			a4 = "T"
-			a7 = "F"
-		if ab == "nor" and abc == "implied by":
-			a4 = "F"
-			a7 = "T"
-		if bc == "nor" and abc == "implied by":
-			a4 = "T"
-			a7 = "F"
+			a2 = a3 = a5 = a7 = 1
+			a6 = 0
+			if p == "l":
+				a1, a4, a8 = 1, 0, 0
+			else:
+				a1, a4, a8 = 0, 1, 1
 	if ab == "xor" or bc == "xor":
-		if abc == "xor":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a4 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
-		if abc == "xnor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a4 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
 		if abc == "and":
-			a1 = "F"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "T"
-			a8 = "F"
+			a1 = a2 = a3 = a5 = a8 = 0
+			a6 = 1
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "or":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "T"
-			a8 = "T"
+			a1 = 0
+			a2 = a3 = a5 = a6 = a8 = 1
+			if p == "l":
+				a4, a7 = 1, 0
+			else:
+				a4, a7 = 0, 1
 		if abc == "nand":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "T"
+			a1 = a2 = a3 = a5 = a8 = 1
+			a6 = 0
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
 		if abc == "nor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a5 = "F"
-			a6 = "F"
-			a8 = "T"
+			a1 = 1
+			a2 = a3 = a5 = a6 = a8 = 0
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
+		if abc == "xor":
+			a1 = a4 = a6 = a7 = 0
+			a2 = a3 = a5 = a8 = 1
+		if abc == "xnor":
+			a1 = a4 = a6 = a7 = 1
+			a2 = a3 = a5 = a8 = 0
 		if abc == "implies":
-			a1 = "T"
-			a2 = "T"
-			a3 = "F"
-			a4 = "T"
-			a6 = "T"
-			a8 = "T"
+			a1 = a2 = a4 = a6 = a7 = 1
+			a5 = 0
+			if p == "l":
+				a3, a8 = 0, 1
+			else:
+				a3, a8 = 1, 0
 		if abc == "implied by":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
-		if ab == "xor" and abc == "and":
-			a4 = "T"
-			a7 = "F"
-		if bc == "xor" and abc == "and":
-			a4 = "F"
-			a7 = "T"
-		if ab == "xor" and abc == "or":
-			a4 = "T"
-			a7 = "F"
-		if bc == "xor" and abc == "or":
-			a4 = "F"
-			a7 = "T"
-		if ab == "xor" and abc == "nand":
-			a4 = "F"
-			a7 = "T"
-		if bc == "xor" and abc == "nand":
-			a4 = "T"
-			a7 = "F"
-		if ab == "xor" and abc == "nor":
-			a4 = "F"
-			a7 = "T"
-		if bc == "xor" and abc == "nor":
-			a4 = "T"
-			a7 = "F"
-		if ab == "xor" and abc == "implies":
-			a5 = "F"
-			a7 = "T"
-		if bc == "xor" and abc == "implies":
-			a5 = "T"
-			a7 = "F"
-		if ab == "xor" and abc == "implied by":
-			a2 = "F"
-			a5 = "T"
-		if bc == "xor" and abc == "implied by":
-			a2 = "T"
-			a5 = "F"
+			a1 = a4 = a5 = a6 = a7 = 1
+			a2 = 0
+			if p == "l":
+				a3, a8 = 1, 0
+			else:
+				a3, a8 = 0, 1
 	if ab == "xnor" or bc == "xnor":
-		if abc == "xor":
-			a1 = "T"
-			a2 = "F"
-			a3 = "F"
-			a4 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
-		if abc == "xnor":
-			a1 = "F"
-			a2 = "T"
-			a3 = "T"
-			a4 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
 		if abc == "and":
-			a1 = "F"
-			a3 = "F"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "T"
+			a1 = a3 = a4 = a6 = a7 = 0
+			a8 = 1
+			if p == "l":
+				a2, a5 = 1, 0
+			else:
+				a2, a5 = 0, 1
 		if abc == "or":
-			a1 = "T"
-			a3 = "F"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a4 = a6 = a7 = a8 = 1
+			a3 = 0
+			if p == "l":
+				a2, a5 = 1, 0
+			else:
+				a2, a5 = 0, 1
 		if abc == "nand":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "F"
+			a1 = a3 = a4 = a6 = a7 = 1
+			a8 = 0
+			if p == "l":
+				a2, a5 = 0, 1
+			else:
+				a2, a5 = 1, 0
 		if abc == "nor":
-			a1 = "F"
-			a3 = "T"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
+			a1 = a4 = a6 = a7 = a8 = 0
+			a3 = 1
+			if p == "l":
+				a2, a5 = 0, 1
+			else:
+				a2, a5 = 1, 0
+		if abc == "xor":
+			a1 = a4 = a6 = a7 = 1
+			a2 = a3 = a5 = a8 = 0
+		if abc == "xnor":
+			a1 = a4 = a6 = a7 = 0
+			a2 = a3 = a5 = a8 = 1
 		if abc == "implies":
-			a2 = "T"
-			a3 = "T"
-			a4 = "T"
-			a5 = "T"
-			a7 = "F"
-			a8 = "T"
+			a2 = a3 = a4 = a5 = a8 = 1
+			a7 = 0
+			if p == "l":
+				a1, a6 = 0, 1
+			else:
+				a1, a6 = 1, 0
 		if abc == "implied by":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a6 = "F"
-			a8 = "T"
-		if ab == "xnor" and abc == "and":
-			a2 = "T"
-			a5 = "F"
-		if bc == "xnor" and abc == "and":
-			a2 = "F"
-			a5 = "T"
-		if ab == "xnor" and abc == "or":
-			a2 = "T"
-			a5 = "F"
-		if bc == "xnor" and abc == "or":
-			a2 = "F"
-			a5 = "T"
-		if ab == "xnor" and abc == "nand":
-			a2 = "F"
-			a5 = "T"
-		if bc == "xnor" and abc == "nand":
-			a2 = "T"
-			a5 = "F"
-		if ab == "xnor" and abc == "nor":
-			a2 = "F"
-			a5 = "T"
-		if bc == "xnor" and abc == "nor":
-			a2 = "T"
-			a5 = "F"
-		if ab == "xnor" and abc == "implies":
-			a1 = "F"
-			a6 = "T"
-		if bc == "xnor" and abc == "implies":
-			a1 = "T"
-			a6 = "F"
-		if ab == "xnor" and abc == "implied by":
-			a4 = "F"
-			a7 = "T"
-		if bc == "xnor" and abc == "implied by":
-			a4 = "T"
-			a7 = "F"
+			a1 = a2 = a3 = a5 = a8 = 1
+			a6 = 0
+			if p == "l":
+				a4, a7 = 0, 1
+			else:
+				a4, a7 = 1, 0
 	if ab == "implies" or bc == "implies":
 		if abc == "and":
-			a1 = "F"
-			a3 = "F"
-			a7 = "F"
-			a8 = "T"
+			a1 = a3 = a7 = 0
+			a8 = 1
+			if p == "l":
+				a2, a4, a5, a6 = 1, 1, 0, 0
+			else:
+				a2, a4, a5, a6 = 0, 0, 1, 1
 		if abc == "or":
-			a1 = "T"
-			a2 = "T"
-			a4 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a2 = a4 = a6 = a7 = a8 = 1
+			if p == "l":
+				a3, a5 = 1, 0
+			else:
+				a3, a5 = 0, 1
 		if abc == "nand":
-			a1 = "T"
-			a3 = "T"
-			a7 = "T"
-			a8 = "F"
+			a1 = a3 = a7 = 1
+			a8 = 0
+			if p == "l":
+				a2, a4, a5, a6 = 0, 0, 1, 1
+			else:
+				a2, a4, a5, a6 = 1, 1, 0, 0
 		if abc == "nor":
-			a1 = "F"
-			a2 = "F"
-			a4 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
+			a1 = a2 = a4 = a6 = a7 = a8 = 0
+			if p == "l":
+				a3, a5 = 0, 1
+			else:
+				a3, a5 = 1, 0
 		if abc == "xor":
-			a1 = "T"
-			a5 = "F"
-			a7 = "T"
-			a8 = "F"
+			a1 = a7 = 1
+			a5 = a8 = 0
+			if p == "l":
+				a2, a3, a4, a6 = 0, 1, 0, 1
+			else:
+				a2, a3, a4, a6 = 1, 0, 1, 0
 		if abc == "xnor":
-			a1 = "F"
-			a5 = "T"
-			a7 = "F"
-			a8 = "T"
+			a1 = a7 = 0
+			a5 = a8 = 1
+			if p == "l":
+				a2, a3, a4, a6 = 1, 0, 1, 0
+			else:
+				a2, a3, a4, a6 = 0, 1, 0, 1
 		if abc == "implies":
-			a1 = "F"
-			a5 = "T"
-			a6 = "T"
-			a8 = "T"
+			a1 = 0
+			a5 = a6 = a8 = 1
+			if p == "l":
+				a2, a3, a4, a7 = 1, 0, 1, 0
+			else:
+				a2, a3, a4, a7 = 0, 1, 0, 1
 		if abc == "implied by":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a4 = "T"
-			a5 = "T"
-			a8 = "T"
-		if ab == "implies" and abc == "and":
-			a2 = "T"
-			a4 = "T"
-			a5 = "F"
-			a6 = "F"
-		if bc == "implies" and abc == "and":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a6 = "T"
-		if ab == "implies" and abc == "or":
-			a3 = "T"
-			a5 = "F"
-		if bc == "implies" and abc == "or":
-			a3 = "F"
-			a5 = "T"
-		if ab == "implies" and abc == "nand":
-			a2 = "F"
-			a4 = "F"
-			a5 = "T"
-			a6 = "T"
-		if bc == "implies" and abc == "nand":
-			a2 = "T"
-			a4 = "T"
-			a5 = "F"
-			a6 = "F"
-		if ab == "implies" and abc == "nor":
-			a3 = "F"
-			a5 = "T"
-		if bc == "implies" and abc == "nor":
-			a3 = "T"
-			a5 = "F"
-		if ab == "implies" and abc == "xor":
-			a2 = "F"
-			a3 = "T"
-			a4 = "F"
-			a6 = "T"
-		if bc == "implies" and abc == "xor":
-			a2 = "T"
-			a3 = "F"
-			a4 = "T"
-			a6 = "F"
-		if ab == "implies" and abc == "xnor":
-			a2 = "T"
-			a3 = "F"
-			a4 = "T"
-			a6 = "F"
-		if bc == "implies" and abc == "xnor":
-			a2 = "F"
-			a3 = "T"
-			a4 = "F"
-			a6 = "T"
-		if ab == "implies" and abc == "implies":
-			a2 = "T"
-			a3 = "F"
-			a4 = "T"
-			a7 = "F"
-		if bc == "implies" and abc == "implies":
-			a2 = "F"
-			a3 = "T"
-			a4 = "F"
-			a7 = "T"
-		if ab == "implies" and abc == "implied by":
-			a6 = "F"
-			a7 = "T"
-		if bc == "implies" and abc == "implied by":
-			a6 = "T"
-			a7 = "F"
+			a1 = a2 = a3 = a4 = a5 = a8 = 1
+			if p == "l":
+				a6, a7 = 0, 1
+			else:
+				a6, a7 = 1, 0
 	if ab == "implied by" or bc == "implied by":
 		if abc == "and":
-			a1 = "F"
-			a3 = "F"
-			a4 = "F"
-			a8 = "T"
+			a1 = a3 = a4 = 0
+			a8 = 1
+			if p == "l":
+				a2, a5, a6, a7 = 1, 0, 1, 0
+			else:
+				a2, a5, a6, a7 = 0, 1, 0, 1
 		if abc == "or":
-			a1 = "T"
-			a4 = "T"
-			a5 = "T"
-			a6 = "T"
-			a7 = "T"
-			a8 = "T"
+			a1 = a4 = a5 = a6 = a7 = a8 = 1
+			if p == "l":
+				a2, a3 = 1, 0
+			else:
+				a2, a3 = 0, 1
 		if abc == "nand":
-			a1 = "T"
-			a3 = "T"
-			a4 = "T"
-			a8 = "F"
+			a1 = a3 = a4 = 1
+			a8 = 0
+			if p == "l":
+				a2, a5, a6, a7 = 0, 1, 0, 1
+			else:
+				a2, a5, a6, a7 = 1, 0, 1, 0
 		if abc == "nor":
-			a1 = "F"
-			a4 = "F"
-			a5 = "F"
-			a6 = "F"
-			a7 = "F"
-			a8 = "F"
+			a1 = a4 = a5 = a6 = a7 = a8 = 0
+			if p == "l":
+				a2, a3 = 0, 1
+			else:
+				a2, a3 = 1, 0
 		if abc == "xor":
-			a1 = "T"
-			a2 = "F"
-			a4 = "T"
-			a8 = "F"
+			a1 = a4 = 1
+			a2 = a8 = 0
+			if p == "l":
+				a3, a5, a6, a7 = 0, 1, 0, 1
+			else:
+				a3, a5, a6, a7 = 1, 0, 1, 0
 		if abc == "xnor":
-			a1 = "F"
-			a3 = "T"
-			a4 = "F"
-			a8 = "T"
+			a1 = a4 = 0
+			a2 = a8 = 1
+			if p == "l":
+				a3, a5, a6, a7 = 1, 0, 1, 0
+			else:
+				a3, a5, a6, a7 = 0, 1, 0, 1
 		if abc == "implies":
-			a1 = "F"
-			a2 = "T"
-			a6 = "T"
-			a8 = "T"
+			a1 = 0
+			a2 = a6 = a8 = 1
+			if p == "l":
+				a3, a4, a5, a7 = 1, 1, 0, 0
+			else:
+				a3, a4, a5, a7 = 0, 0, 1, 1
 		if abc == "implied by":
-			a1 = "T"
-			a2 = "T"
-			a3 = "T"
-			a5 = "T"
-			a7 = "T"
-			a8 = "T"
-		if ab == "implied by" and abc == "and":
-			a2 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "F"
-		if bc == "implied by" and abc == "and":
-			a2 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "T"
-		if ab == "implied by" and abc == "or":
-			a2 = "T"
-			a3 = "F"
-		if bc == "implied by" and abc == "or":
-			a2 = "F"
-			a3 = "T"
-		if ab == "implied by" and abc == "nand":
-			a2 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "T"
-		if bc == "implied by" and abc == "nand":
-			a2 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "F"
-		if ab == "implied by" and abc == "nor":
-			a2 = "F"
-			a3 = "T"
-		if bc == "implied by" and abc == "nor":
-			a2 = "T"
-			a3 = "F"
-		if ab == "implied by" and abc == "xor":
-			a3 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "T"
-		if bc == "implied by" and abc == "xor":
-			a3 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "F"
-		if ab == "implied by" and abc == "xnor":
-			a2 = "T"
-			a5 = "F"
-			a6 = "T"
-			a7 = "F"
-		if bc == "implied by" and abc == "xnor":
-			a2 = "F"
-			a5 = "T"
-			a6 = "F"
-			a7 = "T"
-		if ab == "implied by" and abc == "implies":
-			a3 = "T"
-			a4 = "T"
-			a5 = "F"
-			a7 = "F"
-		if bc == "implied by" and abc == "implies":
-			a3 = "F"
-			a4 = "F"
-			a5 = "T"
-			a7 = "T"
-		if ab == "implied by" and abc == "implied by":
-			a4 = "F"
-			a6 = "T"
-		if bc == "implied by" and abc == "implied by":
-			a4 = "T"
-			a6 = "F"
+			a1 = a2 = a3 = a5 = a7 = a8 = 1
+			if p == "l":
+				a4, a6 = 0, 1
+			else:
+				a4, a6 = 1, 0
 	# Final Printing
 	print "A - Top"
 	print "B - Bottom Left"
 	print "C - Bottom Right"
-	print "D - Area is True or False"
-	print "Mark area if true."
-	print "Click the area outside if all are false."
-	print "A B C D"
-	print "F F F", a1
-	print "F F T", a2
-	print "F T F", a3
-	print "F T T", a4
-	print "T F F", a5
-	print "T F T", a6
-	print "T T F", a7
-	print "T T T", a8
+	print "1 - True"
+	print "0 - False"
+	print "Click the area if it's True."
+	print "If NONE, click the circle outside."
+	print "NONE -", a1
+	print "C -", a2
+	print "B -", a3
+	print "BC -", a4
+	print "A -", a5
+	print "AC -", a6
+	print "AB -", a7
+	print "ABC -", a8
+	raw_input("Press enter to continue.")
+	ktane()
 ktane()
 # ....is some good shit

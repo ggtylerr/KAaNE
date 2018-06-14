@@ -27,7 +27,7 @@ Blind Alley
 
 Blind Maze
 
-Boolean Venn Diagram (WIP)
+Boolean Venn Diagram
 
 Broken Buttons (WIP)
 
