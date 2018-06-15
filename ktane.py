@@ -20,100 +20,120 @@ print "Credits can be found on the Github respotority's front page."
 raw_input("Press enter to continue.")
 
 def ktane():
-	print "\nAvailable Modules:"
-	print "Simple Wires (w)"                # L117
-	print "Button (b)"                      # L775
-	print "Keypad (k)"                      # L852
-	print "Simon Says (ss)"                 # L933
-	print "Who's on First? (wf)"            # L987
-	print "Memory (me)"                     # L1140
-	print "Morse Code (mc)"                 # L1297
-	print "Complicated Wires (cw)"          # L1382
-	print "Wire Sequences (ws)"             # L1455
-	print "Mazes (mz)"                      # L1856
-	print "Passwords (pw)"                  # L2054
-	print "Needy Gas (ng)"                  # L2146
-	print "Capacitor Discharger (cd)"       # L2151
-	print "Needy Knobs (nk)"                # L2155
-	print "[MOD|WIP] Adventure Game (ag)"   # L3186
-	print "[MOD] Astrology (at)"            # L3971
-	print "[MOD] Algebra (al)"		# L3553
-	print "[MOD] Backgrounds (bg)"	        # L4470
-	print "[MOD] Battleship (bs)"		# L4693
-	print "[MOD] The Big Circle (bc)"       # L4801
-	print "[MOD] Binary LEDs (bl)"          # L5011
-	print "[MOD] Bitmaps (bm)"		# L5436
-	print "[MOD] Bitwise Operations (bo)"	# L5640
-	print "[MOD] Blind Alley (ba)"		# L5905
-	print "[MOD] Blind Maze (bz)"		# L6104
-	print "[MOD] Boolean Venn Diagram (bv)" # L6495
-	print "[MOD|WIP] Broken Buttons (bb)"   # L2173
-	print "[MOD] The Bulb (tb)"             # L3713
-	print "[MOD] Wire Placement (wp)"       # L3100
-	print ""
-	x = raw_input("What Module? ")
-	if x == "w":
-		wires()
-	if x == "b":
-		button()
-	if x == "k":
-		keypad()
-	if x == "ss":
-		simonSays()
-	if x == "wf":
-		whosOnFirst()
-	if x == "me":
-		memory()
-	if x == "mc":
-		morseCode()
-	if x == "cw":
-		complicatedWires()
-	if x == "ws":
-		wireSequences()
-	if x == "mz":
-		mazes()
-	if x == "pw":
-		passwords()
-	if x == "ng":
-		gas()
-	if x == "cd":
-		capacitorDischarger()
-	if x == "nk":
-		knobs()
-	if x == "bb":
-		brokenButtons()
-	if x == "wp":
-		wirePlacement()
-	if x == "ag":
-		adventureGame()
-	if x == "al":
-		algebra()
-	if x == "tb":
-		theBulb()
-	if x == "at":
-		astrology()
-	if x == "bg":
-		backgrounds()
-	if x == "bs":
-		battleship()
-	if x == "bc":
-		bigCircle()
-	if x == "bl":
-		binaryLED()
-	if x == "bm":
-		bitmaps()
-	if x == "bo":
-		bitwiseOperations()
-	if x == "ba":
-		blindAlley()
-	if x == "bz":
-		blindMaze()
-	if x == "bv":
-		booleanVennDiagram()
-	else:
-		print "Invalid Module!"
-		raw_input("Press enter to continue.")
-		ktane()
+	y = 0
+	z = 1
+	while y == 0:
+		print "Type next or prev to switch thru pages. Input is case-sensitive, so please input in lower caps."
+		if z == 1:
+			print "Page: 1"
+			print "\nAvailable Modules:"
+			print "Simple Wires (w)"                # L137
+			print "Button (b)"                      # L795
+			print "Keypad (k)"                      # L872
+			print "Simon Says (ss)"                 # L953
+			print "Who's on First? (wf)"            # L1007
+			print "Memory (me)"                     # L1160
+			print "Morse Code (mc)"                 # L1317
+			print "Complicated Wires (cw)"          # L1402
+			print "Wire Sequences (ws)"             # L1475
+			print "Mazes (mz)"                      # L1876
+			print "Passwords (pw)"                  # L2074
+			print "Needy Gas (ng)"                  # L2166
+			print "Capacitor Discharger (cd)"       # L2171
+			print "Needy Knobs (nk)"                # L2175
+			print "[MOD|WIP] Adventure Game (ag)"   # L3206
+			print "[MOD] Astrology (at)"            # L3981
+			print "[MOD] Algebra (al)"		# L3573
+			print "[MOD] Backgrounds (bg)"	        # L4490
+			print "[MOD] Battleship (bs)"		# L4713
+			print "[MOD] The Big Circle (bc)"       # L4821
+			print "[MOD] Binary LEDs (bl)"          # L5031
+			print "[MOD] Bitmaps (bm)"		# L5456
+			print "[MOD] Bitwise Operations (bo)"	# L5660
+			print "[MOD] Blind Alley (ba)"		# L5925
+			print "[MOD] Blind Maze (bz)"		# L6124
+			print "[MOD] Boolean Venn Diagram (bv)" # L6515
+			print "[MOD|WIP] Broken Buttons (bb)"   # L2193
+			print "[MOD] The Bulb (tb)"             # L3733
+			print "[MOD] Burglar Alarms (bu)"	# L6968
+		if z == 2:
+			print "Page: 2"
+			print "\nAvailable Modules:"
+			print "[MOD] Wire Placement (wp)"       # L3120
+		print ""
+		x = raw_input("What Module? ")
+		if x == "next":
+			z = z + 1
+		if x == "prev":
+			z = z - 1
+		if z < 1:
+			z = 1
+		if z > 2:
+			z = 2
+		if x == "w":
+			wires()
+		if x == "b":
+			button()
+		if x == "k":
+			keypad()
+		if x == "ss":
+			simonSays()
+		if x == "wf":
+			whosOnFirst()
+		if x == "me":
+			memory()
+		if x == "mc":
+			morseCode()
+		if x == "cw":
+			complicatedWires()
+		if x == "ws":
+			wireSequences()
+		if x == "mz":
+			mazes()
+		if x == "pw":
+			passwords()
+		if x == "ng":
+			gas()
+		if x == "cd":
+			capacitorDischarger()
+		if x == "nk":
+			knobs()
+		if x == "bb":
+			brokenButtons()
+		if x == "wp":
+			wirePlacement()
+		if x == "ag":
+			adventureGame()
+		if x == "al":
+			algebra()
+		if x == "tb":
+			theBulb()
+		if x == "at":
+			astrology()
+		if x == "bg":
+			backgrounds()
+		if x == "bs":
+			battleship()
+		if x == "bc":
+			bigCircle()
+		if x == "bl":
+			binaryLED()
+		if x == "bm":
+			bitmaps()
+		if x == "bo":
+			bitwiseOperations()
+		if x == "ba":
+			blindAlley()
+		if x == "bz":
+			blindMaze()
+		if x == "bv":
+			booleanVennDiagram()
+		if x == "bu":
+			burglarAlarm()
+		elif not x == "next":
+			if not x == "prev":
+				print "Invalid Module!"
+				raw_input("Press enter to continue.")
 def wires():
 	# Simple Wires
 	# Red: "r"
@@ -4888,8 +4908,7 @@ def bigCircle():
 		x = x + (3 * y)
 		y = input("How many batteries are there? ")
 		even = y % 2
-		odd = y % 1
-		if odd == 0:
+		if even == 1:
 			x = x + 4
 		if y == 0 or even == 0:
 			x = x - 4
@@ -6943,6 +6962,190 @@ def booleanVennDiagram():
 	print "AC -", a6
 	print "AB -", a7
 	print "ABC -", a8
+	raw_input("Press enter to continue.")
+	ktane()
+def burglarAlarm():
+	# Burglar Alarm [line 6969 hahaha ecks dee]
+	# Mod made by Marksam32 and can be downloaded in: http://steamcommunity.com/sharedfiles/filedetails/?id=1318968178
+	# Variable [N]ovember + Number: Button Number Sequence
+	# Variable [M]ike + Number: Module Number Sequence
+	# Variable [C]harlie + Number: Converted Number Sequence
+	# Variable [B]ravo: # of Batteries
+	# Variable [P]apa: # of Ports
+	# Variable [S]ierra: # of Solved Modules
+	# Variable [I]ndia: # of Indicators
+	# Variable PP [Papa, Papa]: # of Port Plates
+	m8 = 10
+	m3 = 10
+	pp = -1
+	i = -1
+	# Number 1
+	b = input("How many batteries are there? ")
+	p = input("How many ports are there? ")
+	if b > p:
+		x = input("How many battery holders are there? ")
+		x = x % 2
+		if x == 0:
+			n1 = 9
+		else:
+			n1 = 1
+	else:
+		m8 = input("What's the last digit of the module number? ")
+		x = m8 % 2
+		if x == 0:
+			n1 = 3
+		else:
+			n1 = 4
+	# Number 2
+	x = raw_input("Is there a PS/2 port? ")
+	if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+		x = input("How many letters are there in the SN? ")
+		y = input("How many digits are there in the SN? ")
+		if x > y:
+			n2 = 0
+		else:
+			n2 = 6
+	else:
+		x = raw_input("Is there a lit BOB indicator? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n2 = 5
+		else:
+			n2 = 2
+	# Number 3
+	s = input("How many solved modules are there? ")
+	x = s % 2
+	if x == 0:
+		m3 = input("What is the 3rd module number? ")
+		x = m3 % 2
+		if x == 0:
+			n3 = 8
+		else:
+			n3 = 4
+	else:
+		x = raw_input("Is there an RJ-45 port? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n3 = 9
+		else:
+			n3 = 3
+	# Number 4
+	m1 = input("What is the 1st module number? ")
+	m2 = input("2nd? ")
+	if m3 == 10:
+		m3 = input("3rd? ")
+	m4 = input("4th? ")
+	m5 = input("5th? ")
+	m6 = input("6th? ")
+	m7 = input("7th? ")
+	if m8 == 10:
+		m8 = input("8th? ")
+	x = (m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8) % 2
+	if x == 1:
+		pp = input("How many port plates are there? ")
+		i = input("How many indicators are there? ")
+		if pp > i:
+			n4 = 7
+		else:
+			n4 = 3
+	else:
+		x = input("How many D batteries are there? ")
+		y = input("How many AA batteries are there? ")
+		if x > y:
+			n4 = 7
+		else:
+			n4 = 2
+	# Number 5
+	if pp == -1:
+		pp = input("How many port plates are there? ")
+	x = b * pp
+	if s > x:
+		x = p % 2
+		if x == 0:
+			n5 = 9
+		else:
+			n5 = 3
+	else:
+		if i == -1:
+			i = input("How many indicators are there? ")
+		if p > i:
+			n5 = 7
+		else:
+			n5 = 8
+	# Number 6
+	x = raw_input("Is there a Parallel port? ")
+	if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+		x = raw_input("Is there a Serial Port? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n6 = 1
+		else:
+			n6 = 5
+	else:
+		x = raw_input("Is there a lit FRQ indicator? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n6 = 0
+		else:
+			n6 = 4
+	# Number 7
+	if b > 4:
+		x = input("How many unlit indicators are there? ")
+		if x == 0:
+			n7 = 2
+		else:
+			n7 = 6
+	else:
+		x = input("How many lit indicators are there? ")
+		if x == 0:
+			n7 = 4
+		else:
+			n7 = 9
+	# Number 8
+	if i == -1:
+		i = input("How many indicators are there? ")
+	if b == i:
+		x = raw_input("Does the SN have any of the following characters: B, U, R, G, 1, 4, R? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n8 = 1
+		else:
+			n8 = 0
+	else:
+		x = raw_input("Does the SN have any of the following characters: A, L, 5, 3, M? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			n8 = 0
+		else:
+			n8 = 8
+	c1 = m1 + n1
+	c2 = m2 + n2
+	c3 = m3 + n3
+	c4 = m4 + n4
+	c5 = m5 + n5
+	c6 = m6 + n6
+	c7 = m7 + n7
+	c8 = m8 + n8
+	c1 = c1 + 1000000
+	c1 = map(int,str(c1))
+	c1 = c1[6]
+	c2 = c2 + 1000000
+	c2 = map(int,str(c2))
+	c2 = c2[6]
+	c3 = c3 + 1000000
+	c3 = map(int,str(c3))
+	c3 = c3[6]
+	c4 = c4 + 1000000
+	c4 = map(int,str(c4))
+	c4 = c4[6]
+	c5 = c5 + 1000000
+	c5 = map(int,str(c5))
+	c5 = c5[6]
+	c6 = c6 + 1000000
+	c6 = map(int,str(c6))
+	c6 = c6[6]
+	c7 = c7 + 1000000
+	c7 = map(int,str(c7))
+	c7 = c7[6]
+	c8 = c8 + 1000000
+	c8 = map(int,str(c8))
+	c8 = c8[6]
+	print "The number to input is as follows:"
+	print c1, c2, c3, c4, c5, c6, c7, c8
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()

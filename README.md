@@ -33,6 +33,8 @@ Broken Buttons (WIP)
 
 The Bulb
 
+Burglar Alarm
+
 Wire Sequences
 
 ## Installation Guide:
