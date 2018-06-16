@@ -9,6 +9,8 @@ Adventure Game (WIP)
 
 Algebra
 
+Anagrams
+
 Astrology
 
 Backgrounds
@@ -36,6 +38,8 @@ The Bulb
 Burglar Alarm
 
 Wire Sequences
+
+Word Scramble
 
 ## Installation Guide:
 

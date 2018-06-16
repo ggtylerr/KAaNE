@@ -27,39 +27,41 @@ def ktane():
 		if z == 1:
 			print "Page: 1"
 			print "\nAvailable Modules:"
-			print "Simple Wires (w)"                # L137
-			print "Button (b)"                      # L795
-			print "Keypad (k)"                      # L872
-			print "Simon Says (ss)"                 # L953
-			print "Who's on First? (wf)"            # L1007
-			print "Memory (me)"                     # L1160
-			print "Morse Code (mc)"                 # L1317
-			print "Complicated Wires (cw)"          # L1402
-			print "Wire Sequences (ws)"             # L1475
-			print "Mazes (mz)"                      # L1876
-			print "Passwords (pw)"                  # L2074
-			print "Needy Gas (ng)"                  # L2166
-			print "Capacitor Discharger (cd)"       # L2171
-			print "Needy Knobs (nk)"                # L2175
-			print "[MOD|WIP] Adventure Game (ag)"   # L3206
-			print "[MOD] Astrology (at)"            # L3981
-			print "[MOD] Algebra (al)"		# L3573
-			print "[MOD] Backgrounds (bg)"	        # L4490
-			print "[MOD] Battleship (bs)"		# L4713
-			print "[MOD] The Big Circle (bc)"       # L4821
-			print "[MOD] Binary LEDs (bl)"          # L5031
-			print "[MOD] Bitmaps (bm)"		# L5456
-			print "[MOD] Bitwise Operations (bo)"	# L5660
-			print "[MOD] Blind Alley (ba)"		# L5925
-			print "[MOD] Blind Maze (bz)"		# L6124
-			print "[MOD] Boolean Venn Diagram (bv)" # L6515
-			print "[MOD|WIP] Broken Buttons (bb)"   # L2193
-			print "[MOD] The Bulb (tb)"             # L3733
-			print "[MOD] Burglar Alarms (bu)"	# L6968
+			print "Simple Wires (w)"                # L143
+			print "Button (b)"                      # L801
+			print "Keypad (k)"                      # L878
+			print "Simon Says (ss)"                 # L959
+			print "Who's on First? (wf)"            # L1013
+			print "Memory (me)"                     # L1166
+			print "Morse Code (mc)"                 # L1323
+			print "Complicated Wires (cw)"          # L1408
+			print "Wire Sequences (ws)"             # L1481
+			print "Mazes (mz)"                      # L1882
+			print "Passwords (pw)"                  # L2080
+			print "Needy Gas (ng)"                  # L2172
+			print "Capacitor Discharger (cd)"       # L2177
+			print "Needy Knobs (nk)"                # L2181
+			print "[MOD|WIP] Adventure Game (ag)"   # L3212
+			print "[MOD] Astrology (at)"            # L3987
+			print "[MOD] Algebra (al)"		# L3579
+			print "[MOD] Anagrams (an)"             # L7157
+			print "[MOD] Backgrounds (bg)"	        # L4496
+			print "[MOD] Battleship (bs)"		# L4719
+			print "[MOD] The Big Circle (bc)"       # L4827
+			print "[MOD] Binary LEDs (bl)"          # L5037
+			print "[MOD] Bitmaps (bm)"		# L5462
+			print "[MOD] Bitwise Operations (bo)"	# L5669
+			print "[MOD] Blind Alley (ba)"		# L5931
+			print "[MOD] Blind Maze (bz)"		# L6130
+			print "[MOD] Boolean Venn Diagram (bv)" # L6521
+			print "[MOD|WIP] Broken Buttons (bb)"   # L2199
+			print "[MOD] The Bulb (tb)"             # L3739
 		if z == 2:
 			print "Page: 2"
 			print "\nAvailable Modules:"
-			print "[MOD] Wire Placement (wp)"       # L3120
+			print "[MOD] Burglar Alarms (bu)"	# L6974
+			print "[MOD] Wire Placement (wp)"       # L3126
+			print "[MOD] Word Scramble (ws)"	# L7207
 		print ""
 		x = raw_input("What Module? ")
 		if x == "next":
@@ -130,6 +132,10 @@ def ktane():
 			booleanVennDiagram()
 		if x == "bu":
 			burglarAlarm()
+		if x == "an":
+			anagrams()
+		if x == "ws":
+			wordScramble()
 		elif not x == "next":
 			if not x == "prev":
 				print "Invalid Module!"
@@ -7146,6 +7152,254 @@ def burglarAlarm():
 	c8 = c8[6]
 	print "The number to input is as follows:"
 	print c1, c2, c3, c4, c5, c6, c7, c8
+	raw_input("Press enter to continue.")
+	ktane()
+def anagrams():
+	# Anagrams
+	# Mod by Mock Army and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=733438645
+	# Variable [A]lpha + Numbers: Letter sequence
+	print "Note that Anagrams is the one with the light on the left."
+	print "Please input in lower caps."
+	a1 = raw_input("What is the 1st letter? ")
+	a2 = raw_input("2nd? ")
+	a3 = raw_input("3rd? ")
+	a4 = raw_input("4th? ")
+	a5 = raw_input("5th? ")
+	a6 = raw_input("6th? ")
+	if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+		print "STREAM"
+		print "MASTER"
+		print "TAMERS"
+	if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+		print "LOOPED"
+		print "POODLE"
+		print "POOLED"
+	if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+		if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+			print "CELLAR"
+			print "CALLER"
+			print "RECALL"
+		elif a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+			print "RESCUE"
+			print "SECURE"
+			print "RECUSE"
+	if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+		if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+			print "SEATED"
+			print "SEDATE"
+			print "TEASED"
+	if a1 == "h" or a2 == "h" or a3 == "h" or a4 == "h" or a5 == "h" or a6 == "h":
+		print "RASHES"
+		print "SHEARS"
+		print "SHARES"
+	if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+		print "BARELY"
+		print "BARLEY"
+		print "BLEARY"
+	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+		if a1 == "u" or a2 == "u" or a3 == "u" or a4 == "u" or a5 == "u" or a6 == "u":
+			print "DUSTER"
+			print "RUSTED"
+			print "RUDEST"
+	raw_input("Press enter to continue.")
+	ktane()
+def wordScramble():
+	# Word Scramble
+	# Mod by Mock Army and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=733438645
+	# Variable [A]lpha + Number: Letter Sequence
+	print "Note that Word Scramble is the one with the light on the right."
+	print "Please input in lower caps."
+	a1 = raw_input("What is the 1st letter? ")
+	a2 = raw_input("2nd? ")
+	a3 = raw_input("3rd? ")
+	a4 = raw_input("4th? ")
+	a5 = raw_input("5th? ")
+	a6 = raw_input("6th? ")
+	if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+		if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+			if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+				if a1 == "u" or a2 == "u" or a3 == "u" or a4 == "u" or a5 == "u" or a6 == "u":
+					if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+						if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+							print "MODULE"
+	if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+		if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+			if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+				if a1 == "w" or a2 == "w" or a3 == "w" or a4 == "w" or a5 == "w" or a6 == "w":
+					print "OTTAWA"
+	if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+				print "BANANA"
+	if a1 == "k" or a2 == "k" or a3 == "k" or a4 == "k" or a5 == "k" or a6 == "k":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+				if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+					if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+						print "KABOOM"
+	if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+				if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+					print "LETTER"
+	if a1 == "w" or a2 == "w" or a3 == "w" or a4 == "w" or a5 == "w" or a6 == "w":
+		if a1 == "i" or a2 == "i" or a3 == "i" or a4 == "i" or a5 == "i" or a6 == "i":
+			if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+				if a1 == "g" or a2 == "g" or a3 == "g" or a4 == "g" or a5 == "g" or a6 == "g":
+					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+						if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+							print "WIDGET"
+	if a1 == "p" or a2 == "p" or a3 == "p" or a4 == "p" or a5 == "p" or a6 == "p":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+				if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+					if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+						if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+							print "PERSON"
+	if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "p" or a2 == "p" or a3 == "p" or a4 == "p" or a5 == "p" or a6 == "p":
+				if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+					if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+						print "SAPPER"
+	if a1 == "w" or a2 == "w" or a3 == "w" or a4 == "w" or a5 == "w" or a6 == "w":
+		if a1 == "i" or a2 == "i" or a3 == "i" or a4 == "i" or a5 == "i" or a6 == "i":
+			if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+				if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+					if a1 == "g" or a2 == "g" or a3 == "g" or a4 == "g" or a5 == "g" or a6 == "g":
+						print "WIRING"
+	if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+		if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+			if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+				if a1 == "h" or a2 == "h" or a3 == "h" or a4 == "h" or a5 == "h" or a6 == "h":
+					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+						print "ARCHER"
+	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "v" or a2 == "v" or a3 == "v" or a4 == "v" or a5 == "v" or a6 == "v":
+				if a1 == "i" or a2 == "i" or a3 == "i" or a4 == "i" or a5 == "i" or a6 == "i":
+					if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+						print "DEVICE"
+	if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+		if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+			if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+				if a1 == "k" or a2 == "k" or a3 == "k" or a4 == "k" or a5 == "k" or a6 == "k":
+					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+						if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+							print "ROCKET"
+	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+				if a1 == "g" or a2 == "g" or a3 == "g" or a4 == "g" or a5 == "g" or a6 == "g":
+					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+						print "DAMAGE"
+	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "f" or a2 == "f" or a3 == "f" or a4 == "f" or a5 == "f" or a6 == "f":
+				if a1 == "u" or a2 == "u" or a3 == "u" or a4 == "u" or a5 == "u" or a6 == "u":
+					if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+						print "DEFUSE"
+	if a1 == "f" or a2 == "f" or a3 == "f" or a4 == "f" or a5 == "f" or a6 == "f":
+		if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+			if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+				if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+						if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+							print "FLAMES"
+	if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+				if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+					if a1 == "x" or a2 == "x" or a3 == "x" or a4 == "x" or a5 == "x" or a6 == "x":
+						print "SEMTEX"
+	if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+				if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+					print "CANNON"
+	if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+		if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+			if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+				if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+					if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+						print "BLASTS"
+	if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+		if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+			if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+				if a1 == "k" or a2 == "k" or a3 == "k" or a4 == "k" or a5 == "k" or a6 == "k":
+					print "ATTACK"
+	if a1 == "w" or a2 == "w" or a3 == "w" or a4 == "w" or a5 == "w" or a6 == "w":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+				if a1 == "p" or a2 == "p" or a3 == "p" or a4 == "p" or a5 == "p" or a6 == "p":
+					if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+						if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+							print "WEAPON"
+	if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+		if a1 == "h" or a2 == "h" or a3 == "h" or a4 == "h" or a5 == "h" or a6 == "h":
+			if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+				if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+					if a1 == "g" or a2 == "g" or a3 == "g" or a4 == "g" or a5 == "g" or a6 == "g":
+						if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+							print "CHARGE"
+	if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "p" or a2 == "p" or a3 == "p" or a4 == "p" or a5 == "p" or a6 == "p":
+				if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+					if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+						print "NAPALM"
+	if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+		if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+			if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+				if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+					if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+						print "MORTAR"
+	if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+		if a1 == "u" or a2 == "u" or a3 == "u" or a4 == "u" or a5 == "u" or a6 == "u":
+			if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+				if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+					if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+						print "BURSTS"
+	if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+				if a1 == "i" or a2 == "i" or a3 == "i" or a4 == "i" or a5 == "i" or a6 == "i":
+					if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+						if a1 == "g" or a2 == "g" or a3 == "g" or a4 == "g" or a5 == "g" or a6 == "g":
+							print "CASING"
+	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+		if a1 == "i" or a2 == "i" or a3 == "i" or a4 == "i" or a5 == "i" or a6 == "i":
+			if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+				if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+					if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+						if a1 == "m" or a2 == "m" or a3 == "m" or a4 == "m" or a5 == "m" or a6 == "m":
+							print "DISARM"
+	if a1 == "k" or a2 == "k" or a3 == "k" or a4 == "k" or a5 == "k" or a6 == "k":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "y" or a2 == "y" or a3 == "y" or a4 == "y" or a5 == "y" or a6 == "y":
+				if a1 == "p" or a2 == "p" or a3 == "p" or a4 == "p" or a5 == "p" or a6 == "p":
+					if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+						if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+							print "KEYPAD"
+	if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+		if a1 == "u" or a2 == "u" or a3 == "u" or a4 == "u" or a5 == "u" or a6 == "u":
+			if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+				if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+					if a1 == "n" or a2 == "n" or a3 == "n" or a4 == "n" or a5 == "n" or a6 == "n":
+						print "BUTTON"
+	if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+		if a1 == "o" or a2 == "o" or a3 == "o" or a4 == "o" or a5 == "o" or a6 == "o":
+			if a1 == "b" or a2 == "b" or a3 == "b" or a4 == "b" or a5 == "b" or a6 == "b":
+				if a1 == "t" or a2 == "t" or a3 == "t" or a4 == "t" or a5 == "t" or a6 == "t":
+					if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
+						print "ROBOTS"
+	if a1 == "k" or a2 == "k" or a3 == "k" or a4 == "k" or a5 == "k" or a6 == "k":
+		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
+			if a1 == "v" or a2 == "v" or a3 == "v" or a4 == "v" or a5 == "v" or a6 == "v":
+				if a1 == "l" or a2 == "l" or a3 == "l" or a4 == "l" or a5 == "l" or a6 == "l":
+					if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+						if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
+							print "KEVLAR"
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()
