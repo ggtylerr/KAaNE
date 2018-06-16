@@ -62,7 +62,7 @@ def ktane():
 			print "[MOD] Burglar Alarms (bu)"	# L6977
 			print "[MOD] Faulty Backgrounds (fb)"   # L7408
 			print "[MOD] Wire Placement (wp)"       # L3129
-			print "[MOD] Word Scramble (ws)"	# L7210
+			print "[MOD] Word Scramble (wo)"	# L7210
 		print ""
 		x = raw_input("What Module? ")
 		if x == "next":
@@ -135,7 +135,7 @@ def ktane():
 			burglarAlarm()
 		if x == "an":
 			anagrams()
-		if x == "ws":
+		if x == "wo":
 			wordScramble()
 		if x == "fb":
 			faultyBackgrounds()
@@ -7187,10 +7187,11 @@ def anagrams():
 			print "SECURE"
 			print "RECUSE"
 	if a1 == "s" or a2 == "s" or a3 == "s" or a4 == "s" or a5 == "s" or a6 == "s":
-		if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
-			print "SEATED"
-			print "SEDATE"
-			print "TEASED"
+		if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
+			if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
+				print "SEATED"
+				print "SEDATE"
+				print "TEASED"
 	if a1 == "h" or a2 == "h" or a3 == "h" or a4 == "h" or a5 == "h" or a6 == "h":
 		print "RASHES"
 		print "SHEARS"
@@ -7276,7 +7277,13 @@ def wordScramble():
 			if a1 == "c" or a2 == "c" or a3 == "c" or a4 == "c" or a5 == "c" or a6 == "c":
 				if a1 == "h" or a2 == "h" or a3 == "h" or a4 == "h" or a5 == "h" or a6 == "h":
 					if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
-						print "ARCHER"
+						if not a1 == "g":
+							if not a2 == "g":
+								if not a3 == "g":
+									if not a4 == "g":
+										if not a5 == "g":
+											if not a6 == "g":
+												print "ARCHER"
 	if a1 == "d" or a2 == "d" or a3 == "d" or a4 == "d" or a5 == "d" or a6 == "d":
 		if a1 == "e" or a2 == "e" or a3 == "e" or a4 == "e" or a5 == "e" or a6 == "e":
 			if a1 == "v" or a2 == "v" or a3 == "v" or a4 == "v" or a5 == "v" or a6 == "v":
