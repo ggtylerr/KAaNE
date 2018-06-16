@@ -27,41 +27,42 @@ def ktane():
 		if z == 1:
 			print "Page: 1"
 			print "\nAvailable Modules:"
-			print "Simple Wires (w)"                # L143
-			print "Button (b)"                      # L801
-			print "Keypad (k)"                      # L878
-			print "Simon Says (ss)"                 # L959
-			print "Who's on First? (wf)"            # L1013
-			print "Memory (me)"                     # L1166
-			print "Morse Code (mc)"                 # L1323
-			print "Complicated Wires (cw)"          # L1408
-			print "Wire Sequences (ws)"             # L1481
-			print "Mazes (mz)"                      # L1882
-			print "Passwords (pw)"                  # L2080
-			print "Needy Gas (ng)"                  # L2172
-			print "Capacitor Discharger (cd)"       # L2177
-			print "Needy Knobs (nk)"                # L2181
-			print "[MOD|WIP] Adventure Game (ag)"   # L3212
-			print "[MOD] Astrology (at)"            # L3987
-			print "[MOD] Algebra (al)"		# L3579
-			print "[MOD] Anagrams (an)"             # L7157
-			print "[MOD] Backgrounds (bg)"	        # L4496
-			print "[MOD] Battleship (bs)"		# L4719
-			print "[MOD] The Big Circle (bc)"       # L4827
-			print "[MOD] Binary LEDs (bl)"          # L5037
-			print "[MOD] Bitmaps (bm)"		# L5462
-			print "[MOD] Bitwise Operations (bo)"	# L5669
-			print "[MOD] Blind Alley (ba)"		# L5931
-			print "[MOD] Blind Maze (bz)"		# L6130
-			print "[MOD] Boolean Venn Diagram (bv)" # L6521
-			print "[MOD|WIP] Broken Buttons (bb)"   # L2199
-			print "[MOD] The Bulb (tb)"             # L3739
+			print "Simple Wires (w)"                # L146
+			print "Button (b)"                      # L804
+			print "Keypad (k)"                      # L881
+			print "Simon Says (ss)"                 # L962
+			print "Who's on First? (wf)"            # L1016
+			print "Memory (me)"                     # L1169
+			print "Morse Code (mc)"                 # L1326
+			print "Complicated Wires (cw)"          # L1411
+			print "Wire Sequences (ws)"             # L1484
+			print "Mazes (mz)"                      # L1885
+			print "Passwords (pw)"                  # L2083
+			print "Needy Gas (ng)"                  # L2175
+			print "Capacitor Discharger (cd)"       # L2180
+			print "Needy Knobs (nk)"                # L2184
+			print "[MOD|WIP] Adventure Game (ag)"   # L3215
+			print "[MOD] Astrology (at)"            # L3990
+			print "[MOD] Algebra (al)"		# L3582
+			print "[MOD] Anagrams (an)"             # L7160
+			print "[MOD] Backgrounds (bg)"	        # L4499
+			print "[MOD] Battleship (bs)"		# L4722
+			print "[MOD] The Big Circle (bc)"       # L4830
+			print "[MOD] Binary LEDs (bl)"          # L5040
+			print "[MOD] Bitmaps (bm)"		# L5465
+			print "[MOD] Bitwise Operations (bo)"	# L5672
+			print "[MOD] Blind Alley (ba)"		# L5934
+			print "[MOD] Blind Maze (bz)"		# L6133
+			print "[MOD] Boolean Venn Diagram (bv)" # L6524
+			print "[MOD|WIP] Broken Buttons (bb)"   # L2202
+			print "[MOD] The Bulb (tb)"             # L3742
 		if z == 2:
 			print "Page: 2"
 			print "\nAvailable Modules:"
-			print "[MOD] Burglar Alarms (bu)"	# L6974
-			print "[MOD] Wire Placement (wp)"       # L3126
-			print "[MOD] Word Scramble (ws)"	# L7207
+			print "[MOD] Burglar Alarms (bu)"	# L6977
+			print "[MOD] Faulty Backgrounds (fb)"   # L7408
+			print "[MOD] Wire Placement (wp)"       # L3129
+			print "[MOD] Word Scramble (ws)"	# L7210
 		print ""
 		x = raw_input("What Module? ")
 		if x == "next":
@@ -136,6 +137,8 @@ def ktane():
 			anagrams()
 		if x == "ws":
 			wordScramble()
+		if x == "fb":
+			faultyBackgrounds()
 		elif not x == "next":
 			if not x == "prev":
 				print "Invalid Module!"
@@ -5954,79 +5957,79 @@ def blindAlley():
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l1 = l1 + 1
-		else:
 			l6 = l6 + 1
+		else:
+			l1 = l1 + 1
 	x = raw_input("Is there a CAR indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l2 = l2 + 1
-		else:
 			l1 = l1 + 1
+		else:
+			l2 = l2 + 1
 	x = raw_input("Is there a CLR indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l9 = l9 + 1
-		else:
 			l6 = l6 + 1
+		else:
+			l9 = l9 + 1
 	x = raw_input("Is there a FRK indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l8 = l8 + 1
-		else:
 			l2 = l2 + 1
+		else:
+			l8 = l8 + 1
 	x = raw_input("Is there a FRQ indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l4 = l4 + 1
-		else:
 			l7 = l7 + 1
+		else:
+			l4 = l4 + 1
 	x = raw_input("Is there a IND indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l4 = l4 + 1
-		else:
 			l1 = l1 + 1
+		else:
+			l4 = l4 + 1
 	x = raw_input("Is there a MSA indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l9 = l9 + 1
-		else:
 			l8 = l8 + 1
+		else:
+			l9 = l9 + 1
 	x = raw_input("Is there a NSA indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l2 = l2 + 1
-		else:
 			l5 = l5 + 1
+		else:
+			l2 = l2 + 1
 	x = raw_input("Is there a SIG indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l5 = l5 + 1
-		else:
 			l7 = l7 + 1
+		else:
+			l5 = l5 + 1
 	x = raw_input("Is there a SND indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l5 = l5 + 1
-		else:
 			l9 = l9 + 1
+		else:
+			l5 = l5 + 1
 	x = raw_input("Is there a TRN indicator? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
 		x = raw_input("Is it lit? ")
 		if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
-			l4 = l4 + 1
-		else:
 			l7 = l7 + 1
+		else:
+			l4 = l4 + 1
 	# Ports
 	x = raw_input("Is there a DVI-D port? ")
 	if x == "y" or x == "Y" or x == "yes" or x == "Yes" or x == "YES":
@@ -7400,6 +7403,80 @@ def wordScramble():
 					if a1 == "a" or a2 == "a" or a3 == "a" or a4 == "a" or a5 == "a" or a6 == "a":
 						if a1 == "r" or a2 == "r" or a3 == "r" or a4 == "r" or a5 == "r" or a6 == "r":
 							print "KEVLAR"
+	raw_input("Press enter to continue.")
+	ktane()
+def faultyBackgrounds():
+	# Faulty Backgrounds
+	# Mod by JoketteWuzHere and can be downloaded here: http://steamcommunity.com/sharedfiles/filedetails/?id=1286383144
+	# Shoutouts to JoketteWuzHere for showing up on stream!
+	# Variable [B]ravo: Fake Button [1 is left whilst 2 is right]
+	print "Note that this module has two \"PUSH ME\" buttons instead of one."
+	x = raw_input("Does only one button affect the counter? ")
+	if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+		b = 1
+	else:
+		x = raw_input("Does one of the buttons match the color of the background? ")
+		if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+			print "1 - Left"
+			print "2 - Right"
+			x = input("Which side is the matching button? ")
+			if x == 1:
+				b = 2
+			else:
+				b = 1
+		else:
+			x = raw_input("Does one of the buttons say \"BUSH ME!\"? ")
+			if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+				b = 1
+			else:
+				x = raw_input("Does one of the buttons say \"PUSH NE!\"? ")
+				if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+					b = 2
+				else:
+					x = raw_input("Does one of the buttons say \"PUSH HE!\"? ")
+					if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+						print "1 - Left"
+						print "2 - Right"
+						x = input("Which side is the button? ")
+						b = x
+					else:
+						x = raw_input("Does one of the buttons say \"PUSH SHE!\"? ")
+						if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+							print "1 - Left"
+							print "2 - Right"
+							x = input("Which side is the button? ")
+							if x == 1:
+								b = 2
+							else:
+								b = 1
+						else:
+							x = raw_input("Does all the even digits show up on the counter? ")
+							if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+								x = raw_input("Does all the odd digits show up on the counter? ")
+								if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+									x = raw_input("Does the number 5 show up on the counter and is one of the buttons black? ")
+									if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+										print "1 - Left"
+										print "2 - Right"
+										x = input("Which side is the button? ")
+										b = x
+									else:
+										x = raw_input("Is the last digit of the SN even? ")
+										if x == "Y" or x == "y" or x == "YES" or x == "yes" or x == "Yes":
+											b = 2
+										else:
+											b = 1
+								else:
+									b = 2
+							else:
+								b = 1
+	if b == 1:
+		print "The left button is fake."
+		print "The right button is real."
+	if b == 2:
+		print "The left button is real."
+		print "The right button is fake."
+	print "Now, follow the instructions on the Backgrounds module."
 	raw_input("Press enter to continue.")
 	ktane()
 ktane()

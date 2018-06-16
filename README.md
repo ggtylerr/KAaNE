@@ -37,6 +37,8 @@ The Bulb
 
 Burglar Alarm
 
+Faulty Backgrounds
+
 Wire Sequences
 
 Word Scramble
